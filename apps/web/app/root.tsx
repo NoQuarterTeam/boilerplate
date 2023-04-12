@@ -17,7 +17,7 @@ import { getThemeSession } from "./services/session/theme.server"
 import { FULL_WEB_URL } from "./lib/config.server"
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Element" }]
+  return [{ title: "Boilerplate" }]
 }
 
 export const links: LinksFunction = () => {

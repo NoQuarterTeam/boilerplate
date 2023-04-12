@@ -9,7 +9,7 @@ function getEnvironment() {
   } else {
     return {
       ENV: "production",
-      WEB_URL: "https://myelement.app",
+      WEB_URL: "https://boilerplate.app",
     }
   }
 }
