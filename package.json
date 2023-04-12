@@ -1,0 +1,23 @@
+{
+  "name": "@elemment/root",
+  "private": true,
+  "dependencies": {
+    "turbo": "^1.8.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "test:ci": "turbo run test:ci",
+    "db:generate": "turbo run db:generate"
+  },
+  "prisma": {
+    "schema": "./packages/database/schema.prisma"
+  }
+}

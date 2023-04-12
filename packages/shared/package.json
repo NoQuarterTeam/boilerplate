@@ -1,0 +1,20 @@
+{
+  "name": "@boilerplate/shared",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "files": [
+    "./index.ts",
+    "./types.ts"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "@boilerplate/database": "*"
+  },
+  "peerDependencies": {
+    "polished": "4.2.2",
+    "tailwind-merge": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3"
+  }
+}

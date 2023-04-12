@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build/**", "public/build/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": [],
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    }
+  }
+}
