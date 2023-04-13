@@ -126,8 +126,8 @@ importers:
         specifier: 13.4.0
         version: 13.4.0(react-native@0.71.6)(react@18.2.0)
       react-native-web:
-        specifier: ~0.18.10
-        version: 0.18.12(react-dom@18.2.0)(react@18.2.0)
+        specifier: ~0.19.0
+        version: 0.19.0(react-dom@18.2.0)(react@18.2.0)
       superjson:
         specifier: ^1.12.2
         version: 1.12.2
@@ -7289,13 +7289,6 @@ packages:
       yaml: 1.10.2
     dev: false
 
-  /create-react-class@15.7.0:
-    resolution: {integrity: sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng==}
-    dependencies:
-      loose-envify: 1.4.0
-      object-assign: 4.1.1
-    dev: false
-
   /cross-env@7.0.3:
     resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
     engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
@@ -14108,14 +14101,13 @@ packages:
       react-native: 0.71.6(@babel/core@7.21.3)(@babel/preset-env@7.20.2)(react@18.2.0)
     dev: false
 
-  /react-native-web@0.18.12(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-fboP7yqobJ8InSr4fP+bQ3scOtSQtUoPcR+HWasH8b/fk/RO+mWcJs/8n+lewy9WTZc2D68ha7VwRDviUshEWA==}
+  /react-native-web@0.19.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-KT3QinirATviotqB8aX4GIvaLzA5WeGQgdqxmKTVBf9msRsrfmFDRUqZrIkYtXRrLo/GjBUZCXKTulSSV3wuog==}
     peerDependencies:
-      react: ^17.0.2 || ^18.0.0
-      react-dom: ^17.0.2 || ^18.0.0
+      react: ^18.0.0
+      react-dom: ^18.0.0
     dependencies:
       '@babel/runtime': 7.21.0
-      create-react-class: 15.7.0
       fbjs: 3.0.4
       inline-style-prefixer: 6.0.4
       normalize-css-color: 1.0.2
