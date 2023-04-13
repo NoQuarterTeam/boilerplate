@@ -9,7 +9,7 @@ function getEnvironment() {
   } else {
     return {
       ENV: "production",
-      WEB_URL: "https://boilerplate.app",
+      WEB_URL: "https://boilerplate-remix-expo.noquarter.co",
     }
   }
 }
@@ -21,5 +21,5 @@ export const VERSION = Application.nativeApplicationVersion
 export const ENV = environment.ENV
 
 export const IS_DEV = ENV === "development"
-export const IS_STAGING = ENV === "staging"
+export const IS_PREVIEW = ENV === "preview"
 export const IS_PRODUCTION = ENV === "production"
