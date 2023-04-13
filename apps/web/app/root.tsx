@@ -2,8 +2,7 @@ import * as React from "react"
 import * as Tooltip from "@radix-ui/react-tooltip"
 import type { LinksFunction, LoaderArgs, SerializeFrom, V2_MetaFunction } from "@remix-run/node"
 import { json } from "@remix-run/node"
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData, useMatches } from "@remix-run/react"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { Links, LiveReload, Meta, Outlet, Scripts, useLoaderData, useMatches } from "@remix-run/react"
 
 import { join } from "@boilerplate/shared"
 import appStyles from "~/styles/app.css"
@@ -46,20 +45,16 @@ export const loader = async ({ request }: LoaderArgs) => {
 }
 export type RootLoader = SerializeFrom<typeof loader>
 
-const queryClient = new QueryClient()
-
 export default function App() {
   const { flash, theme } = useLoaderData<typeof loader>()
 
   return (
     <Document theme={theme}>
       <Toaster>
-        <QueryClientProvider client={queryClient}>
-          <Tooltip.Provider>
-            <FlashMessage flash={flash} />
-            <Outlet />
-          </Tooltip.Provider>
-        </QueryClientProvider>
+        <Tooltip.Provider>
+          <FlashMessage flash={flash} />
+          <Outlet />
+        </Tooltip.Provider>
       </Toaster>
     </Document>
   )
@@ -119,12 +114,6 @@ function Document({ theme, children }: DocumentProps) {
       </head>
       <body className="bg-white dark:bg-gray-800">
         {children}
-        <ScrollRestoration
-          getKey={(location) => {
-            const paths = ["/admin"]
-            return paths.includes(location.pathname) ? location.pathname : location.key
-          }}
-        />
         {!shouldDisableScripts && <Scripts />}
         <LiveReload />
       </body>
