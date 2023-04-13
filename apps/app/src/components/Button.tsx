@@ -8,10 +8,10 @@ import { Spinner } from "./Spinner"
 export const buttonStyles = cva("flex items-center justify-center rounded-sm border", {
   variants: {
     size: {
-      xs: "h-10",
-      sm: "h-12",
-      md: "h-14",
-      lg: "h-16",
+      xs: "h-8",
+      sm: "h-10",
+      md: "h-12",
+      lg: "h-14",
     },
     variant: {
       primary: "bg-primary-600 border-primary-600",

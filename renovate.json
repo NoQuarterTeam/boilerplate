@@ -20,10 +20,11 @@
   ],
   "ignoreDeps": [
     "@react-native-async-storage/async-storage",
-    "react-native-safe-area-context",
-    "react-native-reanimated",
     "react-native-progress",
+    "react-native-reanimated",
+    "react-native-safe-area-context",
     "react-native-svg",
+    "react-native-web",
     "react-native",
     "uuid"
   ]

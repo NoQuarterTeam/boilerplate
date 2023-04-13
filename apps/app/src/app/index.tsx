@@ -8,7 +8,7 @@ import { Text } from "../components/Text"
 import { api, AUTH_TOKEN } from "../lib/utils/api"
 
 export default function Home() {
-  const { data } = api.auth.me.useQuery()
+  const { data, isLoading } = api.auth.me.useQuery()
   const router = useRouter()
   const utils = api.useContext()
   const client = useQueryClient()
@@ -18,9 +18,9 @@ export default function Home() {
     client.clear()
   }
   return (
-    <View className="px-4 pt-20 ">
+    <View className="space-y-4 px-4 pt-20">
       <Heading className="text-4xl">Welcome to the boilerplate</Heading>
-      {data ? (
+      {isLoading ? null : data ? (
         <View className="space-y-2">
           <Text className="text-2xl">Hey {data.firstName}</Text>
           <Button onPress={handleLogout} variant="outline">

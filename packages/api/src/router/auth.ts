@@ -15,7 +15,18 @@ export const authRouter = createTRPCRouter({
     const token = createAuthToken({ id: user.id })
     return { user: { ...user, avatar: createImageUrl(user.avatar) }, token }
   }),
-
+  register: publicProcedure
+    .input(z.object({ email: z.string().email(), password: z.string(), firstName: z.string(), lastName: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const user = await ctx.prisma.user.findUnique({ where: { email: input.email } })
+      if (user) throw new TRPCError({ code: "BAD_REQUEST", message: "Email already in use" })
+      const hashedPassword = bcrypt.hashSync(input.password, 10)
+      const newUser = await ctx.prisma.user.create({
+        data: { ...input, password: hashedPassword },
+      })
+      const token = createAuthToken({ id: newUser.id })
+      return { user: { ...newUser, avatar: createImageUrl(newUser.avatar) }, token }
+    }),
   update: protectedProcedure
     .input(
       z.object({

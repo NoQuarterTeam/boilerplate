@@ -2,11 +2,12 @@ import * as React from "react"
 import * as Tooltip from "@radix-ui/react-tooltip"
 import type { LinksFunction, LoaderArgs, SerializeFrom, V2_MetaFunction } from "@remix-run/node"
 import { json } from "@remix-run/node"
-import { Links, LiveReload, Meta, Outlet, Scripts, useLoaderData, useMatches } from "@remix-run/react"
-
+import { Links, LiveReload, Meta, Outlet, Scripts, useFetchers, useLoaderData, useMatches, useNavigation } from "@remix-run/react"
+import NProgress from "nprogress"
 import { join } from "@boilerplate/shared"
 import appStyles from "~/styles/app.css"
 import toastStyles from "~/styles/toast.css"
+import nProgressStyles from "~/styles/nprogress.css"
 
 import { FlashMessage } from "./components/FlashMessage"
 import { Toaster } from "./components/ui/Toast"
@@ -23,6 +24,7 @@ export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: appStyles },
     { rel: "stylesheet", href: toastStyles, async: true },
+    { rel: "stylesheet", href: nProgressStyles, async: true },
   ]
 }
 
@@ -45,8 +47,24 @@ export const loader = async ({ request }: LoaderArgs) => {
 }
 export type RootLoader = SerializeFrom<typeof loader>
 
+NProgress.configure({ showSpinner: false })
+
 export default function App() {
   const { flash, theme } = useLoaderData<typeof loader>()
+
+  const transition = useNavigation()
+  const fetchers = useFetchers()
+
+  const state = React.useMemo<"idle" | "loading">(() => {
+    const states = [transition.state, ...fetchers.map((fetcher) => fetcher.state)]
+    if (states.every((state) => state === "idle")) return "idle"
+    return "loading"
+  }, [transition.state, fetchers])
+
+  React.useEffect(() => {
+    if (state === "loading") NProgress.start()
+    if (state === "idle") NProgress.done()
+  }, [state])
 
   return (
     <Document theme={theme}>

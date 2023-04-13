@@ -123,8 +123,8 @@ importers:
         specifier: 13.4.0
         version: 13.4.0(react-native@0.71.6)(react@18.2.0)
       react-native-web:
-        specifier: ~0.19.0
-        version: 0.19.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: ~0.18.10
+        version: 0.18.10(react-dom@18.2.0)(react@18.2.0)
       superjson:
         specifier: ^1.12.2
         version: 1.12.2
@@ -291,12 +291,18 @@ importers:
       dayjs:
         specifier: 1.11.7
         version: 1.11.7
+      isbot:
+        specifier: latest
+        version: 3.6.8
       jsonwebtoken:
         specifier: 9.0.0
         version: 9.0.0
       nodemailer:
         specifier: 6.9.1
         version: 6.9.1
+      nprogress:
+        specifier: ^0.2.0
+        version: 0.2.0
       query-string:
         specifier: ^8.1.0
         version: 8.1.0
@@ -352,6 +358,9 @@ importers:
       '@types/nodemailer':
         specifier: 6.4.7
         version: 6.4.7
+      '@types/nprogress':
+        specifier: ^0.2.0
+        version: 0.2.0
       '@types/react':
         specifier: 18.0.35
         version: 18.0.35
@@ -5598,6 +5607,10 @@ packages:
       '@types/node': 18.15.3
     dev: true
 
+  /@types/nprogress@0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
+    dev: true
+
   /@types/parse-json@4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: false
@@ -7120,6 +7133,13 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
+    dev: false
+
+  /create-react-class@15.7.0:
+    resolution: {integrity: sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
     dev: false
 
   /cross-env@7.0.3:
@@ -10309,6 +10329,11 @@ packages:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
     dev: true
 
+  /isbot@3.6.8:
+    resolution: {integrity: sha512-V8XUXN0/UYxfgrui4o38pmOve2eO/1KjluxR1G8Qnu5gqlUiNrvtX06t1W5n8vFtrtKfHj96iFYuPL39jXUe8g==}
+    engines: {node: '>=12'}
+    dev: false
+
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
@@ -12340,6 +12365,10 @@ packages:
       path-key: 3.1.1
     dev: true
 
+  /nprogress@0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
+
   /nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
     dependencies:
@@ -13825,13 +13854,14 @@ packages:
       react-native: 0.71.6(@babel/core@7.21.3)(@babel/preset-env@7.20.2)(react@18.2.0)
     dev: false
 
-  /react-native-web@0.19.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-KT3QinirATviotqB8aX4GIvaLzA5WeGQgdqxmKTVBf9msRsrfmFDRUqZrIkYtXRrLo/GjBUZCXKTulSSV3wuog==}
+  /react-native-web@0.18.10(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YV2gtZa1n7ulTGp+HcxH+KsAtaDPBI/dKd9oOQS31zyFHURjObLUVkKnGjkmlYAUReWfvmlU64GzyNwoZF9/tA==}
     peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
     dependencies:
       '@babel/runtime': 7.21.0
+      create-react-class: 15.7.0
       fbjs: 3.0.4
       inline-style-prefixer: 6.0.4
       normalize-css-color: 1.0.2
