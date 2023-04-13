@@ -1,5 +1,5 @@
 {
-  "name": "@elemment/root",
+  "name": "@boilerplate/root",
   "private": true,
   "dependencies": {
     "turbo": "^1.8.3"

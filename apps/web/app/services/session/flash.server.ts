@@ -2,7 +2,7 @@ import { createCookieSessionStorage } from "@remix-run/node"
 
 import { FLASH_SESSION_SECRET, IS_PRODUCTION } from "~/lib/config.server"
 
-export const FLASH_COOKIE_KEY = IS_PRODUCTION ? "element_session_flash" : "element_session_dev_flash"
+export const FLASH_COOKIE_KEY = IS_PRODUCTION ? "boilerplate_session_flash" : "boilerplate_session_dev_flash"
 
 export enum FlashType {
   Error = "flashError",

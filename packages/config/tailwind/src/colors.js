@@ -8,7 +8,7 @@ delete colors["blueGray"]
 
 module.exports = {
   ...colors,
-  primary: colors.orange,
+  primary: colors.pink,
   gray: {
     50: "#FAFAFA",
     75: "#EFEFEF",

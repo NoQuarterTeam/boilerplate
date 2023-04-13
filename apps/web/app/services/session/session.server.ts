@@ -2,7 +2,7 @@ import { createCookieSessionStorage } from "@remix-run/node"
 
 import { IS_PRODUCTION, SESSION_SECRET } from "~/lib/config.server"
 
-export const COOKIE_KEY = IS_PRODUCTION ? "element_session" : "element_session_dev"
+export const COOKIE_KEY = IS_PRODUCTION ? "boilerplate" : "boilerplate_session_dev"
 
 const userStorage = createCookieSessionStorage({
   cookie: {

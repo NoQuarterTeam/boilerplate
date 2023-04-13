@@ -86,12 +86,22 @@ export default function Home() {
                 />
               </DropdownMenuTrigger>
               <DropdownMenuContent side="bottom" align="end" className="inline-block md:hidden">
-                <DropdownMenuItem asChild>
-                  <Link to="/register">Register</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/login">Login</Link>
-                </DropdownMenuItem>
+                {user ? (
+                  <DropdownMenuItem asChild>
+                    <Button variant="ghost" onClick={() => logoutSubmit(null, { method: "post", action: "/logout" })}>
+                      Log out
+                    </Button>
+                  </DropdownMenuItem>
+                ) : (
+                  <>
+                    <DropdownMenuItem asChild>
+                      <Link to="/register">Register</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link to="/login">Login</Link>
+                    </DropdownMenuItem>
+                  </>
+                )}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
