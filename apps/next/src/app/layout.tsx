@@ -1,6 +1,10 @@
-import { Poppins } from "next/font/google"
-import { ThemeProvider } from "~/components/ThemeProvider"
 import "./globals.css"
+
+import { Poppins } from "next/font/google"
+
+import { Toaster } from "@boilerplate/ui/src"
+
+import { ThemeProvider } from "~/components/ThemeProvider"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${poppins.variable}`} suppressHydrationWarning>
       <body className="bg-white dark:bg-gray-800">
         <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <Toaster />
       </body>
     </html>
   )

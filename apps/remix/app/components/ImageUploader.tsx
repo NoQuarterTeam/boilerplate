@@ -15,7 +15,7 @@ interface Props {
 
 export function ImageUploader({ children, path, onSubmit, dropzoneOptions, className }: Props) {
   const modalProps = useDisclosure()
-  const toast = useToast()
+  const { toast } = useToast()
   const [image, setImage] = React.useState<{ file: File; preview: string } | null>(null)
 
   const onDrop = React.useCallback(
@@ -27,10 +27,10 @@ export function ImageUploader({ children, path, onSubmit, dropzoneOptions, class
           const description = `File too large, must be under ${
             (dropzoneOptions?.maxSize && `${dropzoneOptions.maxSize / 1000000}MB`) || "5MB"
           }`
-          toast({ status: "error", title: "Invalid file", description })
+          toast({ variant: "destructive", title: "Invalid file", description })
         } else {
           // TODO: add remaining error handlers
-          toast({ status: "error", description: "Invalid file, please try another" })
+          toast({ variant: "destructive", description: "Invalid file, please try another" })
         }
         return
       }
@@ -56,7 +56,7 @@ export function ImageUploader({ children, path, onSubmit, dropzoneOptions, class
       handleClose()
     } catch (error) {
       console.log(error)
-      toast({ status: "error", title: "Error uploading image", description: "Please try again!" })
+      toast({ variant: "destructive", title: "Error uploading image", description: "Please try again!" })
     }
   }
 

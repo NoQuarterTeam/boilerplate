@@ -10,13 +10,13 @@ interface Props {
 }
 
 export function FlashMessage(props: Props) {
-  const toast = useToast()
+  const { toast } = useToast()
   React.useEffect(() => {
     if (props.flash.flashError) {
-      toast({ title: props.flash.flashError.title, description: props.flash.flashError.description, status: "error" })
+      toast({ title: props.flash.flashError.title, description: props.flash.flashError.description, variant: "destructive" })
     }
     if (props.flash.flashInfo) {
-      toast({ title: props.flash.flashInfo.title, description: props.flash.flashInfo.description, status: "info" })
+      toast({ title: props.flash.flashInfo.title, description: props.flash.flashInfo.description })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.flash])

@@ -1,9 +1,10 @@
 import Link from "next/link"
 
-import { AlertDialog, Badge, Button, Limiter } from "@boilerplate/ui"
 import { ClientOnly } from "@boilerplate/shared"
-import { ThemeSwitcher } from "~/components/ThemeSwitcher"
+import { Badge, Limiter } from "@boilerplate/ui"
+
 import { HomeBackground } from "~/components/HomeBackground"
+import { ThemeSwitcher } from "~/components/ThemeSwitcher"
 
 export default async function Home() {
   return (
@@ -30,7 +31,6 @@ export default async function Home() {
 
       <Limiter className="pt-16">
         <div className="stack space-y-20">
-          <AlertDialog triggerButton={<Button>Do itttt</Button>} confirmButton={<Button colorScheme="red">woww</Button>} />
           <div className="center flex-col">
             <div className="vstack max-w-lg space-y-6 pb-12 text-center">
               <Badge size="lg" colorScheme="green">

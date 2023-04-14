@@ -148,7 +148,7 @@ importers:
         specifier: ^7.20.0
         version: 7.21.0
       '@boilerplate/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/config/eslint
       '@expo/config-plugins':
         specifier: ^6.0.0
@@ -224,10 +224,10 @@ importers:
         version: 4.3.7(react@18.2.0)
     devDependencies:
       '@boilerplate/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/config/eslint
       '@boilerplate/tailwind-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/config/tailwind
       '@tailwindcss/forms':
         specifier: ^0.5.3
@@ -375,7 +375,7 @@ importers:
         version: 4.3.7(react@18.2.0)
     devDependencies:
       '@boilerplate/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/config/eslint
       '@remix-run/dev':
         specifier: 1.15.0
@@ -506,7 +506,14 @@ importers:
         version: 3.11.0(tailwindcss@3.3.1)
 
   packages/config/tailwind:
+    dependencies:
+      tailwindcss-animate:
+        specifier: ^1.0.5
+        version: 1.0.5(tailwindcss@3.3.1)
     devDependencies:
+      '@boilerplate/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint
       '@tailwindcss/forms':
         specifier: ^0.5.3
         version: 0.5.3(tailwindcss@3.3.1)
@@ -588,7 +595,7 @@ importers:
         version: 0.0.5
     devDependencies:
       '@boilerplate/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../config/eslint
       eslint:
         specifier: 8.38.0
@@ -606,14 +613,14 @@ importers:
   packages/shared:
     dependencies:
       '@boilerplate/database':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../database
       tailwind-merge:
         specifier: ^1.10.0
         version: 1.10.0
     devDependencies:
       '@boilerplate/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../config/eslint
       '@types/node':
         specifier: ^18.15.3
@@ -683,7 +690,7 @@ importers:
         version: 2.8.0
     devDependencies:
       '@boilerplate/eslint-config':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../config/eslint
       '@tailwindcss/forms':
         specifier: ^0.5.3
@@ -15371,6 +15378,14 @@ packages:
 
   /tailwind-merge@1.10.0:
     resolution: {integrity: sha512-WFnDXSS4kFTZwjKg5/oZSGzBRU/l+qcbv5NVTzLUQvJ9yovDAP05h0F2+ZFW0Lw9EcgRoc2AfURUdZvnEFrXKg==}
+    dev: false
+
+  /tailwindcss-animate@1.0.5(tailwindcss@3.3.1):
+    resolution: {integrity: sha512-UU3qrOJ4lFQABY+MVADmBm+0KW3xZyhMdRvejwtXqYOL7YjHYxmuREFAZdmVG5LPe5E9CAst846SLC4j5I3dcw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      tailwindcss: 3.3.1(postcss@8.4.21)
     dev: false
 
   /tailwindcss-radix@2.8.0:

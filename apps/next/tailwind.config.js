@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  presets: [require("@boilerplate/tailwind-config/dist")],
+  presets: [require("@boilerplate/tailwind-config")],
   content: ["./src/**/*.{js,ts,jsx,tsx}", "../../packages/ui/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {

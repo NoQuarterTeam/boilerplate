@@ -1,12 +1,12 @@
 import type * as React from "react"
 import { Container } from "@react-email/container"
+import { Font } from "@react-email/font"
 import { Head } from "@react-email/head"
 import { Html } from "@react-email/html"
 import { Tailwind } from "@react-email/tailwind"
 import { type Config } from "tailwindcss"
 
 import colors from "@boilerplate/tailwind-config/src/colors"
-import { Font } from "@react-email/font"
 
 const theme = {
   extend: {

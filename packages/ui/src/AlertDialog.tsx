@@ -1,9 +1,8 @@
 "use client"
 import * as React from "react"
-
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
-import { join, merge, useDisclosure } from "@boilerplate/shared"
+import { join, merge } from "@boilerplate/shared"
 
 import { Button } from "./Button"
 
@@ -107,19 +106,19 @@ export {
   AlertDialogCancel,
 }
 
+// Default implementation
+
 interface Props {
-  triggerButton: React.ReactNode
+  trigger: React.ReactNode
   confirmButton: React.ReactNode
   title?: string
   description?: string
 }
 
 export function AlertDialog(props: Props) {
-  const { isOpen, onSetIsOpen } = useDisclosure()
-
   return (
-    <AlertDialogRoot open={isOpen} onOpenChange={onSetIsOpen}>
-      <AlertDialogTrigger asChild>{props.triggerButton}</AlertDialogTrigger>
+    <AlertDialogRoot>
+      <AlertDialogTrigger asChild>{props.trigger}</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogTitle>{props.title || "Are you absolutely sure?"}</AlertDialogTitle>
         <AlertDialogDescription>{props.description || "This action cannot be undone."}</AlertDialogDescription>

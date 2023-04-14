@@ -1,6 +1,5 @@
-import { colors } from "./colors"
-import * as plugin from "tailwindcss/plugin"
-import { type Config } from "tailwindcss"
+const colors = require("./colors")
+const plugin = require("tailwindcss/plugin")
 
 // allows writing sq-10 instead of h-10 w-10
 const shapes = plugin(function ({ matchUtilities, theme }) {
@@ -13,8 +12,8 @@ const shapes = plugin(function ({ matchUtilities, theme }) {
   )
 })
 
-export { colors }
-export default {
+// /** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [],
   theme: {
     extend: {
@@ -24,11 +23,8 @@ export default {
       borderRadius: {
         xs: "2px",
       },
-      colors: {
-        primary: colors.pink,
-        gray: colors.gray,
-      },
+      colors,
     },
   },
-  plugins: [shapes],
-} satisfies Config
+  plugins: [shapes, require("tailwindcss-animate")],
+}

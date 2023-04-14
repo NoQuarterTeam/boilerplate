@@ -8,7 +8,7 @@ import { join, merge } from "@boilerplate/shared"
 import { Spinner } from "./Spinner"
 
 export const buttonStyles = cva(
-  "font-semibold focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 flex center border border-transparent transition-colors duration-200",
+  "outline-none font-semibold focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 flex center border border-transparent transition-colors duration-200",
   {
     variants: {
       size: {

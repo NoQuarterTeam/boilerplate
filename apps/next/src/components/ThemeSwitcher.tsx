@@ -1,8 +1,9 @@
 "use client"
-import { RiMoonLine, RiSunLine } from "react-icons/ri"
-import { IconButton } from "@boilerplate/ui"
-import { useTheme } from "next-themes"
 import * as React from "react"
+import { RiMoonLine, RiSunLine } from "react-icons/ri"
+import { useTheme } from "next-themes"
+
+import { IconButton } from "@boilerplate/ui"
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme()

@@ -1,6 +1,6 @@
 "use client"
-import { useTheme } from "next-themes"
 import * as React from "react"
+import { useTheme } from "next-themes"
 
 export function HomeBackground() {
   const { theme } = useTheme()

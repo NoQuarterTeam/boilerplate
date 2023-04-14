@@ -12,7 +12,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "ci": "turbo run lint prettier",
+    "ci": "turbo run typecheck lint prettier",
     "lint": "turbo run lint",
     "prettier": "turbo run prettier",
     "prettier:fix": "turbo run prettier:fix",

@@ -1,4 +1,4 @@
-export declare const colors: {
+declare const _exports: {
     primary: {
         '50': "#fdf2f8";
         '100': "#fce7f3";
@@ -11,6 +11,20 @@ export declare const colors: {
         '800': "#9d174d";
         '900': "#831843";
         '950': "#500724";
+    };
+    slate: {
+        50: string;
+        75: string;
+        100: string;
+        200: string;
+        300: string;
+        400: string;
+        500: string;
+        600: string;
+        700: string;
+        800: string;
+        900: string;
+        950: string;
     };
     gray: {
         50: string;
@@ -31,19 +45,6 @@ export declare const colors: {
     transparent: "transparent";
     black: "#000";
     white: "#fff";
-    slate: {
-        '50': "#f8fafc";
-        '100': "#f1f5f9";
-        '200': "#e2e8f0";
-        '300': "#cbd5e1";
-        '400': "#94a3b8";
-        '500': "#64748b";
-        '600': "#475569";
-        '700': "#334155";
-        '800': "#1e293b";
-        '900': "#0f172a";
-        '950': "#020617";
-    };
     zinc: {
         '50': "#fafafa";
         '100': "#f4f4f5";
@@ -370,4 +371,5 @@ export declare const colors: {
         '950': "#020617";
     };
 };
+export = _exports;
 //# sourceMappingURL=colors.d.ts.map

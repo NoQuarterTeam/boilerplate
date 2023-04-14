@@ -47,8 +47,8 @@
     "zustand": "4.3.7"
   },
   "devDependencies": {
-    "@boilerplate/tailwind-config": "*workspace:*",
-    "@boilerplate/eslint-config": "*workspace:*",
+    "@boilerplate/tailwind-config": "workspace:*",
+    "@boilerplate/eslint-config": "workspace:*",
     "@tailwindcss/forms": "^0.5.3",
     "@remix-run/dev": "1.15.0",
     "@remix-run/eslint-config": "1.15.0",

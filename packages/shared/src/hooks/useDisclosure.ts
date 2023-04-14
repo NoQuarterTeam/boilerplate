@@ -9,3 +9,5 @@ export function useDisclosure({ defaultIsOpen = false }: { defaultIsOpen?: boole
 
   return { isOpen, onOpen, onClose, onToggle, onSetIsOpen: setIsOpen }
 }
+
+export type UseDisclosure = ReturnType<typeof useDisclosure>

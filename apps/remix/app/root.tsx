@@ -70,12 +70,11 @@ export default function App() {
 
   return (
     <Document theme={theme}>
-      <Toaster>
-        <Tooltip.Provider>
-          <FlashMessage flash={flash} />
-          <Outlet />
-        </Tooltip.Provider>
-      </Toaster>
+      <Tooltip.Provider>
+        <FlashMessage flash={flash} />
+        <Outlet />
+      </Tooltip.Provider>
+      <Toaster />
     </Document>
   )
 }
@@ -87,7 +86,6 @@ export function ErrorBoundary({ error }: { error: Error }) {
       <div className="vstack h-screen justify-center p-20">
         <img alt="logo" src="/logo.png" className="sq-24" />
         <h1>Oops, there was an error.</h1>
-        {/* <p>{error.message}</p> */}
       </div>
     </Document>
   )

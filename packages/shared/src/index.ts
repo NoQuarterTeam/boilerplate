@@ -1,4 +1,4 @@
-export { useDisclosure } from "./hooks/useDisclosure"
+export { useDisclosure, type UseDisclosure } from "./hooks/useDisclosure"
 export { formatFileName, useS3Upload } from "./hooks/useS3"
 export type { UploadFile } from "./hooks/useS3"
 export { merge, join } from "./utils/tailwind"
