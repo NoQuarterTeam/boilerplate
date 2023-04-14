@@ -25,14 +25,6 @@
   }
 }
 
-.react-menu {
-  z-index: 99999 !important;
-}
-
-.react-control {
-  min-height: 34px !important;
-}
-
 @layer components {
   .stack {
     @apply space-y-2;

@@ -10,7 +10,6 @@ import { Toaster } from "@boilerplate/ui"
 
 import appStyles from "~/styles/app.css"
 import nProgressStyles from "~/styles/nprogress.css"
-import toastStyles from "~/styles/toast.css"
 
 import { FlashMessage } from "./components/FlashMessage"
 import { FULL_WEB_URL } from "./lib/config.server"
@@ -25,7 +24,6 @@ export const meta: V2_MetaFunction = () => {
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: appStyles },
-    { rel: "stylesheet", href: toastStyles, async: true },
     { rel: "stylesheet", href: nProgressStyles, async: true },
   ]
 }
