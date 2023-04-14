@@ -643,9 +643,6 @@ importers:
       '@boilerplate/tailwind-config':
         specifier: workspace:*
         version: link:../config/tailwind
-      '@headlessui/react':
-        specifier: ^1.7.13
-        version: 1.7.13(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-alert-dialog':
         specifier: ^1.0.3
         version: 1.0.3(@types/react@18.0.35)(react-dom@18.2.0)(react@18.2.0)
@@ -4095,18 +4092,6 @@ packages:
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
     dependencies:
       '@hapi/hoek': 9.3.0
-    dev: false
-
-  /@headlessui/react@1.7.13(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-9n+EQKRtD9266xIHXdY5MfiXPDfYwl7zBM7KOx2Ae3Gdgxy8QML1FkCMjq6AsOf0l6N9uvI4HcFtuFlenaldKg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16 || ^17 || ^18
-      react-dom: ^16 || ^17 || ^18
-    dependencies:
-      client-only: 0.0.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:

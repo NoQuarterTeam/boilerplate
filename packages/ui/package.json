@@ -13,7 +13,6 @@
   "dependencies": {
     "@boilerplate/shared": "workspace:*",
     "@boilerplate/tailwind-config": "workspace:*",
-    "@headlessui/react": "^1.7.13",
     "@radix-ui/react-alert-dialog": "^1.0.3",
     "@radix-ui/react-avatar": "^1.0.2",
     "@radix-ui/react-checkbox": "^1.0.3",
