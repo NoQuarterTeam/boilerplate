@@ -67,7 +67,7 @@
     "metro": "~0.76.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7",
-    "typescript": "5.0.2"
+    "typescript": "5.0.4"
   },
   "private": true
 }
