@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [require("@boilerplate/tailwind-config")],
+  presets: [require("@boilerplate/tailwind-config/dist")],
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {

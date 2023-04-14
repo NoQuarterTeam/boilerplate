@@ -1,4 +1,4 @@
-declare const _exports: {
+export declare const colors: {
     primary: {
         '50': "#fdf2f8";
         '100': "#fce7f3";
@@ -24,6 +24,7 @@ declare const _exports: {
         700: string;
         800: string;
         900: string;
+        950: string;
     };
     inherit: "inherit";
     current: "currentColor";
@@ -369,5 +370,4 @@ declare const _exports: {
         '950': "#020617";
     };
 };
-export = _exports;
 //# sourceMappingURL=colors.d.ts.map

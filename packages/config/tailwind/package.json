@@ -2,18 +2,28 @@
   "name": "@boilerplate/tailwind-config",
   "version": "1.0.0",
   "sideEffects": false,
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "license": "MIT",
   "types": "./src",
   "files": [
-    "./src/index.js",
-    "./src/colors.js"
+    "./src/index.ts",
+    "./src/colors.ts",
+    "./dist/index.js",
+    "./dist/colors.js"
   ],
   "scripts": {
-    "types": "tsc"
+    "build": "tsc",
+    "lint:fix": "eslint --config .eslintrc.commit.js --fix --cache --ext .ts,.tsx src",
+    "lint": "eslint --config .eslintrc.js --ext .ts,.tsx src",
+    "prettier": "prettier --check src",
+    "prettify": "prettier --write src",
+    "typecheck": "tsc --noEmit"
   },
-  "peerDependencies": {
+  "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.1",
+    "eslint": "8.38.0",
+    "prettier": "^2.8.4",
+    "typescript": "5.0.2"
   }
 }

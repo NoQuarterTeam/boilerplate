@@ -47,8 +47,8 @@
     "zustand": "4.3.7"
   },
   "devDependencies": {
-    "@boilerplate/tailwind-config": "*",
-    "@boilerplate/eslint-config": "*",
+    "@boilerplate/tailwind-config": "*workspace:*",
+    "@boilerplate/eslint-config": "*workspace:*",
     "@tailwindcss/forms": "^0.5.3",
     "@remix-run/dev": "1.15.0",
     "@remix-run/eslint-config": "1.15.0",
@@ -66,7 +66,7 @@
     "prettier": "^2.8.4",
     "remix-flat-routes": "0.5.8",
     "tailwindcss": "^3.3.1",
-    "typescript": "^4.9.5"
+    "typescript": "5.0.2"
   },
   "engines": {
     "node": ">=18"
