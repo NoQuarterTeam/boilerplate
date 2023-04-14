@@ -20,6 +20,7 @@
     "dayjs": "1.11.7",
     "isbot": "latest",
     "next": "13.3.0",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone": "14.2.3",
@@ -29,8 +30,8 @@
     "zustand": "4.3.7"
   },
   "devDependencies": {
-    "@boilerplate/tailwind-config": "*",
     "@boilerplate/eslint-config": "*",
+    "@boilerplate/tailwind-config": "*",
     "@tailwindcss/forms": "^0.5.3",
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "9.0.1",

@@ -38,14 +38,14 @@ export default function Home() {
       <div
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 65 65' width='60' height='60' fill='none' stroke='${
-            isDark ? "rgb(50 50 50 / 0.1)" : "rgb(15 23 42 / 0.03)"
+            isDark ? "rgb(50 50 50 / 0.2)" : "rgb(15 23 42 / 0.03)"
           }'%3e%3cpath d='M0 .5H63.5V65'/%3e%3c/svg%3e")`,
         }}
         className="absolute inset-0 z-[-10]"
       />
       <div className="border-b border-solid border-gray-50 dark:border-gray-700">
         <Limiter className="bg-white dark:bg-gray-800">
-          <div className="flex justify-between py-5 align-middle">
+          <div className="flex items-center justify-between py-5 align-middle">
             <div className="hstack h-12 space-x-6">
               <Link to="/">
                 <div className="hstack">

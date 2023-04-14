@@ -1,10 +1,9 @@
 {
   "name": "@boilerplate/shared",
   "version": "1.0.0",
-  "main": "./index.ts",
+  "main": "./src/index.ts",
   "files": [
-    "./index.ts",
-    "./types.ts"
+    "./src/index.ts"
   ],
   "scripts": {
     "lint:fix": "eslint --config .eslintrc.commit.js --fix --cache --ext .ts,.tsx src",

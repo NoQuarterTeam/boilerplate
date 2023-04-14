@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 
 let hydrating = true
@@ -14,9 +15,9 @@ export function useHydrated() {
 }
 
 type Props = {
-  children(): React.ReactNode
+  children: React.ReactNode
   fallback?: React.ReactNode
 }
 export function ClientOnly({ children, fallback = null }: Props) {
-  return useHydrated() ? <>{children()}</> : <>{fallback}</>
+  return useHydrated() ? <>{children}</> : <>{fallback}</>
 }
