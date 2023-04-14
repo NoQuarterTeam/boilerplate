@@ -1,12 +1,13 @@
 import * as React from "react"
-import Constants from "expo-constants"
+import AsyncStorage from "@react-native-async-storage/async-storage"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { httpBatchLink } from "@trpc/client"
 import { createTRPCReact } from "@trpc/react-query"
-import { inferRouterInputs, inferRouterOutputs } from "@trpc/server"
-import type { AppRouter } from "@boilerplate/api"
-import AsyncStorage from "@react-native-async-storage/async-storage"
+import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server"
+import Constants from "expo-constants"
 import superjson from "superjson"
+
+import type { AppRouter } from "@boilerplate/api"
 
 /**
  * A set of typesafe hooks for consuming your API.

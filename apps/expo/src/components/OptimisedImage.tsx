@@ -1,4 +1,5 @@
-import { Image, ImageProps } from "expo-image"
+import { Image, type ImageProps } from "expo-image"
+
 import { WEB_URL } from "../lib/config"
 
 type Fit = "cover" | "contain" | "fill" | "inside" | "outside"

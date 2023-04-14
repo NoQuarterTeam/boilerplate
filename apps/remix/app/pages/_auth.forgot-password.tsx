@@ -2,7 +2,7 @@ import { type ActionArgs, redirect } from "@remix-run/node"
 import { Link } from "@remix-run/react"
 import { z } from "zod"
 
-import { Form, FormButton, FormError, FormField } from "~/components/ui/Form"
+import { Form, FormButton, FormError, FormField } from "~/components/Form"
 import { db } from "~/lib/db.server"
 import { validateFormData } from "~/lib/form"
 import { createToken } from "~/lib/jwt.server"

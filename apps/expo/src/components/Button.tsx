@@ -1,9 +1,11 @@
-import * as React from "react"
-import { TouchableOpacityProps, TouchableOpacity, useColorScheme } from "react-native"
+import type * as React from "react"
+import { TouchableOpacity, type TouchableOpacityProps, useColorScheme } from "react-native"
+import { cva, type VariantProps } from "class-variance-authority"
+
 import { merge } from "@boilerplate/shared"
-import { cva, VariantProps } from "class-variance-authority"
-import { Text } from "./Text"
+
 import { Spinner } from "./Spinner"
+import { Text } from "./Text"
 
 export const buttonStyles = cva("flex items-center justify-center rounded-sm border", {
   variants: {

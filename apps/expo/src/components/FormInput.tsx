@@ -1,6 +1,8 @@
 import { View } from "react-native"
+
 import { merge } from "@boilerplate/shared"
-import { Input, InputProps } from "./Input"
+
+import { Input, type InputProps } from "./Input"
 import { Text } from "./Text"
 
 interface Props extends InputProps {

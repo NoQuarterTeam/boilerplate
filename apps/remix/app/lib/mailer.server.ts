@@ -1,18 +1,9 @@
-import nodemailer from "nodemailer"
-import { SendEmailData } from "resend/build/src/interfaces"
 import { render } from "@react-email/render"
+import nodemailer from "nodemailer"
+import { type SendEmailData } from "resend/build/src/interfaces"
 
 import { IS_PRODUCTION } from "./config.server"
 import { resend } from "./resend.server"
-
-// DEV EMAIL
-export const DEV_EMAIL_OPTIONS: any = {
-  host: "localhost",
-  port: 1025,
-  secure: false,
-  debug: true,
-  ignoreTLS: true,
-}
 
 type Props = SendEmailData & { react: NonNullable<SendEmailData["react"]> }
 class Mailer {
@@ -30,7 +21,7 @@ class Mailer {
   }
 
   private async sendDev(args: Props) {
-    const devMail = nodemailer.createTransport(DEV_EMAIL_OPTIONS)
+    const devMail = nodemailer.createTransport({ host: "localhost", port: 1025, secure: false, debug: true, ignoreTLS: true })
     const html = render(args.react, { pretty: true })
     const text = render(args.react, { plainText: true })
     return devMail.sendMail({ ...args, html, text })

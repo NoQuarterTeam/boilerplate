@@ -1,9 +1,12 @@
-import { TextInput, TextInputProps, useColorScheme } from "react-native"
-import { merge } from "@boilerplate/shared"
-import colors from "@boilerplate/tailwind-config/src/colors"
+import { TextInput, type TextInputProps, useColorScheme } from "react-native"
 import { styled } from "nativewind"
 
-export interface InputProps extends TextInputProps {}
+import { merge } from "@boilerplate/shared"
+import colors from "@boilerplate/tailwind-config/src/colors"
+
+export interface InputProps extends TextInputProps {
+  className?: string
+}
 
 const StyledInput = styled(TextInput)
 

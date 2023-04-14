@@ -1,9 +1,10 @@
 import { TRPCError } from "@trpc/server"
-import { z } from "zod"
 import bcrypt from "bcryptjs"
-import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc"
+import { z } from "zod"
+
 import { createAuthToken } from "../lib/jwt"
 import { createImageUrl } from "../lib/s3"
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc"
 
 export const authRouter = createTRPCRouter({
   me: publicProcedure.query(({ ctx }) => (ctx.user ? { ...ctx.user, avatar: createImageUrl(ctx.user.avatar) } : null)),

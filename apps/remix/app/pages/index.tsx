@@ -1,13 +1,19 @@
-import { json, LoaderArgs, V2_MetaFunction } from "@remix-run/node"
-import { Link, useFetcher, useLoaderData, useSubmit } from "@remix-run/react"
 import { RiMenuLine, RiMoonLine, RiSunLine } from "react-icons/ri"
+import { json, type LoaderArgs, type V2_MetaFunction } from "@remix-run/node"
+import { Link, useFetcher, useLoaderData, useSubmit } from "@remix-run/react"
 
-import { Badge } from "~/components/ui/Badge"
-import { Button } from "~/components/ui/Button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "~/components/ui/DropdownMenu"
-import { IconButton } from "~/components/ui/IconButton"
-import { Limiter } from "~/components/ui/Limiter"
-import { LinkButton } from "~/components/ui/LinkButton"
+import {
+  Badge,
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  IconButton,
+  Limiter,
+} from "@boilerplate/ui"
+
+import { LinkButton } from "~/components/LinkButton"
 import { useTheme } from "~/lib/theme"
 import { getMaybeUser } from "~/services/auth/auth.server"
 

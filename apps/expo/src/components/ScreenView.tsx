@@ -1,8 +1,8 @@
-import { Link } from "expo-router"
-import { View, useColorScheme } from "react-native"
-
+import type * as React from "react"
+import { useColorScheme, View } from "react-native"
 import Feather from "@expo/vector-icons/Feather"
-import * as React from "react"
+import { Link } from "expo-router"
+
 import { Heading } from "./Heading"
 
 interface Props {

@@ -2,13 +2,7 @@
 module.exports = {
   darkMode: "class",
   presets: [require("@boilerplate/tailwind-config")],
-  content: [
-    "./app/pages/**/*.{js,ts,jsx,tsx}",
-    "!./app/pages/emails+/**/*",
-    "./app/root.tsx",
-    "./app/components/**/*.{js,ts,jsx,tsx}",
-    "./app/lib/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "!./app/pages/emails+/**/*", "../../packages/ui/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       spacing: {

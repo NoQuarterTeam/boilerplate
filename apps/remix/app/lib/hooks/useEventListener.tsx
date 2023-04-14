@@ -2,11 +2,11 @@ import * as React from "react"
 
 export const useEventListener = (
   eventName: string,
-  handler: (event: any) => void,
+  handler: (event: unknown) => void,
   element = global,
   options: AddEventListenerOptions = {},
 ) => {
-  const savedHandler = React.useRef<any>()
+  const savedHandler = React.useRef<(event: unknown) => void>()
   const { capture, passive, once } = options
 
   React.useEffect(() => {
@@ -19,7 +19,7 @@ export const useEventListener = (
       return
     }
 
-    const eventListener = (event: Event) => savedHandler.current(event)
+    const eventListener = (event: Event) => savedHandler.current?.(event)
     const opts = { capture, passive, once }
     element.addEventListener(eventName, eventListener, opts)
     return () => {

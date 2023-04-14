@@ -1,7 +1,6 @@
 import Link from "next/link"
-import { Badge } from "~/components/ui/Badge"
 
-import { Limiter } from "~/components/ui/Limiter"
+import { Badge, Limiter } from "@boilerplate/ui"
 
 export default async function Home() {
   return (

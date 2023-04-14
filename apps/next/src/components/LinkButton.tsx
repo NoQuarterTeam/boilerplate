@@ -1,10 +1,8 @@
 "use client"
-
 import Link, { type LinkProps } from "next/link"
 
 import { join, merge } from "@boilerplate/shared"
-import { ButtonStyleProps, buttonStyles, buttonSizeStyles } from "./ui/Button"
-import { Spinner } from "./ui/Spinner"
+import { buttonSizeStyles, type ButtonStyleProps, buttonStyles, Spinner } from "@boilerplate/ui"
 
 interface LinkButtonProps extends ButtonStyleProps, LinkProps {
   isLoading?: boolean

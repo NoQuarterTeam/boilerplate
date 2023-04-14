@@ -1,5 +1,6 @@
-import { type Prisma } from "@boilerplate/database/types"
 import { redirect } from "@remix-run/node"
+
+import { type Prisma } from "@boilerplate/database/types"
 
 import { db } from "~/lib/db.server"
 import type { Await } from "~/lib/helpers/types"

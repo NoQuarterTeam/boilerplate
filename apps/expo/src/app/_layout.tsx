@@ -1,12 +1,12 @@
+import { View } from "react-native"
+import { SafeAreaProvider } from "react-native-safe-area-context"
 import { Poppins_400Regular, Poppins_600SemiBold, Poppins_700Bold, Poppins_900Black, useFonts } from "@expo-google-fonts/poppins"
 import { Slot, SplashScreen } from "expo-router"
 import { StatusBar } from "expo-status-bar"
-import { View } from "react-native"
-import { SafeAreaProvider } from "react-native-safe-area-context"
 
 import { NewUpdate } from "../components/NewUpdate"
-import { useCheckExpoUpdates } from "../lib/hooks/useCheckExpoUpdates"
 import { TRPCProvider } from "../lib/api"
+import { useCheckExpoUpdates } from "../lib/hooks/useCheckExpoUpdates"
 
 // This is the main layout of the app
 // It wraps your pages with the providers they need

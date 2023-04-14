@@ -1,5 +1,6 @@
 import type { ActionArgs, LoaderArgs } from "@remix-run/node"
 import * as trpcFetch from "@trpc/server/adapters/fetch"
+
 import { appRouter, createContext } from "@boilerplate/api"
 
 function handleRequest(args: LoaderArgs | ActionArgs) {

@@ -6,7 +6,7 @@ import type { Prisma } from "@boilerplate/database/types"
 // and it converts it to the nested structure, pretty sweet right?
 
 export function getOrderBy(orderBy: string, order: string) {
-  let object = {} as any
+  let object = {} as { [key: string]: unknown }
   const result = object
   const arr = orderBy.split(".")
   for (let i = 0; i < arr.length - 1; i++) {

@@ -1,6 +1,5 @@
-import "./globals.css"
-
 import { Poppins } from "next/font/google"
+import "./globals.css"
 
 const poppins = Poppins({
   subsets: ["latin"],

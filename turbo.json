@@ -8,9 +8,14 @@
     "lint": {
       "outputs": []
     },
-    "test": {
-      "outputs": [],
-      "dependsOn": ["^build"]
+    "lint:fix": {
+      "outputs": []
+    },
+    "prettier": {
+      "outputs": []
+    },
+    "prettier:fix": {
+      "outputs": []
     },
     "dev": {
       "cache": false

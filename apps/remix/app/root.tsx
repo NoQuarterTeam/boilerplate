@@ -4,17 +4,19 @@ import type { LinksFunction, LoaderArgs, SerializeFrom, V2_MetaFunction } from "
 import { json } from "@remix-run/node"
 import { Links, LiveReload, Meta, Outlet, Scripts, useFetchers, useLoaderData, useMatches, useNavigation } from "@remix-run/react"
 import NProgress from "nprogress"
+
 import { join } from "@boilerplate/shared"
+import { Toaster } from "@boilerplate/ui"
+
 import appStyles from "~/styles/app.css"
-import toastStyles from "~/styles/toast.css"
 import nProgressStyles from "~/styles/nprogress.css"
+import toastStyles from "~/styles/toast.css"
 
 import { FlashMessage } from "./components/FlashMessage"
-import { Toaster } from "./components/ui/Toast"
+import { FULL_WEB_URL } from "./lib/config.server"
 import { type Theme } from "./lib/theme"
 import { getFlashSession } from "./services/session/flash.server"
 import { getThemeSession } from "./services/session/theme.server"
-import { FULL_WEB_URL } from "./lib/config.server"
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Boilerplate" }]

@@ -1,1 +1,2 @@
-export type Await<T extends (...args: any) => any> = Awaited<ReturnType<T>>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Await<T extends (...args: any) => unknown> = Awaited<ReturnType<T>>

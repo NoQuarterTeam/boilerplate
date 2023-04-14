@@ -38,7 +38,7 @@ export const loader = async ({ request }: LoaderArgs) => {
     const width = getIntOrNull(url.searchParams.get("width"))
     const height = getIntOrNull(url.searchParams.get("height"))
     const quality = getIntOrNull(url.searchParams.get("quality")) || 90
-    const fit: any = url.searchParams.get("fit") || "cover"
+    const fit = (url.searchParams.get("fit") as keyof sharp.FitEnum) || "cover"
 
     // Create hash of the url for unique cache key
     const hash = createHash("sha256")
@@ -76,7 +76,7 @@ export const loader = async ({ request }: LoaderArgs) => {
 
     // transform image
     const sharpInstance = sharp()
-    sharpInstance.on("error", (error: any) => {
+    sharpInstance.on("error", (error) => {
       console.error(error)
     })
 

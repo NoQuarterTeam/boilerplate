@@ -11,6 +11,12 @@
     "@prisma/client": "4.12.0",
     "prisma": "4.12.0"
   },
+  "scripts": {
+    "db:migrate": "pnpm with-env prisma migrate dev",
+    "db:push": "pnpm with-env prisma db push",
+    "db:generate": "pnpm with-env prisma generate",
+    "with-env": "dotenv -e ../../.env --"
+  },
   "devDependencies": {
     "@types/node": "^18.15.3",
     "dotenv-cli": "^7.1.0",
@@ -18,11 +24,5 @@
   },
   "prisma": {
     "schema": "./schema.prisma"
-  },
-  "scripts": {
-    "db:migrate": "pnpm with-env prisma migrate dev",
-    "db:push": "pnpm with-env prisma db push",
-    "db:generate": "pnpm with-env prisma generate",
-    "with-env": "dotenv -e ../../.env --"
   }
 }

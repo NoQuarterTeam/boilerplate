@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 
 import { APP_SECRET } from "./config.server"
 
-type Payload = Record<string, any>
+type Payload = Record<string, unknown>
 
 export const createToken = (payload: Payload, options?: jwt.SignOptions): string => {
   try {

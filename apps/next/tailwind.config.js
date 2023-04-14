@@ -2,10 +2,7 @@
 module.exports = {
   darkMode: "class",
   presets: [require("@boilerplate/tailwind-config")],
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-    // "!./app/pages/emails+/**/*",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}", "../../packages/ui/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontSize: {

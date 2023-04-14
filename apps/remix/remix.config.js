@@ -16,17 +16,19 @@ module.exports = {
   },
   serverDependenciesToBundle: [
     "@boilerplate/api",
-    "@boilerplate/shared",
     "@boilerplate/database",
     "@boilerplate/database/types",
+    "@boilerplate/emails",
+    "@boilerplate/shared",
     "@boilerplate/tailwind-config",
     "@boilerplate/tailwind-config/src/colors",
+    "@boilerplate/ui",
     "axios",
-    "query-string",
     "filter-obj",
+    "query-string",
     "split-on-first",
   ],
-  watchPaths: ["../../packages/api"],
+  watchPaths: ["../../packages/api", "../../packages/emails", "../../packages/shared", "../../packages/ui"],
   routes: (defineRoutes) => {
     return flatRoutes("pages", defineRoutes)
   },

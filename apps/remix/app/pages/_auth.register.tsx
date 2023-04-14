@@ -3,13 +3,11 @@ import { redirect } from "@remix-run/node"
 import { Link } from "@remix-run/react"
 import { z } from "zod"
 
-import { Form, FormButton, FormError, FormField } from "~/components/ui/Form"
+import { Form, FormButton, FormError, FormField } from "~/components/Form"
 import { db } from "~/lib/db.server"
 import { validateFormData } from "~/lib/form"
 import { badRequest } from "~/lib/remix"
-
 import { hashPassword } from "~/services/auth/password.server"
-
 import { FlashType, getFlashSession } from "~/services/session/flash.server"
 import { getUserSession } from "~/services/session/session.server"
 
@@ -58,13 +56,13 @@ export const action = async ({ request }: ActionArgs) => {
             await createFlash(
               FlashType.Info,
               `Welcome to the boilerplate, ${data.firstName}!`,
-              "Enjoy it! Give us a star on Github.",
+              "If you like it, give us a star on Github!",
             ),
           ],
         ])
         return redirect("/", { headers })
-      } catch (e: any) {
-        return badRequest(e.message, {
+      } catch (e) {
+        return badRequest(e, {
           headers: { "Set-Cookie": await createFlash(FlashType.Error, "Register error") },
         })
       }

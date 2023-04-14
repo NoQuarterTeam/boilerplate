@@ -6,14 +6,23 @@
     "./index.ts",
     "./types.ts"
   ],
+  "scripts": {
+    "lint:fix": "eslint --config .eslintrc.commit.js --fix --cache --ext .ts,.tsx src",
+    "lint": "eslint --config .eslintrc.js --ext .ts,.tsx src",
+    "prettier": "prettier --check src",
+    "prettier:fix": "prettier --write src",
+    "typecheck": "tsc --noEmit"
+  },
   "sideEffects": false,
   "dependencies": {
-    "@boilerplate/database": "*"
-  },
-  "peerDependencies": {
+    "@boilerplate/database": "*",
     "tailwind-merge": "^1.10.0"
   },
   "devDependencies": {
-    "@types/node": "^18.15.3"
+    "@boilerplate/eslint-config": "*",
+    "@types/node": "^18.15.3",
+    "eslint": "8.38.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
   }
 }
