@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Badge } from "~/components/ui/Badge"
+
 import { Limiter } from "~/components/ui/Limiter"
 
 export default async function Home() {
@@ -24,6 +25,7 @@ export default async function Home() {
           </div>
         </Limiter>
       </div>
+
       <Limiter className="pt-16">
         <div className="stack space-y-20">
           <div className="center flex-col">

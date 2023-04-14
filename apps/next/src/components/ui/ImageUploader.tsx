@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 import type { DropzoneOptions, FileRejection } from "react-dropzone"
 import { useDropzone } from "react-dropzone"
@@ -10,6 +11,7 @@ import { ButtonGroup } from "./ButtonGroup"
 import { inputStyles } from "./Inputs"
 import { Modal } from "./Modal"
 import { useToast } from "./Toast"
+import Image from "next/image"
 
 interface Props {
   path: string
@@ -44,7 +46,7 @@ export function ImageUploader({ children, path, onSubmit, dropzoneOptions, class
       setImage({ file: files[0], preview: window.URL.createObjectURL(files[0]) })
       modalProps.onOpen()
     },
-    [toast, dropzoneOptions],
+    [toast, dropzoneOptions, modalProps],
   )
   const { getRootProps, getInputProps } = useDropzone({
     maxSize: 5000000, // 5MB
@@ -86,7 +88,15 @@ export function ImageUploader({ children, path, onSubmit, dropzoneOptions, class
 
       <Modal {...modalProps} onClose={handleClose} title="Confirm image">
         <div className="p-4">
-          <img className="mb-4 max-h-[400px] w-full object-contain" alt="preview" src={image?.preview} />
+          {image && (
+            <Image
+              height={400}
+              width={600}
+              className="mb-4 max-h-[400px] w-full object-contain"
+              alt="preview"
+              src={image.preview}
+            />
+          )}
           <ButtonGroup>
             <Button variant="ghost" disabled={isLoading} onClick={handleClose}>
               Cancel

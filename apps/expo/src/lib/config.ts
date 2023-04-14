@@ -9,7 +9,7 @@ function getEnvironment() {
   } else {
     return {
       ENV: "production",
-      WEB_URL: "https://boilerplate-remix-expo.noquarter.co",
+      WEB_URL: "https://my-production-app.com",
     }
   }
 }
