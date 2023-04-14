@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 
 export function useDisclosure({ defaultIsOpen = false }: { defaultIsOpen?: boolean } | undefined = {}) {
@@ -8,5 +9,3 @@ export function useDisclosure({ defaultIsOpen = false }: { defaultIsOpen?: boole
 
   return { isOpen, onOpen, onClose, onToggle, onSetIsOpen: setIsOpen }
 }
-
-export type DisclosureProps = ReturnType<typeof useDisclosure>

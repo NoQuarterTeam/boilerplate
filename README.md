@@ -1,12 +1,13 @@
 # Boilerplate
 
-## Typescript + React + Remix + Prisma + React Native
+## React + Remix + Next + Typescript + Prisma + Expo + React Native
 
 Comes with user authentication included
 
 - [React](https://github.com/facebook/react)
 - [Prisma](https://www.prisma.io)
 - [Remix](https://remix.run)
+- Next.js
 - Expo
 - React Native
 - TypeScript
@@ -20,19 +21,17 @@ Comes with user authentication included
 
 ## Get Started
 
-**Must have node and postgres installed and setup locally**
+**Must have node and pnpm installed and setup locally**
 
-1. `npm i`
-2. `createdb boilerplate`
-3. `npm run db:migrate`
+1. `pnpm i`
+2. Create db in planetscale and add connection string to .env
+3. `cd packages/database pnpm db:push`
 
-Make sure you have created a .env file in the api package with the right values, you can use .env.example as the template
+Make sure you have created a .env file with the right values, you can use .env.example as the template
 
 ## Development
 
-`npm run build`
-then
-`npm run dev`
+`pnpm run dev`
 
 ## Production
 
@@ -42,8 +41,4 @@ then
 
 ### Deployment
 
-We are using Fly.io
-
-### Extra info
-
-- [Remix Docs](https://remix.run/docs)
+We are using Vercel
