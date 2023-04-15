@@ -124,7 +124,7 @@ function Header({
   onClick?: () => void
 }) {
   const sharedClassName = join(
-    "flex items-center min-w-auto text-sm h-auto font-700",
+    "flex items-center min-w-auto text-sm h-auto font-semibold",
     className,
     isButton ? "cursor-pointer" : "cursor-default",
   )

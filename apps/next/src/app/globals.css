@@ -3,11 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  hr {
-    @apply border-gray-100 dark:border-gray-600;
-  }
-  * {
-    @apply dark:text-white;
+  html {
+    @apply font-sans;
   }
   h1,
   h2,
@@ -15,7 +12,15 @@
   h4,
   h5,
   h6 {
+    @apply font-serif;
     @apply font-bold;
+  }
+
+  hr {
+    @apply border-gray-100 dark:border-gray-600;
+  }
+  * {
+    @apply dark:text-white;
   }
 }
 

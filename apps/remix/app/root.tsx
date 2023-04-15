@@ -8,6 +8,14 @@ import NProgress from "nprogress"
 import { join } from "@boilerplate/shared"
 import { Toaster } from "@boilerplate/ui"
 
+import poppins300 from "@fontsource/poppins/300.css"
+import poppins400 from "@fontsource/poppins/400.css"
+import poppins500 from "@fontsource/poppins/500.css"
+import poppins600 from "@fontsource/poppins/600.css"
+import poppins700 from "@fontsource/poppins/700.css"
+import poppins800 from "@fontsource/poppins/800.css"
+import poppins900 from "@fontsource/poppins/900.css"
+
 import appStyles from "~/styles/app.css"
 import nProgressStyles from "~/styles/nprogress.css"
 
@@ -23,6 +31,13 @@ export const meta: V2_MetaFunction = () => {
 
 export const links: LinksFunction = () => {
   return [
+    { rel: "stylesheet", href: poppins300 },
+    { rel: "stylesheet", href: poppins400 },
+    { rel: "stylesheet", href: poppins500 },
+    { rel: "stylesheet", href: poppins600 },
+    { rel: "stylesheet", href: poppins700 },
+    { rel: "stylesheet", href: poppins800 },
+    { rel: "stylesheet", href: poppins900 },
     { rel: "stylesheet", href: appStyles },
     { rel: "stylesheet", href: nProgressStyles, async: true },
   ]
@@ -101,12 +116,6 @@ function Document({ theme, children }: DocumentProps) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-          rel="stylesheet"
-        />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />

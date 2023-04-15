@@ -11,6 +11,7 @@ module.exports = {
     v2_meta: true,
     v2_routeConvention: true,
     v2_errorBoundary: true,
+    unstable_cssSideEffectImports: true,
     v2_normalizeFormMethod: true,
     unstable_tailwind: true,
   },

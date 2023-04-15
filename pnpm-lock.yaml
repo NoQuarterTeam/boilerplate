@@ -313,6 +313,9 @@ importers:
       '@boilerplate/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@fontsource/poppins':
+        specifier: ^4.5.10
+        version: 4.5.10
       '@remix-run/node':
         specifier: 1.15.0
         version: 1.15.0
@@ -4071,6 +4074,10 @@ packages:
       use-isomorphic-layout-effect: 1.1.2(@types/react@18.0.35)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@fontsource/poppins@4.5.10:
+    resolution: {integrity: sha512-oYZVHsnlwV3VWM1SE/m6SUxVh0QLk5+2wB+lBiXcI7N/0KVQWmV9YykaPqfJHBLvmdya+MAOnv+BQHeLU1vOOw==}
     dev: false
 
   /@gar/promisify@1.1.3:
