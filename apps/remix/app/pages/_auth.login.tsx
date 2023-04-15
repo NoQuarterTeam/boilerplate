@@ -11,7 +11,7 @@ import { comparePasswords } from "~/services/auth/password.server"
 import { getUserSession } from "~/services/session/session.server"
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Login" }]
+  return [{ title: "Login" }, { name: "description", content: "Login to the boilerplate" }]
 }
 export const headers = () => {
   return {

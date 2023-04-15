@@ -1,5 +1,5 @@
 import { RiMenuLine, RiMoonLine, RiSunLine } from "react-icons/ri"
-import { json, type LoaderArgs, type V2_MetaFunction } from "@remix-run/node"
+import { json, type LoaderArgs } from "@remix-run/node"
 import { Link, useFetcher, useLoaderData, useSubmit } from "@remix-run/react"
 
 import {
@@ -16,10 +16,6 @@ import {
 import { LinkButton } from "~/components/LinkButton"
 import { useTheme } from "~/lib/theme"
 import { getMaybeUser } from "~/services/auth/auth.server"
-
-export const meta: V2_MetaFunction = () => {
-  return [{ title: "Boilerplate" }]
-}
 
 export const loader = async ({ request }: LoaderArgs) => {
   const user = await getMaybeUser(request)

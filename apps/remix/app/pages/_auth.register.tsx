@@ -12,7 +12,7 @@ import { FlashType, getFlashSession } from "~/services/session/flash.server"
 import { getUserSession } from "~/services/session/session.server"
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Register" }]
+  return [{ title: "Register" }, { name: "description", content: "Sign up to the boilerplate" }]
 }
 export const headers = () => {
   return {
