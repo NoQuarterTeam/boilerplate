@@ -26,7 +26,7 @@ import { getFlashSession } from "./services/session/flash.server"
 import { getThemeSession } from "./services/session/theme.server"
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Boilerplate" }]
+  return [{ title: "Boilerplate", description: "Created by No Quarter" }]
 }
 
 export const links: LinksFunction = () => {
