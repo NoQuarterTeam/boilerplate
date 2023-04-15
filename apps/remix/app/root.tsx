@@ -115,7 +115,7 @@ function Document({ theme, children }: DocumentProps) {
     <html lang="en" className={join(theme)}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
