@@ -64,8 +64,12 @@ export function Table<T extends DataType>(props: Props<T>) {
               >
                 {header}
                 {orderBy && !!sortKey && orderBy === sortKey && (
-                  <div className="center ml-2">
-                    {order === Prisma.SortOrder.asc ? <ArrowUp /> : order === Prisma.SortOrder.desc ? <ArrowDown /> : null}
+                  <div className="center ml-1">
+                    {order === Prisma.SortOrder.asc ? (
+                      <ArrowUp className="sq-4" />
+                    ) : order === Prisma.SortOrder.desc ? (
+                      <ArrowDown className="sq-4" />
+                    ) : null}
                   </div>
                 )}
               </Header>

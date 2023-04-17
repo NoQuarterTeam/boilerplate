@@ -35,7 +35,7 @@ export function Search({ placeholder, name = "search", ...props }: InputProps) {
   return (
     <form className="relative w-full" onSubmit={handleSubmit}>
       <div className="center absolute left-1 top-0 h-full">
-        <IconButton size="xs" type="submit" aria-label="search" variant="ghost" icon={<SearchIcon />} />
+        <IconButton size="xs" type="submit" aria-label="search" variant="ghost" icon={<SearchIcon className="sq-4" />} />
       </div>
       <Input
         name={name}
@@ -48,7 +48,7 @@ export function Search({ placeholder, name = "search", ...props }: InputProps) {
       />
       <div className="center absolute right-1 top-0 h-full">
         {!!isPendingSearch && (
-          <IconButton size="xs" onClick={clearSearch} aria-label="clear search" variant="ghost" icon={<X />} />
+          <IconButton size="xs" onClick={clearSearch} aria-label="clear search" variant="ghost" icon={<X className="sq-4" />} />
         )}
       </div>
     </form>
