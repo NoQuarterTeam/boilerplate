@@ -20,6 +20,7 @@
     "@boilerplate/tailwind-config": "workspace:*",
     "@expo-google-fonts/poppins": "^0.2.3",
     "@expo/react-native-action-sheet": "^4.0.1",
+    "@hookform/resolvers": "^3.1.0",
     "@react-native-async-storage/async-storage": "1.17.11",
     "@tanstack/react-query": "^4.23.0",
     "@trpc/client": "^10.9.0",
@@ -42,6 +43,7 @@
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-native": "0.71.6",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-progress": "^5.0.0",
@@ -52,6 +54,7 @@
     "react-native-web": "~0.18.10",
     "superjson": "^1.12.2",
     "uuid": "^3.4.0",
+    "zod": "3.21.4",
     "zustand": "4.3.7"
   },
   "devDependencies": {
@@ -61,8 +64,8 @@
     "@boilerplate/eslint-config": "workspace:*",
     "@boilerplate/tailwind-config": "workspace:*",
     "@expo/config-plugins": "^6.0.0",
-    "@types/react-native": "^0.71.3",
     "@types/react": "^18.0.27",
+    "@types/react-native": "^0.71.3",
     "eslint": "8.38.0",
     "metro": "~0.76.0",
     "postcss": "^8.4.21",

@@ -1,4 +1,3 @@
-import * as React from "react"
 import { KeyboardAvoidingView, ScrollView, View } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { Link, useRouter } from "expo-router"
@@ -8,6 +7,10 @@ import { FormError } from "../../components/FormError"
 import { FormInput } from "../../components/FormInput"
 import { Heading } from "../../components/Heading"
 import { api, AUTH_TOKEN } from "../../lib/api"
+import { FormProvider } from "react-hook-form"
+import { useForm } from "../../lib/hooks/useForm"
+import { z } from "zod"
+import { registerSchema } from "@boilerplate/api/src/router/auth"
 
 export default function Register() {
   const queryClient = api.useContext()
@@ -19,64 +22,52 @@ export default function Register() {
       router.replace("/")
     },
   })
-  const handleRegister = async () => {
-    await AsyncStorage.removeItem(AUTH_TOKEN)
-    login.mutate({ email, password, firstName, lastName })
-  }
+  const form = useForm({ defaultValues: { email: "", password: "", firstName: "", lastName: "" }, schema: registerSchema })
 
-  const [email, setEmail] = React.useState("")
-  const [password, setPassword] = React.useState("")
-  const [firstName, setFirstName] = React.useState("")
-  const [lastName, setLastName] = React.useState("")
+  const handleRegister = async (data: z.infer<typeof registerSchema>) => {
+    await AsyncStorage.removeItem(AUTH_TOKEN)
+    login.mutate(data)
+  }
 
   return (
     <KeyboardAvoidingView>
-      <ScrollView className="h-full space-y-3 px-4 pt-16">
-        <Heading className="text-4xl">Register</Heading>
-        <View>
-          <FormInput label="Email" value={email} onChangeText={setEmail} error={login.error?.data?.zodError?.fieldErrors.email} />
-        </View>
-        <View>
-          <FormInput
-            secureTextEntry
-            label="Password"
-            value={password}
-            onChangeText={setPassword}
-            error={login.error?.data?.zodError?.fieldErrors.password}
-          />
+      <FormProvider {...form}>
+        <ScrollView className="h-full space-y-3 px-4 pt-16">
+          <Heading className="text-4xl">Register</Heading>
           <View>
-            <FormInput
-              label="First name"
-              value={firstName}
-              onChangeText={setFirstName}
-              error={login.error?.data?.zodError?.fieldErrors.firstName}
-            />
+            <FormInput name="email" label="Email" error={login.error?.data?.zodError?.fieldErrors.email} />
           </View>
           <View>
             <FormInput
-              label="Last name"
-              value={lastName}
-              onChangeText={setLastName}
-              error={login.error?.data?.zodError?.fieldErrors.lastName}
+              name="password"
+              secureTextEntry
+              label="Password"
+              error={login.error?.data?.zodError?.fieldErrors.password}
             />
           </View>
-        </View>
-        <View className="space-y-1">
           <View>
-            <Button isLoading={login.isLoading} disabled={login.isLoading} onPress={handleRegister}>
-              Register
-            </Button>
+            <FormInput name="firstName" label="First name" error={login.error?.data?.zodError?.fieldErrors.firstName} />
           </View>
-          {login.error?.data?.formError && (
+          <View>
+            <FormInput name="lastName" label="Last name" error={login.error?.data?.zodError?.fieldErrors.lastName} />
+          </View>
+          <View className="space-y-1">
             <View>
-              <FormError error={login.error.data.formError} />
+              <Button isLoading={login.isLoading} disabled={login.isLoading} onPress={form.handleSubmit(handleRegister)}>
+                Register
+              </Button>
             </View>
-          )}
-        </View>
-        <Link href="/login" className="mt-6 text-lg">
-          Login
-        </Link>
-      </ScrollView>
+            {login.error?.data?.formError && (
+              <View>
+                <FormError error={login.error.data.formError} />
+              </View>
+            )}
+          </View>
+          <Link href="/login" className="mt-6 text-lg">
+            Login
+          </Link>
+        </ScrollView>
+      </FormProvider>
     </KeyboardAvoidingView>
   )
 }
