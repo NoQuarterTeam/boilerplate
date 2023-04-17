@@ -1,9 +1,10 @@
 "use client"
 import * as React from "react"
-import { RiMoonLine, RiSunLine } from "react-icons/ri"
+
 import { useTheme } from "next-themes"
 
 import { IconButton } from "@boilerplate/ui"
+import { Moon, Sun } from "lucide-react"
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme()
@@ -16,7 +17,7 @@ export function ThemeSwitcher() {
       type="submit"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       variant="ghost"
-      icon={isDark ? <RiSunLine className="sq-4" /> : <RiMoonLine className="sq-4" />}
+      icon={isDark ? <Sun className="sq-4" /> : <Moon className="sq-4" />}
     />
   )
 }

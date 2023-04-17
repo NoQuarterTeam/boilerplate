@@ -1,11 +1,11 @@
 import * as React from "react"
-import { BiX } from "react-icons/bi"
-import { CgSearch } from "react-icons/cg"
+
 import { useSearchParams } from "@remix-run/react"
 import queryString from "query-string"
 
 import { merge } from "@boilerplate/shared"
 import { IconButton, Input, type InputProps } from "@boilerplate/ui"
+import { SearchIcon, X } from "lucide-react"
 
 export function Search({ placeholder, name = "search", ...props }: InputProps) {
   const [params, setParams] = useSearchParams()
@@ -35,7 +35,7 @@ export function Search({ placeholder, name = "search", ...props }: InputProps) {
   return (
     <form className="relative w-full" onSubmit={handleSubmit}>
       <div className="center absolute left-1 top-0 h-full">
-        <IconButton size="xs" type="submit" aria-label="search" variant="ghost" icon={<CgSearch />} />
+        <IconButton size="xs" type="submit" aria-label="search" variant="ghost" icon={<SearchIcon />} />
       </div>
       <Input
         name={name}
@@ -48,7 +48,7 @@ export function Search({ placeholder, name = "search", ...props }: InputProps) {
       />
       <div className="center absolute right-1 top-0 h-full">
         {!!isPendingSearch && (
-          <IconButton size="xs" onClick={clearSearch} aria-label="clear search" variant="ghost" icon={<BiX />} />
+          <IconButton size="xs" onClick={clearSearch} aria-label="clear search" variant="ghost" icon={<X />} />
         )}
       </div>
     </form>

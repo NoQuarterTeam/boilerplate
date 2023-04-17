@@ -1,10 +1,11 @@
 "use client"
 import * as React from "react"
-import { BiX } from "react-icons/bi"
+
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { merge } from "@boilerplate/shared"
+import { X } from "lucide-react"
 
 const ToastProvider = ToastPrimitives.Provider
 
@@ -74,7 +75,7 @@ const ToastClose = React.forwardRef<
     toast-close=""
     {...props}
   >
-    <BiX className="sq-4" />
+    <X className="sq-4" />
   </ToastPrimitives.Close>
 ))
 ToastClose.displayName = ToastPrimitives.Close.displayName

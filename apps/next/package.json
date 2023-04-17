@@ -19,12 +19,12 @@
     "@boilerplate/ui": "workspace:*",
     "dayjs": "1.11.7",
     "isbot": "latest",
+    "lucide-react": "^0.161.0",
     "next": "13.3.0",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone": "14.2.3",
-    "react-icons": "4.8.0",
     "resend": "^0.13.0",
     "zod": "3.21.4",
     "zustand": "4.3.7"

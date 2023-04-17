@@ -1,11 +1,12 @@
 import * as React from "react"
-import { CgArrowLongDown, CgArrowLongUp } from "react-icons/cg"
+
 import { Link as RLink, useSearchParams } from "@remix-run/react"
 import queryString from "query-string"
 
 import { Prisma } from "@boilerplate/database/types"
 import { join, merge } from "@boilerplate/shared"
 import { Button, NoData } from "@boilerplate/ui"
+import { ArrowDown, ArrowUp } from "lucide-react"
 
 interface DataType {
   id: string
@@ -64,11 +65,7 @@ export function Table<T extends DataType>(props: Props<T>) {
                 {header}
                 {orderBy && !!sortKey && orderBy === sortKey && (
                   <div className="center ml-2">
-                    {order === Prisma.SortOrder.asc ? (
-                      <CgArrowLongUp />
-                    ) : order === Prisma.SortOrder.desc ? (
-                      <CgArrowLongDown />
-                    ) : null}
+                    {order === Prisma.SortOrder.asc ? <ArrowUp /> : order === Prisma.SortOrder.desc ? <ArrowDown /> : null}
                   </div>
                 )}
               </Header>

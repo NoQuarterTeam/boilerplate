@@ -36,8 +36,9 @@ import { FULL_WEB_URL } from "./lib/config.server"
 import { type Theme } from "./lib/theme"
 import { getFlashSession } from "./services/session/flash.server"
 import { getThemeSession } from "./services/session/theme.server"
-import { RiEmotionSadLine } from "react-icons/ri"
+
 import { LinkButton } from "./components/LinkButton"
+import { Frown } from "lucide-react"
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Boilerplate" }, { name: "description", content: "Created by No Quarter" }]
@@ -127,7 +128,7 @@ export function ErrorBoundary() {
           </div>
         ) : error instanceof Error ? (
           <div className="stack max-w-4xl space-y-6">
-            <RiEmotionSadLine className="sq-20" />
+            <Frown className="sq-20" />
             <h1 className="text-3xl">Oops, there was an error.</h1>
             <p>{error.message}</p>
             <hr />

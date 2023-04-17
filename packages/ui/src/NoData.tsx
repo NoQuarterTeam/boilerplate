@@ -1,5 +1,5 @@
+import { AlertTriangle } from "lucide-react"
 import type * as React from "react"
-import { FiAlertTriangle } from "react-icons/fi"
 
 interface Props {
   children: React.ReactNode
@@ -7,7 +7,7 @@ interface Props {
 export function NoData(props: Props) {
   return (
     <div className="hstack border border-gray-700 px-4 py-3">
-      <FiAlertTriangle className="text-gray-500" />
+      <AlertTriangle className="text-gray-500" />
       <p className="text-gray-500">{props.children}</p>
     </div>
   )

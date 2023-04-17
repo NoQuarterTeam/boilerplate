@@ -98,6 +98,9 @@ importers:
       expo-updates:
         specifier: ~0.16.4
         version: 0.16.4(expo@48.0.10)
+      lucide-react-native:
+        specifier: ^0.161.0
+        version: 0.161.0(prop-types@15.8.1)(react-native-svg@13.4.0)(react-native@0.71.6)(react@18.2.0)
       nativewind:
         specifier: ^2.0.11
         version: 2.0.11(react@18.2.0)(tailwindcss@3.3.1)
@@ -204,6 +207,9 @@ importers:
       isbot:
         specifier: latest
         version: 3.6.8
+      lucide-react:
+        specifier: ^0.161.0
+        version: 0.161.0(react@18.2.0)
       next:
         specifier: 13.3.0
         version: 13.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -219,9 +225,6 @@ importers:
       react-dropzone:
         specifier: 14.2.3
         version: 14.2.3(react@18.2.0)
-      react-icons:
-        specifier: 4.8.0
-        version: 4.8.0(react@18.2.0)
       resend:
         specifier: ^0.13.0
         version: 0.13.0
@@ -352,6 +355,9 @@ importers:
       jsonwebtoken:
         specifier: 9.0.0
         version: 9.0.0
+      lucide-react:
+        specifier: ^0.161.0
+        version: 0.161.0(react@18.2.0)
       nodemailer:
         specifier: 6.9.1
         version: 6.9.1
@@ -370,9 +376,6 @@ importers:
       react-dropzone:
         specifier: 14.2.3
         version: 14.2.3(react@18.2.0)
-      react-icons:
-        specifier: 4.8.0
-        version: 4.8.0(react@18.2.0)
       resend:
         specifier: ^0.13.0
         version: 0.13.0
@@ -685,6 +688,9 @@ importers:
       class-variance-authority:
         specifier: ^0.5.1
         version: 0.5.1(typescript@5.0.4)
+      lucide-react:
+        specifier: ^0.161.0
+        version: 0.161.0(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -11186,6 +11192,28 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /lucide-react-native@0.161.0(prop-types@15.8.1)(react-native-svg@13.4.0)(react-native@0.71.6)(react@18.2.0):
+    resolution: {integrity: sha512-hb87FDAipQvANlrBJ949yN8Vudp8JWk+K+FRy9FnlnoBipQpBvMCWwSkm7Yu5iTvZKK1EKdnRDoUR1X0Wl8WLA==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+      react-native-svg: ^12.0.0 || ^13.0.0
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-native: 0.71.6(@babel/core@7.21.3)(@babel/preset-env@7.20.2)(react@18.2.0)
+      react-native-svg: 13.4.0(react-native@0.71.6)(react@18.2.0)
+    dev: false
+
+  /lucide-react@0.161.0(react@18.2.0):
+    resolution: {integrity: sha512-Yr0VR0l6r+t65JCE9q+rTMItWqbhF4Wn3l73PHMwxves2wDhEPH7V2JqxvqS0In/brIwiyBV90++r/rHxNK9ug==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -14139,14 +14167,6 @@ packages:
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
-    dependencies:
-      react: 18.2.0
-    dev: false
-
-  /react-icons@4.8.0(react@18.2.0):
-    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
-    peerDependencies:
-      react: '*'
     dependencies:
       react: 18.2.0
     dev: false

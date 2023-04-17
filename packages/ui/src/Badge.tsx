@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { merge } from "@boilerplate/shared"
 
-export const badgeProps = cva("rounded-xs font-semibold uppercase", {
+export const badgeProps = cva("rounded-xs font-medium uppercase", {
   variants: {
     colorScheme: {
       primary: "bg-primary-300/40 dark:bg-primary-300/20 text-primary-900 dark:text-primary-200 dark:color-primary-200",
@@ -14,8 +14,8 @@ export const badgeProps = cva("rounded-xs font-semibold uppercase", {
     size: {
       xs: "text-xxs px-1 py-px",
       sm: "text-xs px-1 py-0.5",
-      md: "text-xs px-2 py-1",
-      lg: "text-lg px-2 py-1",
+      md: "text-sm px-2 py-1",
+      lg: "text-md px-2.5 py-1",
     },
   },
   defaultVariants: {

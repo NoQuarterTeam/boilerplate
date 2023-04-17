@@ -1,5 +1,3 @@
-import { RiMenuLine, RiMoonLine, RiSunLine } from "react-icons/ri"
-import { AiOutlineGithub } from "react-icons/ai"
 import { json, type LoaderArgs } from "@remix-run/node"
 import { Link, useFetcher, useLoaderData, useSubmit } from "@remix-run/react"
 
@@ -11,12 +9,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   IconButton,
+  Icons,
   Limiter,
 } from "@boilerplate/ui"
 
 import { LinkButton } from "~/components/LinkButton"
 import { useTheme } from "~/lib/theme"
 import { getMaybeUser } from "~/services/auth/auth.server"
+import { Menu, Moon, Sun } from "lucide-react"
 
 export const loader = async ({ request }: LoaderArgs) => {
   const user = await getMaybeUser(request)
@@ -54,11 +54,10 @@ export default function Home() {
               <themeFetcher.Form action="/api/theme" method="post" replace>
                 <input type="hidden" name="theme" value={isDark ? "light" : "dark"} />
                 <IconButton
-                  rounded="full"
                   type="submit"
                   aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
                   variant="ghost"
-                  icon={isDark ? <RiSunLine className="sq-4" /> : <RiMoonLine className="sq-4" />}
+                  icon={isDark ? <Sun className="sq-4" /> : <Moon className="sq-4" />}
                 />
               </themeFetcher.Form>
               {user ? (
@@ -80,11 +79,9 @@ export default function Home() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <IconButton
-                  size="md"
-                  rounded="full"
                   className="inline-block md:hidden"
                   aria-label={`Toggle open menu`}
-                  icon={<RiMenuLine className="sq-5" />}
+                  icon={<Menu className="sq-5" />}
                   variant="ghost"
                 />
               </DropdownMenuTrigger>
@@ -132,8 +129,7 @@ export default function Home() {
                 size="lg"
                 rel="noopener noreferrer"
                 variant="outline"
-                className="p-6"
-                leftIcon={<AiOutlineGithub className="sq-6" />}
+                leftIcon={<Icons.github className="sq-5" />}
               >
                 Give us a star on Github
               </LinkButton>

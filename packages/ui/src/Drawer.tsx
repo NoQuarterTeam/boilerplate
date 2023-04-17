@@ -1,12 +1,12 @@
 "use client"
-"use client"
 
 import * as React from "react"
-import { BiX } from "react-icons/bi"
+
 import * as DrawerPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { join, merge, type UseDisclosure } from "@boilerplate/shared"
+import { X } from "lucide-react"
 
 const DrawerRoot = DrawerPrimitive.Root
 
@@ -144,7 +144,7 @@ const DrawerContent = React.forwardRef<React.ElementRef<typeof DrawerPrimitive.C
       <DrawerPrimitive.Content ref={ref} className={merge(sheetVariants({ position, size }), className)} {...props}>
         {children}
         <DrawerPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-gray-100 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 dark:data-[state=open]:bg-gray-800">
-          <BiX className="sq-4" />
+          <X className="sq-4" />
           <span className="sr-only">Close</span>
         </DrawerPrimitive.Close>
       </DrawerPrimitive.Content>

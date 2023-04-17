@@ -8,19 +8,19 @@ import { join, merge } from "@boilerplate/shared"
 import { Spinner } from "./Spinner"
 
 export const buttonStyles = cva(
-  "outline-none font-semibold focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 flex center border border-transparent transition-colors duration-200",
+  "outline-none focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 flex center border border-transparent transition-colors duration-200",
   {
     variants: {
       size: {
-        xs: "text-xs px-2",
-        sm: "text-sm px-2",
-        md: "text-md px-4",
-        lg: "text-lg px-5",
+        xs: "text-xxs px-2",
+        sm: "text-xs px-2",
+        md: "text-sm px-3",
+        lg: "text-md px-5",
       },
       variant: {
-        solid: "border-transparent",
-        outline: "bg-transparent",
-        ghost: "bg-transparent border-transparent",
+        solid: "border-transparent font-medium",
+        outline: "bg-transparent font-normal",
+        ghost: "bg-transparent border-transparent font-normal",
       },
       colorScheme: {
         gray: "text-black dark:text-white",
@@ -92,7 +92,7 @@ export const buttonStyles = cva(
     defaultVariants: {
       variant: "solid",
       rounded: "sm",
-      size: "sm",
+      size: "md",
       colorScheme: "gray",
     },
   },
@@ -102,13 +102,13 @@ export const buttonSizeStyles = cva("", {
   variants: {
     size: {
       xs: "h-7",
-      sm: "h-9",
-      md: "h-11",
-      lg: "h-12",
+      sm: "h-8",
+      md: "h-9",
+      lg: "h-11",
     },
   },
   defaultVariants: {
-    size: "sm",
+    size: "md",
   },
 })
 
