@@ -38,7 +38,7 @@ export function Table<T extends DataType>(props: Props<T>) {
   const data = props.data || []
 
   return (
-    <div className="flex flex-grow flex-col overflow-hidden">
+    <div className="flex w-full flex-grow flex-col overflow-hidden">
       <div className="flex px-4 py-3">
         {columns.map(({ sortKey, header, row, hasNoLink, ...column }: ColumnProps<T>, i: number) => (
           <div
@@ -83,7 +83,7 @@ export function Table<T extends DataType>(props: Props<T>) {
             <div
               key={item.id}
               className={join(
-                "flex w-full items-center border-t border-gray-700 px-4",
+                "flex w-full items-center border-t border-gray-100 px-4 dark:border-gray-700",
                 !!props.getRowHref && "cursor-pointer hover:bg-gray-900",
               )}
             >
@@ -95,7 +95,7 @@ export function Table<T extends DataType>(props: Props<T>) {
             </div>
           ))}
 
-          <div className="flex items-center justify-between border-t border-gray-700 bg-gray-900 px-4 py-3">
+          <div className="flex items-center justify-between border-t border-gray-100 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-900">
             <p className="w-100% text-sm">
               {props.count} {props.count === 1 ? "item" : "items"}
             </p>
@@ -202,18 +202,16 @@ export function Pagination(props: PaginationProps) {
       >
         Prev
       </Button>
-      {pageArray
-        // .slice(currentPage > 3 ? currentPage - 3 : 0, currentPage > 3 ? currentPage + 2 : props.take || 5)
-        .map((page) => (
-          <Button
-            size="xs"
-            key={page}
-            variant={currentPage === page + 1 ? "solid" : "ghost"}
-            onClick={() => handleSetPage(page + 1)}
-          >
-            {page + 1}
-          </Button>
-        ))}
+      {pageArray.map((page) => (
+        <Button
+          size="xs"
+          key={page}
+          variant={currentPage === page + 1 ? "solid" : "ghost"}
+          onClick={() => handleSetPage(page + 1)}
+        >
+          {page + 1}
+        </Button>
+      ))}
       <Button
         size="xs"
         variant="ghost"

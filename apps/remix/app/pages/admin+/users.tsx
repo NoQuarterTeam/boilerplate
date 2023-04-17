@@ -1,24 +1,44 @@
-import { json, type LoaderArgs } from "@remix-run/node"
+import { type Prisma } from "@boilerplate/database"
+import { Tile } from "@boilerplate/ui"
+import { json, type LoaderArgs, type SerializeFrom } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
+import { Search } from "~/components/Search"
+import { Column, Table } from "~/components/Table"
 import { db } from "~/lib/db.server"
+import { getTableParams } from "~/lib/table"
 
 export const loader = async ({ request }: LoaderArgs) => {
-  const users = await db.user.findMany()
-  return json(users)
+  const { orderBy, search, skip, take } = getTableParams(request)
+  const where = {
+    OR: search
+      ? [{ email: { contains: search } }, { firstName: { contains: search } }, { lastName: { contains: search } }]
+      : undefined,
+  } satisfies Prisma.UserWhereInput
+  const users = await db.user.findMany({
+    orderBy,
+    skip,
+    take,
+    where,
+  })
+  const count = await db.user.count({ where })
+  return json({ users, count })
 }
 
+type User = SerializeFrom<typeof loader>["users"][number]
+
 export default function Users() {
-  const users = useLoaderData<typeof loader>()
+  const { users, count } = useLoaderData<typeof loader>()
   return (
-    <div>
-      <h1>Users</h1>
-      <div>
-        {users.map((user) => (
-          <div key={user.id}>
-            {user.email} - {user.firstName} {user.lastName} - {user.createdAt}
-          </div>
-        ))}
-      </div>
+    <div className="stack">
+      <h1 className="text-4xl">Users</h1>
+      <Search />
+      <Tile>
+        <Table<User> data={users} count={count}>
+          <Column<User> header="Name" row={(user) => user.firstName} />
+          <Column<User> header="Email" row={(user) => user.email} />
+          <Column<User> header="Signed up" row={(user) => user.createdAt} />
+        </Table>
+      </Tile>
     </div>
   )
 }

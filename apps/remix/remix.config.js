@@ -24,6 +24,7 @@ module.exports = {
     "@boilerplate/tailwind-config",
     "@boilerplate/ui",
     "axios",
+    "decode-uri-component",
     "filter-obj",
     "query-string",
     "split-on-first",

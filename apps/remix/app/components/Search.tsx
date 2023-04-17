@@ -34,8 +34,8 @@ export function Search({ placeholder, name = "search", ...props }: InputProps) {
 
   return (
     <form className="relative w-full" onSubmit={handleSubmit}>
-      <div className="center absolute left-2 top-0 h-full">
-        <IconButton type="submit" aria-label="search" variant="ghost" icon={<CgSearch />} />
+      <div className="center absolute left-1 top-0 h-full">
+        <IconButton size="xs" type="submit" aria-label="search" variant="ghost" icon={<CgSearch />} />
       </div>
       <Input
         name={name}
@@ -44,10 +44,12 @@ export function Search({ placeholder, name = "search", ...props }: InputProps) {
         onChange={(e) => setSearch(e.target.value)}
         {...props}
         ref={undefined}
-        className={merge("px-14", props.className)}
+        className={merge("px-9", props.className)}
       />
-      <div className="center absolute right-2 top-0 h-full">
-        {!!isPendingSearch && <IconButton onClick={clearSearch} aria-label="clear search" variant="ghost" icon={<BiX />} />}
+      <div className="center absolute right-1 top-0 h-full">
+        {!!isPendingSearch && (
+          <IconButton size="xs" onClick={clearSearch} aria-label="clear search" variant="ghost" icon={<BiX />} />
+        )}
       </div>
     </form>
   )

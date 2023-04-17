@@ -11,8 +11,8 @@ export const loader = async ({ request }: LoaderArgs) => {
 
 export default function AdminLayout() {
   return (
-    <div className="flex p-10">
-      <div className="px-4">
+    <div className="flex">
+      <div className="p-8">
         <ul>
           <li>
             <NavLink end to="/admin" className={({ isActive }) => join("", isActive && "text-primary-500")}>
@@ -26,7 +26,7 @@ export default function AdminLayout() {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="w-full p-8">
         <Outlet />
       </div>
     </div>
