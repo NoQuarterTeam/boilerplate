@@ -29,10 +29,11 @@ export function getOrderByParams(request: Request, defaultOrder?: DefaultOrder) 
   return getOrderBy(orderBy, order)
 }
 
+export const DEFAULT_TAKE = 10
 export function getPaginationParams(request: Request, defaultTake?: number) {
   const url = new URL(request.url)
   const page = parseInt(url.searchParams.get("page") || "1") || 1
-  const take = defaultTake || 10
+  const take = defaultTake || DEFAULT_TAKE
   const skip = (page - 1) * take
   return { skip, take }
 }

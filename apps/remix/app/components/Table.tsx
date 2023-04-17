@@ -7,6 +7,7 @@ import { Prisma } from "@boilerplate/database/types"
 import { join, merge } from "@boilerplate/shared"
 import { Button, NoData } from "@boilerplate/ui"
 import { ArrowDown, ArrowUp } from "lucide-react"
+import { DEFAULT_TAKE } from "~/lib/table"
 
 interface DataType {
   id: string
@@ -184,7 +185,7 @@ export interface PaginationProps {
 }
 
 export function Pagination(props: PaginationProps) {
-  const numberOfPages = props.count ? Math.ceil(props.count / (props.take || 5)) : 0
+  const numberOfPages = props.count ? Math.ceil(props.count / (props.take || DEFAULT_TAKE)) : 0
   const [params, setParams] = useSearchParams()
   const currentPage = parseInt(params.get("page") || "1") as number
   const handleSetPage = (page: number) => {

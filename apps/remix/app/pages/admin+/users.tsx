@@ -7,8 +7,9 @@ import { Column, Table } from "~/components/Table"
 import { db } from "~/lib/db.server"
 import { getTableParams } from "~/lib/table"
 
+const TAKE = 10
 export const loader = async ({ request }: LoaderArgs) => {
-  const { orderBy, search, skip, take } = getTableParams(request, 10, { orderBy: "createdAt", order: "desc" })
+  const { orderBy, search, skip, take } = getTableParams(request, TAKE, { orderBy: "createdAt", order: "desc" })
   const where = {
     OR: search
       ? [{ email: { contains: search } }, { firstName: { contains: search } }, { lastName: { contains: search } }]
@@ -33,7 +34,7 @@ export default function Users() {
       <h1 className="text-4xl">Users</h1>
       <Search />
       <Tile>
-        <Table<User> data={users} count={count}>
+        <Table<User> data={users} take={TAKE} count={count}>
           <Column<User> sortKey="firstName" header="Name" row={(user) => user.firstName} />
           <Column<User> sortKey="email" header="Email" row={(user) => user.email} />
           <Column<User> sortKey="createdAt" header="Signed up" row={(user) => user.createdAt} />
