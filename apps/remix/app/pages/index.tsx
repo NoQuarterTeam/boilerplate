@@ -1,4 +1,5 @@
 import { RiMenuLine, RiMoonLine, RiSunLine } from "react-icons/ri"
+import { AiOutlineGithub } from "react-icons/ai"
 import { json, type LoaderArgs } from "@remix-run/node"
 import { Link, useFetcher, useLoaderData, useSubmit } from "@remix-run/react"
 
@@ -124,6 +125,18 @@ export default function Home() {
                   Sign up
                 </LinkButton>
               )}
+
+              <LinkButton
+                to="https://github.com/NoQuarterTeam/boilerplate"
+                target="_blank"
+                size="lg"
+                rel="noopener noreferrer"
+                variant="outline"
+                className="p-6"
+                leftIcon={<AiOutlineGithub className="sq-6" />}
+              >
+                Give us a star on Github
+              </LinkButton>
             </div>
           </div>
         </div>
