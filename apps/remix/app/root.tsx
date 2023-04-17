@@ -2,7 +2,19 @@ import * as React from "react"
 import * as Tooltip from "@radix-ui/react-tooltip"
 import type { LinksFunction, LoaderArgs, SerializeFrom, V2_MetaFunction } from "@remix-run/node"
 import { json } from "@remix-run/node"
-import { Links, LiveReload, Meta, Outlet, Scripts, useFetchers, useLoaderData, useMatches, useNavigation } from "@remix-run/react"
+import {
+  isRouteErrorResponse,
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  useFetchers,
+  useLoaderData,
+  useMatches,
+  useNavigation,
+  useRouteError,
+} from "@remix-run/react"
 import NProgress from "nprogress"
 
 import { join } from "@boilerplate/shared"
@@ -24,6 +36,8 @@ import { FULL_WEB_URL } from "./lib/config.server"
 import { type Theme } from "./lib/theme"
 import { getFlashSession } from "./services/session/flash.server"
 import { getThemeSession } from "./services/session/theme.server"
+import { RiEmotionSadLine } from "react-icons/ri"
+import { LinkButton } from "./components/LinkButton"
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Boilerplate" }, { name: "description", content: "Created by No Quarter" }]
@@ -92,12 +106,40 @@ export default function App() {
   )
 }
 
-export function ErrorBoundary({ error }: { error: Error }) {
-  console.error("Boundary:", error)
+export function ErrorBoundary() {
+  const error = useRouteError()
+  const isCatchError = isRouteErrorResponse(error)
+
   return (
     <Document theme="dark">
-      <div className="vstack h-screen justify-center p-20">
-        <h1>Oops, there was an error.</h1>
+      <div className="flex h-screen items-center p-20">
+        {isCatchError ? (
+          <div className="stack space-y-6">
+            <div className="stack">
+              <h1 className="text-9xl">{error.status}</h1>
+              <p className="text-lg">
+                {error.status === 404
+                  ? "The page you're looking for doesn't exist"
+                  : error.data.message || "Something's gone wrong here"}
+              </p>
+            </div>
+            {error.status === 404 && <LinkButton to="/">Take me home</LinkButton>}
+          </div>
+        ) : error instanceof Error ? (
+          <div className="stack max-w-4xl space-y-6">
+            <RiEmotionSadLine className="sq-20" />
+            <h1 className="text-3xl">Oops, there was an error.</h1>
+            <p>{error.message}</p>
+            <hr />
+            <div className="rounded-md bg-gray-200 p-4 dark:bg-gray-700 ">
+              <pre className="overflow-scroll text-sm">{error.stack}</pre>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <h1 className="text-6xl">Sorry, an unknown error has occured</h1>
+          </div>
+        )}
       </div>
     </Document>
   )
