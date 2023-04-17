@@ -7,7 +7,7 @@ module.exports = {
   cacheDirectory: "./node_modules/.cache/remix",
   ignoredRouteFiles: ["**/*"],
   future: {
-    // unstable_postcss: true,
+    unstable_postcss: true,
     v2_meta: true,
     v2_routeConvention: true,
     v2_errorBoundary: true,

@@ -62,15 +62,15 @@ export default function Home() {
                 />
               </themeFetcher.Form>
               {user ? (
-                <Button size="md" variant="outline" onClick={() => logoutSubmit(null, { method: "post", action: "/logout" })}>
+                <Button variant="outline" onClick={() => logoutSubmit(null, { method: "post", action: "/logout" })}>
                   Logout
                 </Button>
               ) : (
                 <div className="hstack">
-                  <LinkButton size="md" variant="ghost" to="/login">
+                  <LinkButton variant="ghost" to="/login">
                     Login
                   </LinkButton>
-                  <LinkButton size="md" colorScheme="primary" to="/register">
+                  <LinkButton colorScheme="primary" to="/register">
                     Register
                   </LinkButton>
                 </div>

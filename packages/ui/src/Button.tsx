@@ -91,7 +91,7 @@ export const buttonStyles = cva(
     ],
     defaultVariants: {
       variant: "solid",
-      rounded: "xs",
+      rounded: "sm",
       size: "sm",
       colorScheme: "gray",
     },

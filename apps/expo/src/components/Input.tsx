@@ -2,7 +2,7 @@ import { TextInput, type TextInputProps, useColorScheme } from "react-native"
 import { styled } from "nativewind"
 
 import { merge } from "@boilerplate/shared"
-import { colors } from "@boilerplate/tailwind-config"
+import colors from "@boilerplate/tailwind-config/src/colors"
 
 export interface InputProps extends TextInputProps {
   className?: string
@@ -18,7 +18,7 @@ export function Input(props: TextInputProps) {
       {...props}
       className={merge(
         "border border-gray-100 dark:border-gray-600",
-        "font-body text-md focus:border-primary-500 rounded-xs block w-full px-3.5 py-2.5 text-black dark:text-white",
+        "font-body text-md focus:border-primary-500 block w-full rounded-sm px-3.5 py-2.5 text-black dark:text-white",
         props.className,
       )}
     />
