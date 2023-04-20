@@ -1,16 +1,17 @@
+import { FormProvider } from "react-hook-form"
 import { KeyboardAvoidingView, ScrollView, View } from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import { Link, useRouter } from "expo-router"
+import { type z } from "zod"
+
+import { registerSchema } from "@boilerplate/api/src/router/auth"
 
 import { Button } from "../../components/Button"
 import { FormError } from "../../components/FormError"
 import { FormInput } from "../../components/FormInput"
 import { Heading } from "../../components/Heading"
 import { api, AUTH_TOKEN } from "../../lib/api"
-import { FormProvider } from "react-hook-form"
 import { useForm } from "../../lib/hooks/useForm"
-import { z } from "zod"
-import { registerSchema } from "@boilerplate/api/src/router/auth"
 
 export default function Register() {
   const queryClient = api.useContext()

@@ -116,7 +116,7 @@ export function Checkbox({
       className={merge(
         inputStyles({ variant: "outline", size: "xs" }),
         checkboxSizeStyles({ size }),
-        "text-primary-500 checked:bg-primary-500 hover:text-primary-600 focus:ring-primary-300 dark:checked:bg-primary-500 dark:hover:checked:bg-primary-600  dark:focus:ring-primary-300  cursor-pointer transition-all ",
+        "text-primary-500 checked:bg-primary-500 hover:text-primary-600 focus:ring-primary-300 dark:checked:bg-primary-500 dark:hover:checked:bg-primary-600 dark:focus:ring-primary-300  cursor-pointer transition-all ",
         props.className,
       )}
     />

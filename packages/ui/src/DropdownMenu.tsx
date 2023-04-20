@@ -1,10 +1,9 @@
 "use client"
 import * as React from "react"
-
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import { ChevronRight } from "lucide-react"
 
 import { merge } from "@boilerplate/shared"
-import { ChevronRight } from "lucide-react"
 
 const DropdownMenu = DropdownMenuPrimitive.Root
 

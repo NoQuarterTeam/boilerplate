@@ -5,9 +5,9 @@ import { z } from "zod"
 
 import { Form, FormButton, FormError, FormField } from "~/components/Form"
 import { db } from "~/lib/db.server"
-import { validateFormData } from "~/lib/form"
+import { formError, validateFormData } from "~/lib/form"
 import { decryptToken } from "~/lib/jwt.server"
-import { badRequest } from "~/lib/remix"
+
 import { hashPassword } from "~/services/auth/password.server"
 import { FlashType, getFlashSession } from "~/services/session/flash.server"
 
@@ -23,9 +23,9 @@ export const action = async ({ request }: ActionArgs) => {
     token: z.string(),
     password: z.string().min(8, "Must be at least 8 characters"),
   })
-  const { data, fieldErrors } = await validateFormData(resetPasswordSchema, formData)
-  if (fieldErrors) return badRequest({ fieldErrors, data })
-
+  const result = await validateFormData(resetPasswordSchema, formData)
+  if (!result.success) return formError(result)
+  const data = result.data
   const payload = decryptToken<{ id: string }>(data.token)
   const hashedPassword = await hashPassword(data.password)
   await db.user.update({ where: { id: payload.id }, data: { password: hashedPassword } })

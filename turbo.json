@@ -5,6 +5,9 @@
       "dependsOn": ["^build"],
       "outputs": ["build/**", "public/build/**"]
     },
+    "fix": {
+      "outputs": []
+    },
     "lint": {
       "outputs": []
     },

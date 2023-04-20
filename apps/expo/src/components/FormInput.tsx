@@ -1,5 +1,6 @@
-import { View } from "react-native"
 import { Controller, useFormContext } from "react-hook-form"
+import { View } from "react-native"
+
 import { merge } from "@boilerplate/shared"
 
 import { Input, type InputProps } from "./Input"

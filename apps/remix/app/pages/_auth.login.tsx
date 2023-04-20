@@ -5,8 +5,8 @@ import { z } from "zod"
 
 import { Form, FormButton, FormError, FormField } from "~/components/Form"
 import { db } from "~/lib/db.server"
-import { validateFormData } from "~/lib/form"
-import { badRequest } from "~/lib/remix"
+import { formError, validateFormData } from "~/lib/form"
+
 import { comparePasswords } from "~/services/auth/password.server"
 import { getUserSession } from "~/services/session/session.server"
 
@@ -26,13 +26,14 @@ export const action = async ({ request }: ActionArgs) => {
     password: z.string().min(8, "Must be at least 8 characters"),
     redirectTo: z.string().nullable().optional(),
   })
-  const { data, fieldErrors } = await validateFormData(loginSchema, formData)
-  const redirectTo = data.redirectTo
-  if (fieldErrors) return badRequest({ fieldErrors, data })
+  const result = await validateFormData(loginSchema, formData)
+  if (!result.success) return formError(result)
+  const data = result.data
   const user = await db.user.findUnique({ where: { email: data.email } })
-  if (!user) return badRequest({ formError: "Incorrect email or password" })
+  if (!user) return formError({ formError: "Incorrect email or password" })
   const isCorrectPassword = await comparePasswords(data.password, user.password)
-  if (!isCorrectPassword) return badRequest({ formError: "Incorrect email or password" })
+  const redirectTo = data.redirectTo
+  if (!isCorrectPassword) return formError({ formError: "Incorrect email or password" })
 
   const { setUser } = await getUserSession(request)
   const headers = new Headers([["Set-Cookie", await setUser(user.id)]])

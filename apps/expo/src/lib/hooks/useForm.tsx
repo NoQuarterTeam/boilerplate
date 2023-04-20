@@ -1,6 +1,6 @@
-import { FieldValues, useForm as useRForm, UseFormProps } from "react-hook-form"
+import { type FieldValues, useForm as useRForm, type UseFormProps } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+import { type z } from "zod"
 
 export function useForm<TFieldValues extends FieldValues = FieldValues, TContext = unknown>({
   schema,

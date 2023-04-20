@@ -85,7 +85,7 @@ export function Table<T extends DataType>(props: Props<T>) {
             <div
               key={item.id}
               className={join(
-                "flex w-full items-center border-t border-gray-100 px-4 dark:border-gray-700",
+                "flex w-full items-center border-t border-black/10 px-4 dark:border-white/10",
                 !!props.getRowHref && "cursor-pointer hover:bg-gray-900",
               )}
             >
@@ -97,7 +97,7 @@ export function Table<T extends DataType>(props: Props<T>) {
             </div>
           ))}
 
-          <div className="flex items-center justify-between border-t border-gray-100 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-900">
+          <div className="flex items-center justify-between border-t border-black/10 bg-gray-50 px-4 py-3 dark:border-white/10 dark:bg-gray-900">
             <p className="w-100% text-sm">
               {props.count} {props.count === 1 ? "item" : "items"}
             </p>

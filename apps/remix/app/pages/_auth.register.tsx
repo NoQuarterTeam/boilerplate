@@ -5,7 +5,7 @@ import { z } from "zod"
 
 import { Form, FormButton, FormError, FormField } from "~/components/Form"
 import { db } from "~/lib/db.server"
-import { validateFormData } from "~/lib/form"
+import { formError, validateFormData } from "~/lib/form"
 import { badRequest } from "~/lib/remix"
 import { hashPassword } from "~/services/auth/password.server"
 import { FlashType, getFlashSession } from "~/services/session/flash.server"
@@ -20,17 +20,17 @@ export const headers = () => {
   }
 }
 
-enum RegisterActionMethods {
+enum RegisterActions {
   Register = "Register",
 }
 
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData()
-  const action = formData.get("_action") as RegisterActionMethods | undefined
+  const action = formData.get("_action") as RegisterActions | undefined
 
   const { createFlash } = await getFlashSession(request)
   switch (action) {
-    case RegisterActionMethods.Register:
+    case RegisterActions.Register:
       try {
         if (formData.get("passwordConfirmation")) return redirect("/")
         const registerSchema = z.object({
@@ -39,12 +39,12 @@ export const action = async ({ request }: ActionArgs) => {
           firstName: z.string().min(2, "Must be at least 2 characters"),
           lastName: z.string().min(2, "Must be at least 2 characters"),
         })
-        const { data, fieldErrors } = await validateFormData(registerSchema, formData)
-        if (fieldErrors) return badRequest({ fieldErrors, data })
-
+        const result = await validateFormData(registerSchema, formData)
+        if (!result.success) return formError(result)
+        const data = result.data
         const email = data.email.toLowerCase().trim()
         const existing = await db.user.findFirst({ where: { email } })
-        if (existing) return badRequest({ data, formError: "User with these details already exists" })
+        if (existing) return formError({ data, formError: "User with these details already exists" })
         const password = await hashPassword(data.password)
         const user = await db.user.create({ data: { ...data, email, password } })
         const { setUser } = await getUserSession(request)
@@ -84,7 +84,7 @@ export default function Register() {
           <FormField required label="First name" name="firstName" placeholder="Jim" />
           <FormField required label="Last name" name="lastName" placeholder="Bob" />
           <div>
-            <FormButton name="_action" value={RegisterActionMethods.Register} className="w-full">
+            <FormButton name="_action" value={RegisterActions.Register} className="w-full">
               Register
             </FormButton>
             <FormError />

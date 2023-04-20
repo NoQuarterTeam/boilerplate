@@ -4,9 +4,8 @@ import { z } from "zod"
 
 import { Form, FormButton, FormError, FormField } from "~/components/Form"
 import { db } from "~/lib/db.server"
-import { validateFormData } from "~/lib/form"
+import { formError, validateFormData } from "~/lib/form"
 import { createToken } from "~/lib/jwt.server"
-import { badRequest } from "~/lib/remix"
 import { FlashType, getFlashSession } from "~/services/session/flash.server"
 import { sendResetPasswordEmail } from "~/services/user/user.mailer.server"
 
@@ -19,8 +18,9 @@ export const headers = () => {
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData()
   const resetSchema = z.object({ email: z.string().email("Invalid email") })
-  const { data, fieldErrors } = await validateFormData(resetSchema, formData)
-  if (fieldErrors) return badRequest({ fieldErrors, data })
+  const result = await validateFormData(resetSchema, formData)
+  if (!result.success) return formError(result)
+  const data = result.data
   const user = await db.user.findUnique({ where: { email: data.email } })
   if (user) {
     const token = createToken({ id: user.id })

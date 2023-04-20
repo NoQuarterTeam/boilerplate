@@ -4,6 +4,7 @@ import * as React from "react"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
 import { merge } from "@boilerplate/shared"
+
 import { Button } from "./Button"
 
 const AlertDialogRoot = AlertDialogPrimitive.Root

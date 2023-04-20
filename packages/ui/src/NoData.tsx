@@ -1,5 +1,5 @@
-import { AlertTriangle } from "lucide-react"
 import type * as React from "react"
+import { AlertTriangle } from "lucide-react"
 
 interface Props {
   children: React.ReactNode
