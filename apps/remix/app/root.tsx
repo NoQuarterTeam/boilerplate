@@ -58,6 +58,8 @@ export const links: LinksFunction = () => {
   ]
 }
 
+export const config = { runtime: "edge" }
+
 export const loader = async ({ request }: LoaderArgs) => {
   const { flash, commit } = await getFlashSession(request)
   const { getTheme, commit: commitTheme } = await getThemeSession(request)
