@@ -1,5 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "github": { "silent": true },
-  "installCommand": "pnpm --filter !expo install"
+  "github": { "silent": true }
 }
