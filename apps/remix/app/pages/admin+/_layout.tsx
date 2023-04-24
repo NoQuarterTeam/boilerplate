@@ -1,5 +1,5 @@
 import { join } from "@boilerplate/shared"
-import { json, redirect, type LoaderArgs } from "@remix-run/node"
+import { json, redirect, type LoaderArgs } from "@vercel/remix"
 import { NavLink, Outlet } from "@remix-run/react"
 import { getCurrentUser } from "~/services/auth/auth.server"
 

@@ -1,4 +1,4 @@
-import { type ActionArgs, redirect } from "@remix-run/node"
+import { type ActionArgs, redirect } from "@vercel/remix"
 import { Link } from "@remix-run/react"
 import { z } from "zod"
 

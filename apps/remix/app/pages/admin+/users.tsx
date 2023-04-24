@@ -1,6 +1,6 @@
 import { type Prisma } from "@boilerplate/database"
 import { Tile } from "@boilerplate/ui"
-import { json, type LoaderArgs, type SerializeFrom } from "@remix-run/node"
+import { json, type LoaderArgs, type SerializeFrom } from "@vercel/remix"
 import { useLoaderData } from "@remix-run/react"
 import { Search } from "~/components/Search"
 import { Column, Table } from "~/components/Table"

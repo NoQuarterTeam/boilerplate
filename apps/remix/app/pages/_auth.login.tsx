@@ -1,5 +1,5 @@
-import type { ActionArgs, V2_MetaFunction } from "@remix-run/node"
-import { redirect } from "@remix-run/node"
+import type { ActionArgs, V2_MetaFunction } from "@vercel/remix"
+import { redirect } from "@vercel/remix"
 import { Link, useSearchParams } from "@remix-run/react"
 import { z } from "zod"
 

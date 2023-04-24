@@ -1,4 +1,4 @@
-import type { HeadersFunction } from "@remix-run/node"
+import type { HeadersFunction } from "@vercel/remix"
 
 export const useLoaderHeaders: HeadersFunction = ({ loaderHeaders }) => {
   const headers = new Headers()

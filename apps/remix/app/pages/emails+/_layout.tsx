@@ -1,4 +1,4 @@
-import { redirect } from "@remix-run/node"
+import { redirect } from "@vercel/remix"
 import { Outlet } from "@remix-run/react"
 
 import { IS_PRODUCTION } from "~/lib/config.server"

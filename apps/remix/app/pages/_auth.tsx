@@ -1,5 +1,5 @@
-import type { LoaderArgs } from "@remix-run/node"
-import { redirect } from "@remix-run/node"
+import type { LoaderArgs } from "@vercel/remix"
+import { redirect } from "@vercel/remix"
 import { Outlet } from "@remix-run/react"
 
 import { db } from "~/lib/db.server"

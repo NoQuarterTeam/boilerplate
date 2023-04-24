@@ -1,4 +1,4 @@
-import { createCookieSessionStorage } from "@remix-run/node"
+import { createCookieSessionStorage } from "@vercel/remix"
 
 import { IS_PRODUCTION, THEME_SESSION_SECRET } from "~/lib/config.server"
 import { isTheme, type Theme } from "~/lib/theme"

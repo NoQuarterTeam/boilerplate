@@ -1,5 +1,5 @@
-import type { ActionArgs } from "@remix-run/node"
-import { json } from "@remix-run/node"
+import type { ActionArgs } from "@vercel/remix"
+import { json } from "@vercel/remix"
 import { z } from "zod"
 
 import { formError, validateFormData } from "~/lib/form"

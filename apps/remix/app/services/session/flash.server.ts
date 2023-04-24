@@ -1,4 +1,4 @@
-import { createCookieSessionStorage } from "@remix-run/node"
+import { createCookieSessionStorage } from "@vercel/remix"
 
 import { FLASH_SESSION_SECRET, IS_PRODUCTION } from "~/lib/config.server"
 

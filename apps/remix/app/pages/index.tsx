@@ -1,4 +1,4 @@
-import { json, type LoaderArgs } from "@remix-run/node"
+import { json, type LoaderArgs } from "@vercel/remix"
 import { Link, useFetcher, useLoaderData, useSubmit } from "@remix-run/react"
 
 import {

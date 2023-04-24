@@ -1,4 +1,4 @@
-import type { ActionArgs, LoaderArgs } from "@remix-run/node"
+import type { ActionArgs, LoaderArgs } from "@vercel/remix"
 import * as trpcFetch from "@trpc/server/adapters/fetch"
 
 import { appRouter, createContext } from "@boilerplate/api"

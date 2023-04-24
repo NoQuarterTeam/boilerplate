@@ -1,5 +1,5 @@
-import type { ActionArgs } from "@remix-run/node"
-import { redirect } from "@remix-run/node"
+import type { ActionArgs } from "@vercel/remix"
+import { redirect } from "@vercel/remix"
 
 import { FlashType, getFlashSession } from "~/services/session/flash.server"
 import { getUserSession } from "~/services/session/session.server"

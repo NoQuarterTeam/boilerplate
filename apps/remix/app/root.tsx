@@ -1,7 +1,7 @@
 import * as React from "react"
 import * as Tooltip from "@radix-ui/react-tooltip"
-import type { LinksFunction, LoaderArgs, SerializeFrom, V2_MetaFunction } from "@remix-run/node"
-import { json } from "@remix-run/node"
+import type { LinksFunction, LoaderArgs, SerializeFrom, V2_MetaFunction } from "@vercel/remix"
+import { json } from "@vercel/remix"
 import {
   isRouteErrorResponse,
   Links,
