@@ -4,7 +4,7 @@ import { redirect } from "@vercel/remix"
 import { FlashType, getFlashSession } from "~/services/session/flash.server"
 import { getUserSession } from "~/services/session/session.server"
 
-export const config = { runtime: "edge" }
+// export const config = { runtime: "edge" }
 
 export const action = async ({ request }: ActionArgs) => {
   const { destroy } = await getUserSession(request)
