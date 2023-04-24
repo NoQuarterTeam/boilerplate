@@ -14,7 +14,11 @@
       "groupName": "@types"
     },
     {
-      "packageNames": ["aws-sdk"],
+      "packageNames": ["lucid-react"],
+      "extends": ["schedule:weekly"]
+    },
+    {
+      "packageNames": ["@aws-sdk/"],
       "extends": ["schedule:weekly"]
     }
   ],
