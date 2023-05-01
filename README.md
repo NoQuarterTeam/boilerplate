@@ -2,6 +2,8 @@
 
 ## React + Remix + Next + Typescript + Prisma + Expo + React Native
 
+### Like this stack? Come work with us: www.noquarter.co
+
 <img width="738" alt="Screenshot 2023-04-14 at 17 06 53" src="https://user-images.githubusercontent.com/12549124/232088546-2c735482-9063-4297-9077-f7dd2fcb60d5.png">
 
 
