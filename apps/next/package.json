@@ -19,7 +19,7 @@
     "@boilerplate/ui": "workspace:*",
     "dayjs": "1.11.7",
     "isbot": "latest",
-    "lucide-react": "^0.215.0",
+    "lucide-react": "^0.216.0",
     "next": "13.4.1",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
