@@ -27,7 +27,7 @@
     "react-dropzone": "14.2.3",
     "resend": "^0.16.0",
     "zod": "3.21.4",
-    "zustand": "4.3.8"
+    "zustand": "4.3.9"
   },
   "devDependencies": {
     "@boilerplate/eslint-config": "workspace:*",
