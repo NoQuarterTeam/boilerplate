@@ -333,14 +333,14 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       '@remix-run/node':
-        specifier: 1.18.1
-        version: 1.18.1
+        specifier: 1.19.0
+        version: 1.19.0
       '@remix-run/react':
-        specifier: 1.18.1
-        version: 1.18.1(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.19.0
+        version: 1.19.0(react-dom@18.2.0)(react@18.2.0)
       '@remix-run/serve':
-        specifier: 1.18.1
-        version: 1.18.1
+        specifier: 1.19.0
+        version: 1.19.0
       '@trpc/server':
         specifier: ^10.16.0
         version: 10.16.0
@@ -400,8 +400,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/config/eslint
       '@remix-run/dev':
-        specifier: 1.18.1
-        version: 1.18.1(@remix-run/serve@1.18.1)
+        specifier: 1.19.0
+        version: 1.19.0(@remix-run/serve@1.19.0)
       '@remix-run/eslint-config':
         specifier: 1.19.0
         version: 1.19.0(eslint@8.45.0)(react@18.2.0)(typescript@5.1.6)
@@ -446,7 +446,7 @@ importers:
         version: 2.8.4
       remix-flat-routes:
         specifier: 0.5.10
-        version: 0.5.10(@remix-run/dev@1.18.1)
+        version: 0.5.10(@remix-run/dev@1.19.0)
       tailwindcss:
         specifier: ^3.3.1
         version: 3.3.1(postcss@8.4.21)
@@ -2130,11 +2130,6 @@ packages:
     dependencies:
       '@babel/types': 7.21.5
 
-  /@babel/helper-string-parser@7.19.4:
-    resolution: {integrity: sha512-nHtDoQcuqFmwYNYPz3Rah5ph2p8PFeFCsZk9A/48dPc/rGocJ5J3hAAZ7pb76VWX3fZKu+uEr/FhH5jLx7umrw==}
-    engines: {node: '>=6.9.0'}
-    dev: false
-
   /@babel/helper-string-parser@7.21.5:
     resolution: {integrity: sha512-5pTUx3hAJaZIdW99sJ6ZUUgWq/Y+Hja7TowEnLNMm1VivRgZQL3vpBY3qUACVsvw+yQU6+YgfBVmcbLaZtrA1w==}
     engines: {node: '>=6.9.0'}
@@ -2773,6 +2768,15 @@ packages:
       '@babel/core': 7.21.8
       '@babel/helper-plugin-utils': 7.21.5
     dev: true
+
+  /@babel/plugin-syntax-import-meta@7.10.4(@babel/core@7.21.3):
+    resolution: {integrity: sha512-Yqfm+XDx0+Prh3VSeEQCPU81yC+JWZ2pDPFSS4ZdpfZhp4MkFMaDC1UqseovEKwSUpnIL7+vK+Clp7bfh0iD7g==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.21.3
+      '@babel/helper-plugin-utils': 7.21.5
+    dev: false
 
   /@babel/plugin-syntax-import-meta@7.10.4(@babel/core@7.21.8):
     resolution: {integrity: sha512-Yqfm+XDx0+Prh3VSeEQCPU81yC+JWZ2pDPFSS4ZdpfZhp4MkFMaDC1UqseovEKwSUpnIL7+vK+Clp7bfh0iD7g==}
@@ -3651,6 +3655,17 @@ packages:
       '@babel/helper-plugin-utils': 7.21.5
       regenerator-transform: 0.15.1
 
+  /@babel/plugin-transform-regenerator@7.21.5(@babel/core@7.21.3):
+    resolution: {integrity: sha512-ZoYBKDb6LyMi5yCsByQ5jmXsHAQDDYeexT1Szvlmui+lADvfSecr5Dxd/PkrTC3pAD182Fcju1VQkB4oCp9M+w==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.21.3
+      '@babel/helper-plugin-utils': 7.21.5
+      regenerator-transform: 0.15.1
+    dev: false
+
   /@babel/plugin-transform-regenerator@7.21.5(@babel/core@7.21.8):
     resolution: {integrity: sha512-ZoYBKDb6LyMi5yCsByQ5jmXsHAQDDYeexT1Szvlmui+lADvfSecr5Dxd/PkrTC3pAD182Fcju1VQkB4oCp9M+w==}
     engines: {node: '>=6.9.0'}
@@ -3843,6 +3858,16 @@ packages:
       '@babel/core': 7.21.3
       '@babel/helper-plugin-utils': 7.21.5
 
+  /@babel/plugin-transform-unicode-escapes@7.21.5(@babel/core@7.21.3):
+    resolution: {integrity: sha512-LYm/gTOwZqsYohlvFUe/8Tujz75LqqVC2w+2qPHLR+WyWHGCZPN1KBpJCJn+4Bk4gOkQy/IXKIge6az5MqwlOg==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.21.3
+      '@babel/helper-plugin-utils': 7.21.5
+    dev: false
+
   /@babel/plugin-transform-unicode-escapes@7.21.5(@babel/core@7.21.8):
     resolution: {integrity: sha512-LYm/gTOwZqsYohlvFUe/8Tujz75LqqVC2w+2qPHLR+WyWHGCZPN1KBpJCJn+4Bk4gOkQy/IXKIge6az5MqwlOg==}
     engines: {node: '>=6.9.0'}
@@ -3957,6 +3982,93 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
+
+  /@babel/preset-env@7.21.5(@babel/core@7.21.3):
+    resolution: {integrity: sha512-wH00QnTTldTbf/IefEVyChtRdw5RJvODT/Vb4Vcxq1AZvtXj6T0YeX0cAcXhI6/BdGuiP3GcNIL4OQbI2DVNxg==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/compat-data': 7.21.7
+      '@babel/core': 7.21.3
+      '@babel/helper-compilation-targets': 7.21.5(@babel/core@7.21.3)
+      '@babel/helper-plugin-utils': 7.21.5
+      '@babel/helper-validator-option': 7.21.0
+      '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining': 7.20.7(@babel/core@7.21.3)
+      '@babel/plugin-proposal-async-generator-functions': 7.20.7(@babel/core@7.21.3)
+      '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-proposal-class-static-block': 7.21.0(@babel/core@7.21.3)
+      '@babel/plugin-proposal-dynamic-import': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-proposal-export-namespace-from': 7.18.9(@babel/core@7.21.3)
+      '@babel/plugin-proposal-json-strings': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-proposal-logical-assignment-operators': 7.20.7(@babel/core@7.21.3)
+      '@babel/plugin-proposal-nullish-coalescing-operator': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-proposal-numeric-separator': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-proposal-object-rest-spread': 7.20.7(@babel/core@7.21.3)
+      '@babel/plugin-proposal-optional-catch-binding': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-proposal-optional-chaining': 7.21.0(@babel/core@7.21.3)
+      '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-proposal-private-property-in-object': 7.21.0(@babel/core@7.21.3)
+      '@babel/plugin-proposal-unicode-property-regex': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.21.3)
+      '@babel/plugin-syntax-class-properties': 7.12.13(@babel/core@7.21.3)
+      '@babel/plugin-syntax-class-static-block': 7.14.5(@babel/core@7.21.3)
+      '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.21.3)
+      '@babel/plugin-syntax-export-namespace-from': 7.8.3(@babel/core@7.21.3)
+      '@babel/plugin-syntax-import-assertions': 7.20.0(@babel/core@7.21.3)
+      '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.21.3)
+      '@babel/plugin-syntax-json-strings': 7.8.3(@babel/core@7.21.3)
+      '@babel/plugin-syntax-logical-assignment-operators': 7.10.4(@babel/core@7.21.3)
+      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3(@babel/core@7.21.3)
+      '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.21.3)
+      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.21.3)
+      '@babel/plugin-syntax-optional-catch-binding': 7.8.3(@babel/core@7.21.3)
+      '@babel/plugin-syntax-optional-chaining': 7.8.3(@babel/core@7.21.3)
+      '@babel/plugin-syntax-private-property-in-object': 7.14.5(@babel/core@7.21.3)
+      '@babel/plugin-syntax-top-level-await': 7.14.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-arrow-functions': 7.21.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-async-to-generator': 7.20.7(@babel/core@7.21.3)
+      '@babel/plugin-transform-block-scoped-functions': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-block-scoping': 7.21.0(@babel/core@7.21.3)
+      '@babel/plugin-transform-classes': 7.21.0(@babel/core@7.21.3)
+      '@babel/plugin-transform-computed-properties': 7.21.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-destructuring': 7.21.3(@babel/core@7.21.3)
+      '@babel/plugin-transform-dotall-regex': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-duplicate-keys': 7.18.9(@babel/core@7.21.3)
+      '@babel/plugin-transform-exponentiation-operator': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-for-of': 7.21.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-function-name': 7.18.9(@babel/core@7.21.3)
+      '@babel/plugin-transform-literals': 7.18.9(@babel/core@7.21.3)
+      '@babel/plugin-transform-member-expression-literals': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-modules-amd': 7.20.11(@babel/core@7.21.3)
+      '@babel/plugin-transform-modules-commonjs': 7.21.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-modules-systemjs': 7.20.11(@babel/core@7.21.3)
+      '@babel/plugin-transform-modules-umd': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-named-capturing-groups-regex': 7.20.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-new-target': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-object-super': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-parameters': 7.21.3(@babel/core@7.21.3)
+      '@babel/plugin-transform-property-literals': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-regenerator': 7.21.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-reserved-words': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-shorthand-properties': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-spread': 7.20.7(@babel/core@7.21.3)
+      '@babel/plugin-transform-sticky-regex': 7.18.6(@babel/core@7.21.3)
+      '@babel/plugin-transform-template-literals': 7.18.9(@babel/core@7.21.3)
+      '@babel/plugin-transform-typeof-symbol': 7.18.9(@babel/core@7.21.3)
+      '@babel/plugin-transform-unicode-escapes': 7.21.5(@babel/core@7.21.3)
+      '@babel/plugin-transform-unicode-regex': 7.18.6(@babel/core@7.21.3)
+      '@babel/preset-modules': 0.1.5(@babel/core@7.21.3)
+      '@babel/types': 7.21.5
+      babel-plugin-polyfill-corejs2: 0.3.3(@babel/core@7.21.3)
+      babel-plugin-polyfill-corejs3: 0.6.0(@babel/core@7.21.3)
+      babel-plugin-polyfill-regenerator: 0.4.1(@babel/core@7.21.3)
+      core-js-compat: 3.29.1
+      semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@babel/preset-env@7.21.5(@babel/core@7.21.8):
     resolution: {integrity: sha512-wH00QnTTldTbf/IefEVyChtRdw5RJvODT/Vb4Vcxq1AZvtXj6T0YeX0cAcXhI6/BdGuiP3GcNIL4OQbI2DVNxg==}
@@ -4193,7 +4305,7 @@ packages:
     resolution: {integrity: sha512-YuGopBq3ke25BVSiS6fgF49Ul9gH1x70Bcr6bqRLjWCkcX8Hre1/5+z+IiWOIerRMSSEfGZVB9z9kyq7wVs9YA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/helper-string-parser': 7.19.4
+      '@babel/helper-string-parser': 7.21.5
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
     dev: false
@@ -6384,12 +6496,12 @@ packages:
       nanoid: 3.3.4
     dev: false
 
-  /@remix-run/dev@1.18.1(@remix-run/serve@1.18.1):
-    resolution: {integrity: sha512-uT+YRGiR17p51y284MvEZMpkFkIykJ0uTVP3hepW0fvtoD+dt09DFVk1AQkJhEKlIVECkyR9lrOtceP/2qML6w==}
+  /@remix-run/dev@1.19.0(@remix-run/serve@1.19.0):
+    resolution: {integrity: sha512-DcBPKDaAoOnQoMT0IeKZ0XklLOYuoL5XHsWXoS/p1mIzpECq4elv7pPM9SzYVjHoVeGM4ih8ncB2KtfJrqM7ag==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     peerDependencies:
-      '@remix-run/serve': ^1.18.1
+      '@remix-run/serve': ^1.19.0
     peerDependenciesMeta:
       '@remix-run/serve':
         optional: true
@@ -6404,8 +6516,8 @@ packages:
       '@babel/traverse': 7.21.5
       '@babel/types': 7.21.5
       '@npmcli/package-json': 2.0.0
-      '@remix-run/serve': 1.18.1
-      '@remix-run/server-runtime': 1.18.1
+      '@remix-run/serve': 1.19.0
+      '@remix-run/server-runtime': 1.19.0
       '@vanilla-extract/integration': 6.2.1
       arg: 5.0.2
       cacache: 15.3.0
@@ -6413,7 +6525,7 @@ packages:
       chokidar: 3.5.3
       dotenv: 16.0.3
       esbuild: 0.17.6
-      esbuild-plugins-node-modules-polyfill: 1.1.0(esbuild@0.17.6)
+      esbuild-plugins-node-modules-polyfill: 1.3.0(esbuild@0.17.6)
       execa: 5.1.1
       exit-hook: 2.2.1
       express: 4.18.2
@@ -6443,7 +6555,7 @@ packages:
       recast: 0.21.5
       remark-frontmatter: 4.0.1
       remark-mdx-frontmatter: 1.1.1
-      semver: 7.3.8
+      semver: 7.5.3
       sort-package-json: 1.57.0
       tar-fs: 2.1.1
       tsconfig-paths: 4.1.2
@@ -6500,13 +6612,13 @@ packages:
       - supports-color
     dev: true
 
-  /@remix-run/express@1.18.1(express@4.18.2):
-    resolution: {integrity: sha512-jI751cvY2pi4ZD7/+5qAC1Xyt049EM3baNhm5VATsVaTNVOJbNxazOvKflv+bLbpw1lV9sF3MAAMnig5YqStMg==}
+  /@remix-run/express@1.19.0(express@4.18.2):
+    resolution: {integrity: sha512-wPDKKJiwYosC8rOHrq0ONe3qKLnmy56osFoD04Y+WCPzua6LkpatLvymzlO+4j1Xwe7szMrDbUBsSHo7ZknCkg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       express: ^4.17.1
     dependencies:
-      '@remix-run/node': 1.18.1
+      '@remix-run/node': 1.19.0
       express: 4.18.2
 
   /@remix-run/node@1.15.0:
@@ -6524,12 +6636,12 @@ packages:
       stream-slice: 0.1.2
     dev: false
 
-  /@remix-run/node@1.18.1:
-    resolution: {integrity: sha512-Civ8hQGdQKxmYtDvzV+8sYOPiLfH2FtT35iSwEqDN49uraInljoWngSwzrRmKkilhI4eABSN9fv0trUDyOTBrQ==}
+  /@remix-run/node@1.19.0:
+    resolution: {integrity: sha512-gL0IBjcblddC85tQ5r7VHtS/oOVoWOoso+ZCC/G0SzZO/wEiq3bpi9c6UA1/bI1a9Kvgr+wKclWl9XwpWCGwvQ==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      '@remix-run/server-runtime': 1.18.1
-      '@remix-run/web-fetch': 4.3.4
+      '@remix-run/server-runtime': 1.19.0
+      '@remix-run/web-fetch': 4.3.5
       '@remix-run/web-file': 3.0.2
       '@remix-run/web-stream': 1.0.3
       '@web3-storage/multipart-parser': 1.0.0
@@ -6538,17 +6650,17 @@ packages:
       source-map-support: 0.5.21
       stream-slice: 0.1.2
 
-  /@remix-run/react@1.18.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-vs94AxXXaXU0K3W4zQ05hR9R1+Ief9oq5JZOZKdeFoM2dgdSb6u/ovRNyQK1ukzjIBO9vARpNC0HMeqN/eGhtw==}
+  /@remix-run/react@1.19.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-wZBNfA+wtX4GQ2xQyWefSpq45b9b+DydXq+mucog1jaR2OPFmSDjNzwp09Nc8G1TcpsvDH4CNgz4nsA94WvFmQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@remix-run/router': 1.7.1
+      '@remix-run/router': 1.7.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-router-dom: 6.14.1(react-dom@18.2.0)(react@18.2.0)
+      react-router-dom: 6.14.2(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /@remix-run/router@1.5.0:
@@ -6556,17 +6668,17 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
-  /@remix-run/router@1.7.1:
-    resolution: {integrity: sha512-bgVQM4ZJ2u2CM8k1ey70o1ePFXsEzYVZoWghh6WjM8p59jQ7HxzbHW4SbnWFG7V9ig9chLawQxDTZ3xzOF8MkQ==}
+  /@remix-run/router@1.7.2:
+    resolution: {integrity: sha512-7Lcn7IqGMV+vizMPoEl5F0XDshcdDYtMI6uJLQdQz5CfZAwy3vvGKYSUk789qndt5dEC4HfSjviSYlSoHGL2+A==}
     engines: {node: '>=14'}
 
-  /@remix-run/serve@1.18.1:
-    resolution: {integrity: sha512-u3SFXjUYmm3RV02QMGfCrjw7qMxg7y3wpnDf9RWfZtZG6oQEHpGkJeUXdSJjVGCmGQlWtGoVaFZ0fOQllu9G4g==}
+  /@remix-run/serve@1.19.0:
+    resolution: {integrity: sha512-OK3U4p/jSE5tOiyC+mSZGWU1fTMhUHiVNElr1mEhgLcMyLHaorenz9cY7ybInfVnpfBcWOmOeWWCJHLfcVjYJg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
-      '@remix-run/express': 1.18.1(express@4.18.2)
-      '@remix-run/node': 1.18.1
+      '@remix-run/express': 1.19.0(express@4.18.2)
+      '@remix-run/node': 1.19.0
       compression: 1.7.4
       express: 4.18.2
       morgan: 1.10.0
@@ -6586,23 +6698,23 @@ packages:
       source-map: 0.7.4
     dev: false
 
-  /@remix-run/server-runtime@1.18.1:
-    resolution: {integrity: sha512-E0sQlgUQG2ytFmUH7zRH7n2MufnP6WWWq1KpRoiuwJZxfTFIzaiCCIiNqbP/uXGWDGcwEevpawNUzzszL1tT0w==}
+  /@remix-run/server-runtime@1.19.0:
+    resolution: {integrity: sha512-Qwo/7omjLxbBB7nnzzgWd/PAScMjLEjNCeBkOw9qdgAubPSGqGakqG4w036fwQ3rXB5OlHsTOZI4Hxoh4AJHSg==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      '@remix-run/router': 1.7.1
+      '@remix-run/router': 1.7.2
       '@types/cookie': 0.4.1
       '@web3-storage/multipart-parser': 1.0.0
       cookie: 0.4.2
       set-cookie-parser: 2.5.1
       source-map: 0.7.4
 
-  /@remix-run/v1-route-convention@0.1.2(@remix-run/dev@1.18.1):
+  /@remix-run/v1-route-convention@0.1.2(@remix-run/dev@1.19.0):
     resolution: {integrity: sha512-vlcG2+uNVMf0euoFzM3BR3fgj0xYhjQPSufxK0sCCOXVGCteAqfXtcMQs2pZVYrKjeXLL+8ok2L9ThyZkhyt+A==}
     peerDependencies:
       '@remix-run/dev': ^1.15.0
     dependencies:
-      '@remix-run/dev': 1.18.1(@remix-run/serve@1.18.1)
+      '@remix-run/dev': 1.19.0(@remix-run/serve@1.19.0)
       minimatch: 7.4.6
     dev: true
 
@@ -6614,6 +6726,19 @@ packages:
 
   /@remix-run/web-fetch@4.3.4:
     resolution: {integrity: sha512-AUM1XBa4hcgeNt2CD86OlB5aDLlqdMl0uJ+89R8dPGx07I5BwMXnbopCaPAkvSBIoHeT/IoLWIuZrLi7RvXS+Q==}
+    engines: {node: ^10.17 || >=12.3}
+    dependencies:
+      '@remix-run/web-blob': 3.0.4
+      '@remix-run/web-form-data': 3.0.4
+      '@remix-run/web-stream': 1.0.3
+      '@web3-storage/multipart-parser': 1.0.0
+      abort-controller: 3.0.0
+      data-uri-to-buffer: 3.0.1
+      mrmime: 1.0.1
+    dev: false
+
+  /@remix-run/web-fetch@4.3.5:
+    resolution: {integrity: sha512-cLLeNLvLRyFRhJLulzS98bb07kJ+ENkGaqUkBisdG4FNEoZF6tXtrTGLWJNJa1nAP/wFkMKEDxIP77LgAPyeow==}
     engines: {node: ^10.17 || >=12.3}
     dependencies:
       '@remix-run/web-blob': 3.0.4
@@ -7717,7 +7842,7 @@ packages:
       '@babel/plugin-proposal-decorators': 7.21.0(@babel/core@7.21.3)
       '@babel/plugin-proposal-object-rest-spread': 7.20.7(@babel/core@7.21.3)
       '@babel/plugin-transform-react-jsx': 7.21.0(@babel/core@7.21.3)
-      '@babel/preset-env': 7.20.2(@babel/core@7.21.3)
+      '@babel/preset-env': 7.21.5(@babel/core@7.21.3)
       babel-plugin-module-resolver: 4.1.0
       babel-plugin-react-native-web: 0.18.12
       metro-react-native-babel-preset: 0.73.9(@babel/core@7.21.3)
@@ -9218,8 +9343,8 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /esbuild-plugins-node-modules-polyfill@1.1.0(esbuild@0.17.6):
-    resolution: {integrity: sha512-pfJAbt00Luc9uuYtXGlaUrcTzf4h95Cr9Lfw+7smTFmZWtbwbrN5Hsf+La4lfD6OygHvZeefZFILOGK1ZnuyjA==}
+  /esbuild-plugins-node-modules-polyfill@1.3.0(esbuild@0.17.6):
+    resolution: {integrity: sha512-r/aNOvAlIaIzqJwvFHWhDGrPF/Aj5qI1zKVeHbCFpKH+bnKW1BG2LGixMd3s6hyWcZHcfdl2QZRucVuOLzFRrA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       esbuild: ^0.14.0 || ^0.15.0 || ^0.16.0 || ^0.17.0 || ^0.18.0
@@ -15441,26 +15566,26 @@ packages:
       use-sidecar: 1.1.2(@types/react@18.2.15)(react@18.2.0)
     dev: false
 
-  /react-router-dom@6.14.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-ssF6M5UkQjHK70fgukCJyjlda0Dgono2QGwqGvuk7D+EDGHdacEN3Yke2LTMjkrpHuFwBfDFsEjGVXBDmL+bWw==}
+  /react-router-dom@6.14.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-5pWX0jdKR48XFZBuJqHosX3AAHjRAzygouMTyimnBPOLdY3WjzUSKhus2FVMihUFWzeLebDgr4r8UeQFAct7Bg==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.7.1
+      '@remix-run/router': 1.7.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-router: 6.14.1(react@18.2.0)
+      react-router: 6.14.2(react@18.2.0)
     dev: false
 
-  /react-router@6.14.1(react@18.2.0):
-    resolution: {integrity: sha512-U4PfgvG55LdvbQjg5Y9QRWyVxIdO1LlpYT7x+tMAxd9/vmiPuJhIwdxZuIQLN/9e3O4KFDHYfR9gzGeYMasW8g==}
+  /react-router@6.14.2(react@18.2.0):
+    resolution: {integrity: sha512-09Zss2dE2z+T1D03IheqAFtK4UzQyX8nFPWx6jkwdYzGLXd5ie06A6ezS2fO6zJfEb/SpG6UocN2O1hfD+2urQ==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.7.1
+      '@remix-run/router': 1.7.2
       react: 18.2.0
     dev: false
 
@@ -15661,14 +15786,14 @@ packages:
       unified: 10.1.2
     dev: true
 
-  /remix-flat-routes@0.5.10(@remix-run/dev@1.18.1):
+  /remix-flat-routes@0.5.10(@remix-run/dev@1.19.0):
     resolution: {integrity: sha512-9pn3vx8q66wmWmaEEUDqFKobKVD6EtC9K/gsZsPAUfRVyzWfcS6GkPq9IKZm/nJ+7WuTpiDOVxvx2j22kbReXw==}
     hasBin: true
     peerDependencies:
       '@remix-run/dev': ^1.15.0
     dependencies:
-      '@remix-run/dev': 1.18.1(@remix-run/serve@1.18.1)
-      '@remix-run/v1-route-convention': 0.1.2(@remix-run/dev@1.18.1)
+      '@remix-run/dev': 1.19.0(@remix-run/serve@1.19.0)
+      '@remix-run/v1-route-convention': 0.1.2(@remix-run/dev@1.19.0)
       minimatch: 5.1.6
     dev: true
 
@@ -17428,6 +17553,7 @@ packages:
   /vm2@3.9.14:
     resolution: {integrity: sha512-HgvPHYHeQy8+QhzlFryvSteA4uQLBCOub02mgqdR+0bN/akRZ48TGB1v0aCv7ksyc0HXx16AZtMHKS38alc6TA==}
     engines: {node: '>=6.0'}
+    deprecated: The library contains critical security issues and should not be used for production! The maintenance of the project has been discontinued. Consider migrating your code to isolated-vm.
     hasBin: true
     dependencies:
       acorn: 8.9.0
