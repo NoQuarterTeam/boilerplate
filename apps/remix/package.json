@@ -37,7 +37,7 @@
     "isbot": "latest",
     "jsonwebtoken": "9.0.1",
     "lucide-react": "^0.261.0",
-    "nodemailer": "6.9.3",
+    "nodemailer": "6.9.4",
     "nprogress": "^0.2.0",
     "query-string": "^8.1.0",
     "react": "18.2.0",
