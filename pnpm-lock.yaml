@@ -148,8 +148,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       zod:
-        specifier: 3.21.4
-        version: 3.21.4
+        specifier: 3.22.0
+        version: 3.22.0
       zustand:
         specifier: 4.4.1
         version: 4.4.1(@types/react@18.0.35)(react@18.2.0)
@@ -233,8 +233,8 @@ importers:
         specifier: ^0.17.0
         version: 0.17.0
       zod:
-        specifier: 3.21.4
-        version: 3.21.4
+        specifier: 3.22.0
+        version: 3.22.0
       zustand:
         specifier: 4.4.1
         version: 4.4.1(@types/react@18.2.20)(react@18.2.0)
@@ -390,8 +390,8 @@ importers:
         specifier: ^0.32.0
         version: 0.32.0
       zod:
-        specifier: 3.21.4
-        version: 3.21.4
+        specifier: 3.22.0
+        version: 3.22.0
       zustand:
         specifier: 4.4.1
         version: 4.4.1(@types/react@18.2.20)(react@18.2.0)
@@ -475,8 +475,8 @@ importers:
         specifier: ^1.12.2
         version: 1.12.2
       zod:
-        specifier: 3.21.4
-        version: 3.21.4
+        specifier: 3.22.0
+        version: 3.22.0
     devDependencies:
       '@boilerplate/eslint-config':
         specifier: workspace:*
@@ -17868,6 +17868,10 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
+
+  /zod@3.22.0:
+    resolution: {integrity: sha512-y5KZY/ssf5n7hCGDGGtcJO/EBJEm5Pa+QQvFBeyMOtnFYOSflalxIFFvdaYevPhePcmcKC4aTbFkCcXN7D0O8Q==}
     dev: false
 
   /zustand@4.4.1(@types/react@18.0.35)(react@18.2.0):
