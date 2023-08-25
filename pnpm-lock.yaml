@@ -212,8 +212,8 @@ importers:
         specifier: latest
         version: 3.6.13
       lucide-react:
-        specifier: ^0.268.0
-        version: 0.268.0(react@18.2.0)
+        specifier: ^0.269.0
+        version: 0.269.0(react@18.2.0)
       next:
         specifier: 13.4.19
         version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -363,8 +363,8 @@ importers:
         specifier: 9.0.1
         version: 9.0.1
       lucide-react:
-        specifier: ^0.268.0
-        version: 0.268.0(react@18.2.0)
+        specifier: ^0.269.0
+        version: 0.269.0(react@18.2.0)
       nodemailer:
         specifier: 6.9.4
         version: 6.9.4
@@ -696,8 +696,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       lucide-react:
-        specifier: ^0.268.0
-        version: 0.268.0(react@18.2.0)
+        specifier: ^0.269.0
+        version: 0.269.0(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -12544,8 +12544,8 @@ packages:
       react-native-svg: 13.4.0(react-native@0.71.6)(react@18.2.0)
     dev: false
 
-  /lucide-react@0.268.0(react@18.2.0):
-    resolution: {integrity: sha512-XP/xY3ASJAViqNqVnDRcEfdxfRB7uNST8sqTLwZhL983ikmHMQ7qQak7ZxrnXOVhB3QDBawdr3ANq0P+iWHP/g==}
+  /lucide-react@0.269.0(react@18.2.0):
+    resolution: {integrity: sha512-+ViEb/2eJJt43/CtxpTfvqu/8gzK49cSUdeuqRuFYiZmX9AvwfumtETM4plhXHymfHb6/mVbHg9uIlc13y+uew==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
