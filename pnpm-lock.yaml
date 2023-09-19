@@ -64,8 +64,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       dayjs:
-        specifier: 1.11.9
-        version: 1.11.9
+        specifier: 1.11.10
+        version: 1.11.10
       expo:
         specifier: ~48.0.10
         version: 48.0.10(@babel/core@7.21.3)
@@ -206,11 +206,11 @@ importers:
         specifier: workspace:*
         version: link:../../packages/ui
       dayjs:
-        specifier: 1.11.9
-        version: 1.11.9
+        specifier: 1.11.10
+        version: 1.11.10
       isbot:
         specifier: latest
-        version: 3.6.13
+        version: 3.7.0
       lucide-react:
         specifier: ^0.279.0
         version: 0.279.0(react@18.2.0)
@@ -354,11 +354,11 @@ importers:
         specifier: ^2.4.3
         version: 2.4.3
       dayjs:
-        specifier: 1.11.9
-        version: 1.11.9
+        specifier: 1.11.10
+        version: 1.11.10
       isbot:
         specifier: latest
-        version: 3.6.13
+        version: 3.7.0
       jsonwebtoken:
         specifier: 9.0.2
         version: 9.0.2
@@ -466,8 +466,8 @@ importers:
         specifier: ^2.4.3
         version: 2.4.3
       dayjs:
-        specifier: 1.11.9
-        version: 1.11.9
+        specifier: 1.11.10
+        version: 1.11.10
       jsonwebtoken:
         specifier: 9.0.2
         version: 9.0.2
@@ -8989,8 +8989,8 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  /dayjs@1.11.9:
-    resolution: {integrity: sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==}
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
 
   /deasync@0.1.28:
     resolution: {integrity: sha512-QqLF6inIDwiATrfROIyQtwOQxjZuek13WRYZ7donU5wJPLoP67MnYxA6QtqdvdBy2mMqv5m3UefBVdJjvevOYg==}
@@ -12018,13 +12018,13 @@ packages:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
     dev: true
 
-  /isbot@3.6.13:
-    resolution: {integrity: sha512-uoP4uK5Dc2CrabmK+Gue1jTL+scHiCc1c9rblRpJwG8CPxjLIv8jmGyyGRGkbPOweayhkskdZsEQXG6p+QCQrg==}
+  /isbot@3.6.7:
+    resolution: {integrity: sha512-SXNUQaNZlj/+9jdrGnAp6WW0YoHe3MIwwc6oRIYuhhERBUt7/L6I7JkMiA2sX9fcvS7gZ2C7GWgmDZfOOU4I5g==}
     engines: {node: '>=12'}
     dev: false
 
-  /isbot@3.6.7:
-    resolution: {integrity: sha512-SXNUQaNZlj/+9jdrGnAp6WW0YoHe3MIwwc6oRIYuhhERBUt7/L6I7JkMiA2sX9fcvS7gZ2C7GWgmDZfOOU4I5g==}
+  /isbot@3.7.0:
+    resolution: {integrity: sha512-9BcjlI89966BqWJmYdTnRub85sit931MyCthSIPtgoOsTjoW7A2MVa09HzPpYE2+G4vyAxfDvR0AbUGV0FInQg==}
     engines: {node: '>=12'}
     dev: false
 
@@ -12622,7 +12622,7 @@ packages:
     hasBin: true
     dependencies:
       ansi-fragments: 0.2.1
-      dayjs: 1.11.9
+      dayjs: 1.11.10
       yargs: 15.4.1
 
   /longest-streak@3.1.0:
