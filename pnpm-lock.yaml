@@ -586,8 +586,8 @@ importers:
         specifier: 0.0.11
         version: 0.0.11(react@18.2.0)
       '@react-email/font':
-        specifier: ^0.0.4
-        version: 0.0.4(react@18.2.0)
+        specifier: ^0.0.5
+        version: 0.0.5(react@18.2.0)
       '@react-email/head':
         specifier: 0.0.6
         version: 0.0.6(react@18.2.0)
@@ -6231,8 +6231,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-email/font@0.0.4(react@18.2.0):
-    resolution: {integrity: sha512-rN/pFlAcDNmfYFxpufT/rFRrM5KYBJM4nTA2uylTehlVOro6fb/q6n0zUwLF6OmQ4QIuRbqdEy7DI9mmJiNHxA==}
+  /@react-email/font@0.0.5(react@18.2.0):
+    resolution: {integrity: sha512-if/qKYmH3rJ2egQJoKbV8SfKCPavu+ikUq/naT/UkCr8Q0lkk309tRA0x7fXG/WeIrmcipjMzFRGTm2TxTecDw==}
     peerDependencies:
       react: 18.2.0
     dependencies:
