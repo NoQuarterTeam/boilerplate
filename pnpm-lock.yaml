@@ -577,8 +577,8 @@ importers:
         specifier: workspace:*
         version: link:../config/tailwind
       '@react-email/button':
-        specifier: 0.0.11
-        version: 0.0.11(react@18.2.0)
+        specifier: 0.0.13
+        version: 0.0.13(react@18.2.0)
       '@react-email/column':
         specifier: 0.0.8
         version: 0.0.8(react@18.2.0)
@@ -6204,8 +6204,8 @@ packages:
       '@babel/runtime': 7.21.0
     dev: false
 
-  /@react-email/button@0.0.11(react@18.2.0):
-    resolution: {integrity: sha512-mB5ySfZifwE5ybtIWwXGbmKk1uKkH4655gftL4+mMxZAZCkINVa2KXTi5pO+xZhMtJI9xtAsikOrOEU1gTDoww==}
+  /@react-email/button@0.0.13(react@18.2.0):
+    resolution: {integrity: sha512-e/y8u2odJ8fF83B+wvL2FXzVcbQSUh2Cn2JH2Ez4L6AuPELsh8s2JYo081IDsXc16IyFiYpObn0blOt7s/qp8g==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: 18.2.0
