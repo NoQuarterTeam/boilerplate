@@ -44,7 +44,7 @@
     "react-dom": "18.2.0",
     "react-dropzone": "14.2.3",
     "resend": "^0.17.0",
-    "sharp": "^0.32.0",
+    "sharp": "^0.33.0",
     "zod": "3.22.4",
     "zustand": "4.4.7"
   },
