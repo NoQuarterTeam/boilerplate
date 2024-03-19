@@ -19,7 +19,7 @@
     "postinstall": "prisma generate"
   },
   "devDependencies": {
-    "@types/node": "^18.15.3",
+    "@types/node": "^20.0.0",
     "dotenv-cli": "^7.1.0",
     "typescript": "5.3.3"
   },
