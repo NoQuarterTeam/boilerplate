@@ -331,7 +331,7 @@ importers:
         version: link:../../packages/ui
       '@fontsource/poppins':
         specifier: ^5.0.0
-        version: 5.0.0
+        version: 5.0.14
       '@remix-run/node':
         specifier: 1.19.3
         version: 1.19.3
@@ -5319,8 +5319,8 @@ packages:
       - '@types/react'
     dev: false
 
-  /@fontsource/poppins@5.0.0:
-    resolution: {integrity: sha512-YdJlR5Q/XXvp1rd0668YtzBM/QQmR/1T/oMyatcn648wkLiAt4FOhi6CT1xxo6PeucqX/+w8gAhP5XvToeMg0Q==}
+  /@fontsource/poppins@5.0.14:
+    resolution: {integrity: sha512-nmM1zpPo3Uh4JcGAVSQuWaZNYh2FbbwWhZ5t6hRaynmJaNTBW85d3nEh9zMmzI0HX7X5xqQVdRHeDatKpOGsnA==}
     dev: false
 
   /@gar/promisify@1.1.3:
