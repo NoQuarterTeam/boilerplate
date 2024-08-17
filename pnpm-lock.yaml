@@ -595,8 +595,8 @@ importers:
         specifier: 0.0.13
         version: 0.0.13(react@18.2.0)
       '@react-email/hr':
-        specifier: 0.0.7
-        version: 0.0.7(react@18.2.0)
+        specifier: 0.0.9
+        version: 0.0.9(react@18.2.0)
       '@react-email/html':
         specifier: 0.0.7
         version: 0.0.7(react@18.2.0)
@@ -6500,11 +6500,11 @@ packages:
       - '@types/react'
     dev: false
 
-  /@react-email/hr@0.0.7(react@18.2.0):
-    resolution: {integrity: sha512-8suK0M/deXHt0DBSeKhSC4bnCBCBm37xk6KJh9M0/FIKlvdltQBem52YUiuqVl1XLB87Y6v6tvspn3SZ9fuxEA==}
+  /@react-email/hr@0.0.9(react@18.2.0):
+    resolution: {integrity: sha512-Rte+EZL3ptH3rkVU3a7fh8/06mZ6Q679tDaWDjsw3878RQC9afWqUPp5lwgA/1pTouLmJlDs2BjRnV6H84O7iw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      react: 18.2.0
+      react: ^18.2.0
     dependencies:
       react: 18.2.0
     dev: false
