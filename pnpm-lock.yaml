@@ -580,8 +580,8 @@ importers:
         specifier: 0.0.16
         version: 0.0.16(react@18.2.0)
       '@react-email/column':
-        specifier: 0.0.9
-        version: 0.0.9(react@18.2.0)
+        specifier: 0.0.11
+        version: 0.0.11(react@18.2.0)
       '@react-email/container':
         specifier: 0.0.11
         version: 0.0.11(react@18.2.0)
@@ -6455,11 +6455,11 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-email/column@0.0.9(react@18.2.0):
-    resolution: {integrity: sha512-1ekqNBgmbS6m97/sUFOnVvQtLYljUWamw8Y44VId95v6SjiJ4ca+hMcdOteHWBH67xkRofEOWTvqDRea5SBV8w==}
+  /@react-email/column@0.0.11(react@18.2.0):
+    resolution: {integrity: sha512-KvrPuQFn0hlItRRL3vmRuOJgKG+8I0oO9HM5ReLMi5Ns313JSEQogCJaXuOEFkOVeuu5YyY6zy/+5Esccc1AxQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      react: 18.2.0
+      react: ^18.2.0
     dependencies:
       react: 18.2.0
     dev: false
