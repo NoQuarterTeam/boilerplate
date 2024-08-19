@@ -280,7 +280,7 @@ importers:
         version: 6.1.2(postcss@8.4.41)
       dotenv-cli:
         specifier: ^7.1.0
-        version: 7.1.0
+        version: 7.4.2
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -434,7 +434,7 @@ importers:
         version: 6.1.2(postcss@8.4.41)
       dotenv-cli:
         specifier: ^7.1.0
-        version: 7.1.0
+        version: 7.4.2
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -492,7 +492,7 @@ importers:
         version: 18.19.45
       dotenv-cli:
         specifier: ^7.1.0
-        version: 7.1.0
+        version: 7.4.2
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -566,7 +566,7 @@ importers:
         version: 18.19.45
       dotenv-cli:
         specifier: ^7.1.0
-        version: 7.1.0
+        version: 7.4.2
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -725,7 +725,7 @@ importers:
         version: 18.3.0
       dotenv-cli:
         specifier: ^7.1.0
-        version: 7.1.0
+        version: 7.4.2
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -9269,12 +9269,12 @@ packages:
       domhandler: 5.0.3
     dev: false
 
-  /dotenv-cli@7.1.0:
-    resolution: {integrity: sha512-motytjZFQB3ZtGTIN4c0vnFgv4kuNZ2WxVnGY6PVFiygCzkm3IFBBguDUzezd9HgNA0OYYd6vNCWlozs0Q1Zxg==}
+  /dotenv-cli@7.4.2:
+    resolution: {integrity: sha512-SbUj8l61zIbzyhIbg0FwPJq6+wjbzdn9oEtozQpZ6kW2ihCcapKVZj49oCT3oPM+mgQm+itgvUQcG5szxVrZTA==}
     hasBin: true
     dependencies:
       cross-spawn: 7.0.3
-      dotenv: 16.0.3
+      dotenv: 16.4.5
       dotenv-expand: 10.0.0
       minimist: 1.2.8
     dev: true
@@ -9286,6 +9286,11 @@ packages:
 
   /dotenv@16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: true
+
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
     dev: true
 
