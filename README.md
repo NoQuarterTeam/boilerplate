@@ -1,3 +1,5 @@
+# Archived, just use [T3 turbo](https://github.com/t3-oss/create-t3-turbo)
+
 # Boilerplate
 
 ## React + Remix + Next + Typescript + Prisma + Expo + React Native
