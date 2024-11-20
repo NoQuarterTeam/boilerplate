@@ -35,7 +35,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "9.0.6",
-    "@types/node": "18.19.45",
+    "@types/node": "22.9.0",
     "@types/nodemailer": "6.4.15",
     "@types/nprogress": "^0.2.0",
     "@types/react": "18.3.3",
