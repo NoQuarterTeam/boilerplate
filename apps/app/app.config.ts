@@ -13,6 +13,11 @@ export default {
   owner: "noquarter",
   orientation: "portrait",
   userInterfaceStyle: "automatic",
+  extra: {
+    eas: {
+      projectId: "2d3e9c31-6262-47f3-8455-3c39c9bb4df9",
+    },
+  },
   ios: {
     buildNumber: BUILD.toString(),
     supportsTablet: true,
