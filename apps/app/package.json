@@ -8,6 +8,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "build:simulator": "eas build --profile simulator --platform ios",
     "build:dev": "eas build --profile development --platform ios",
     "build:preview": "eas build --profile preview --platform ios",
     "build:staging-internal": "eas build --profile staging-internal --platform ios",
