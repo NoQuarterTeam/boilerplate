@@ -1,0 +1,33 @@
+{
+  "projectName": "dashboard",
+  "mode": "file-router",
+  "typescript": true,
+  "tailwind": true,
+  "packageManager": "bun",
+  "git": false,
+  "install": false,
+  "addOnOptions": {
+    "drizzle": {
+      "database": "postgresql"
+    }
+  },
+  "includeExamples": true,
+  "envVarValues": {},
+  "routerOnly": false,
+  "version": 1,
+  "framework": "react",
+  "chosenAddOns": [
+    "neon",
+    "tanstack-query",
+    "db",
+    "form",
+    "table",
+    "store",
+    "nitro",
+    "drizzle",
+    "better-auth",
+    "sentry",
+    "tRPC",
+    "t3env"
+  ]
+}

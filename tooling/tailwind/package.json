@@ -1,0 +1,11 @@
+{
+  "name": "@boilerplate/tailwind-config",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    "./base.css": "./base.css"
+  },
+  "dependencies": {
+    "tailwindcss": "catalog:"
+  }
+}

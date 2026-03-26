@@ -1,0 +1,13 @@
+{
+  "extends": "@boilerplate/tsconfig/base.json",
+  "include": ["**/*.ts", "**/*.tsx", "reset.d.ts"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM"],
+    "paths": {
+      "@boilerplate/ui/*": ["../../packages/ui/src/*"],
+      "@/*": ["./src/*"]
+    },
+    "types": ["vite/client", "node"]
+  }
+}

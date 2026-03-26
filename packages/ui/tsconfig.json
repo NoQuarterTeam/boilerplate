@@ -1,0 +1,11 @@
+{
+  "extends": "@boilerplate/tsconfig/compiled.json",
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM"],
+    "paths": {
+      "@boilerplate/ui/*": ["./src/*"]
+    }
+  }
+}

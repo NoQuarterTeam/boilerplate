@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "@boilerplate/tailwind-config/base.css";
+@import "uniwind";
+
+@source "./**/*.{ts,tsx}";

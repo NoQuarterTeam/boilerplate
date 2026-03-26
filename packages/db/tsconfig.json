@@ -1,0 +1,7 @@
+{
+  "extends": "@boilerplate/tsconfig/compiled.json",
+  "include": ["./src/**/*.ts", "./drizzle.config.ts"],
+  "compilerOptions": {
+    "types": ["node"]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@boilerplate/tsconfig",
+  "private": true,
+  "files": [
+    "*.json"
+  ],
+  "type": "module"
+}

@@ -1,0 +1,7 @@
+{
+  "extends": "@boilerplate/tsconfig/compiled.json",
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}
