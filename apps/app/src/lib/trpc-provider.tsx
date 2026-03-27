@@ -12,6 +12,13 @@ import { getWebBaseUrl } from "@/lib/config"
 export const { TRPCProvider, useTRPC } = createTRPCContext<AppRouter>()
 
 export function TrpcProvider({ children }: { children: ReactNode }) {
+  const { data: session } = authClient.useSession()
+  const authCacheKey = session?.user?.id ? `user:${session.user.id}` : "guest"
+
+  return <TrpcProviderInner key={authCacheKey}>{children}</TrpcProviderInner>
+}
+
+function TrpcProviderInner({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient({ defaultOptions: { queries: { staleTime: 30_000 } } }))
 
   const [trpcClient] = useState(() =>

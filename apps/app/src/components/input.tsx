@@ -19,17 +19,17 @@ const inputVariants = cva(
   },
 )
 
-export type InputProps = TextInputProps & VariantProps<typeof inputVariants> & { className?: string }
+export type InputProps = TextInputProps & VariantProps<typeof inputVariants> & { className?: string; isInvalid?: boolean }
 
 export const Input = forwardRef<ComponentRef<typeof TextInput>, InputProps>(function Input(
-  { className, size = "default", ...props },
+  { className, size = "default", isInvalid, ...props },
   ref,
 ) {
   return (
     <TextInput
       ref={ref}
       placeholderTextColorClassName="text-muted-foreground"
-      className={cn(inputVariants({ size }), "disabled:opacity-50", className)}
+      className={cn(inputVariants({ size }), "disabled:opacity-50", isInvalid && "border-destructive", className)}
       {...props}
     />
   )

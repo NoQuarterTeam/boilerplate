@@ -26,8 +26,8 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
-    requireEmailVerification: true,
-    autoSignIn: false,
+    requireEmailVerification: false,
+    autoSignIn: true,
     sendResetPassword: async ({ user, url }) => {
       waitUntil(
         sendAppEmail({
@@ -38,21 +38,33 @@ export const auth = betterAuth({
       )
     },
   },
+
   emailVerification: {
     autoSignInAfterVerification: true,
     sendOnSignUp: true,
     sendOnSignIn: true,
-    sendVerificationEmail: async ({ user, url }) => {
+    sendVerificationEmail: async ({ user, url }, request) => {
+      const newUrl = new URL(url)
+
+      const headers = request?.headers
+      if (headers) {
+        const host = headers.get("x-forwarded-host") || headers.get("host")
+        const proto = headers.get("x-forwarded-proto") || "http"
+        newUrl.host = host || newUrl.host
+        newUrl.protocol = proto + ":"
+      }
+
       waitUntil(
         sendAppEmail({
           to: user.email,
           subject: "Verify your Boilerplate email",
-          react: VerifyEmail({ firstName: getFirstName(user.name), verifyUrl: url }),
+          react: VerifyEmail({ firstName: getFirstName(user.name), verifyUrl: newUrl.toString() }),
         }),
       )
     },
   },
   advanced: {
+    trustedProxyHeaders: true,
     backgroundTasks: { handler: waitUntil },
     database: { generateId: false },
   },

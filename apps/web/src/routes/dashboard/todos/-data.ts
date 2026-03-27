@@ -25,6 +25,8 @@ export const listTodosFn = createServerFn({ method: "GET" })
       .orderBy(desc(todosTable.createdAt))
   })
 
+export type TodoListItem = Awaited<ReturnType<typeof listTodosFn>>[number]
+
 export const todosListQueryOptions = () => queryOptions({ queryKey: ["todos", "list"], queryFn: () => listTodosFn() })
 
 export const createTodoFn = createServerFn({ method: "POST" })

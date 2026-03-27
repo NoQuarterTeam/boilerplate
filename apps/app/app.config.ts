@@ -29,6 +29,7 @@ export default {
   android: {
     adaptiveIcon: { backgroundColor: "#ffffff" },
     predictiveBackGestureEnabled: false,
+    softwareKeyboardLayoutMode: "resize",
   },
   plugins: [
     "expo-router",
