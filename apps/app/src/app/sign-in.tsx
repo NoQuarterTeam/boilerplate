@@ -1,9 +1,11 @@
 import { router } from "expo-router"
 import { useState } from "react"
-import { ActivityIndicator, Alert, KeyboardAvoidingView, Platform, Text, View } from "react-native"
+import { ActivityIndicator, Alert, KeyboardAvoidingView, Platform, View } from "react-native"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
 
 import { Button, ButtonText } from "@/components/button"
 import { Input } from "@/components/input"
+import { Text } from "@/components/text"
 import { authClient } from "@/lib/auth-client"
 
 export default function SignIn() {
@@ -34,12 +36,16 @@ export default function SignIn() {
       setSubmitting(false)
     }
   }
+  const safeAreaInsets = useSafeAreaInsets()
 
   return (
-    <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} className="flex-1">
-      <View className="flex-1 gap-2 px-6 pt-4">
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      style={{ paddingBottom: safeAreaInsets.bottom, flex: 1 }}
+    >
+      <View className="flex-1 gap-2 bg-background px-6 pt-6">
         <Text className="text-2xl font-bold">Sign in</Text>
-        <Text className="mt-2 text-sm font-semibold text-neutral-700">Email</Text>
+        <Text className="mt-2 text-sm font-semibold">Email</Text>
         <Input
           placeholder="you@example.com"
           autoCapitalize="none"
@@ -48,7 +54,7 @@ export default function SignIn() {
           value={email}
           onChangeText={setEmail}
         />
-        <Text className="mt-2 text-sm font-semibold text-neutral-700">Password</Text>
+        <Text className="mt-2 text-sm font-semibold">Password</Text>
         <Input placeholder="••••••••" secureTextEntry autoComplete="password" value={password} onChangeText={setPassword} />
         {error ? <Text className="mt-1 text-sm text-red-700">{error}</Text> : null}
         <Button className="mt-5" disabled={submitting || !email.trim() || !password} onPress={() => void handleLogin()}>

@@ -35,7 +35,7 @@ function SignUpPage() {
           email: value.email.trim(),
           password: value.password,
           name: value.name.trim(),
-          callbackURL: "boilerplate://verify-email",
+          callbackURL: "/verify-email",
         },
         {
           onError: ({ error }) => {

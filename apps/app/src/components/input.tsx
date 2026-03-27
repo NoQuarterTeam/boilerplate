@@ -4,22 +4,22 @@ import { TextInput, type TextInputProps } from "react-native"
 
 import { cn } from "@/lib/utils"
 
-const inputVariants = cva("w-full min-w-0 rounded-md border border-input bg-transparent text-base text-foreground shadow-xs", {
-  variants: {
-    size: {
-      default: "m-0 h-10 px-2.5",
-      sm: "h-8 px-2.5 text-sm",
+const inputVariants = cva(
+  "m-0 w-full min-w-0 rounded-md border border-input bg-transparent px-2.5 py-0 text-foreground shadow-xs",
+  {
+    variants: {
+      size: {
+        default: "h-10",
+        sm: "h-8 text-xs",
+      },
+    },
+    defaultVariants: {
+      size: "default",
     },
   },
-  defaultVariants: {
-    size: "default",
-  },
-})
+)
 
-export type InputProps = TextInputProps &
-  VariantProps<typeof inputVariants> & {
-    className?: string
-  }
+export type InputProps = TextInputProps & VariantProps<typeof inputVariants> & { className?: string }
 
 export const Input = forwardRef<ComponentRef<typeof TextInput>, InputProps>(function Input(
   { className, size = "default", ...props },

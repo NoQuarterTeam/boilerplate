@@ -1,11 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { Link } from "expo-router"
 import { useState } from "react"
-import { ActivityIndicator, Pressable, ScrollView, Text, View } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import { ActivityIndicator, Pressable, ScrollView, View } from "react-native"
+import { useSafeAreaInsets } from "react-native-safe-area-context"
 
 import { Button, ButtonText } from "@/components/button"
 import { Input } from "@/components/input"
+import { Text } from "@/components/text"
 import { authClient } from "@/lib/auth-client"
 import { useTRPC } from "@/lib/trpc-provider"
 import { cn } from "@/lib/utils"
@@ -46,27 +47,21 @@ export default function Home() {
     }),
   )
 
-  if (sessionPending) {
-    return (
-      <View className="flex-1 items-center justify-center">
-        <ActivityIndicator size="large" />
-      </View>
-    )
-  }
+  const safeAreaInsets = useSafeAreaInsets()
+  if (sessionPending) return null
 
   if (session?.user) {
     return (
-      <SafeAreaView className="flex-1 bg-background" edges={["top"]}>
-        <View className="flex-row items-center justify-between border-b border-neutral-200 px-5 py-3">
+      <View className="flex-1 bg-background" style={{ paddingTop: safeAreaInsets.top, paddingBottom: safeAreaInsets.bottom }}>
+        <View className="flex-row items-center justify-between border-b border-border px-5 py-3">
           <Text className="text-[17px] font-semibold">Todos</Text>
-          <Pressable className="px-2 py-1 active:opacity-60" onPress={() => void authClient.signOut()}>
-            <Text className="text-base font-semibold text-blue-600">Log out</Text>
-          </Pressable>
+          <Button variant="ghost" onPress={() => void authClient.signOut()}>
+            <ButtonText>Log out</ButtonText>
+          </Button>
         </View>
-        <ScrollView keyboardShouldPersistTaps="handled" contentContainerClassName="p-5 pb-10">
+        <ScrollView keyboardShouldPersistTaps="handled" contentContainerClassName="p-5 pb-10 flex-1">
           <Text className="mb-5 text-xl font-semibold">Hi, {session.user.name?.split(/\s+/)[0] ?? "there"}</Text>
-
-          <Text className="mt-3 mb-2 text-[13px] font-semibold text-neutral-600">New todo</Text>
+          <Text className="mt-3 mb-2 font-semibold">New todo</Text>
           <View className="flex-row items-center gap-2.5">
             <Input
               className="flex-1"
@@ -87,27 +82,24 @@ export default function Home() {
             </Button>
           </View>
 
-          <Text className="mt-3 mb-2 text-[13px] font-semibold text-neutral-600">Your list</Text>
+          <Text className="mt-3 mb-2 text-[13px] font-semibold">Your list</Text>
           {listQuery.isPending ? (
             <ActivityIndicator className="my-4" />
           ) : !listQuery.data?.length ? (
-            <Text className="text-[15px] text-neutral-500">No todos yet.</Text>
+            <Text className="text-[15px] text-muted-foreground">No todos yet.</Text>
           ) : (
             <View className="gap-2.5">
               {listQuery.data.map((todo) => (
-                <View key={todo.id} className="flex-row items-center gap-3 rounded-lg border border-neutral-200 px-3 py-2.5">
+                <View key={todo.id} className="flex-row items-center gap-3 rounded-lg border border-border px-3 py-2.5">
                   <Pressable
                     accessibilityRole="checkbox"
                     accessibilityState={{ checked: todo.completed }}
                     onPress={() => void toggle.mutateAsync({ id: todo.id, completed: !todo.completed })}
-                    className="h-7 w-7 items-center justify-center rounded-md border-2 border-neutral-700"
+                    className="h-7 w-7 items-center justify-center rounded-md border-2 border-border"
                   >
-                    <Text className="text-base font-bold text-neutral-900">{todo.completed ? "✓" : ""}</Text>
+                    <Text className="font-bold">{todo.completed ? "✓" : ""}</Text>
                   </Pressable>
-                  <Text
-                    className={cn("flex-1 text-base text-neutral-900", todo.completed && "text-neutral-500 line-through")}
-                    numberOfLines={2}
-                  >
+                  <Text className={cn("flex-1", todo.completed && "text-muted-foreground line-through")} numberOfLines={2}>
                     {todo.title}
                   </Text>
                   <Pressable
@@ -122,14 +114,14 @@ export default function Home() {
             </View>
           )}
         </ScrollView>
-      </SafeAreaView>
+      </View>
     )
   }
 
   return (
-    <View className="flex-1 justify-center gap-4 px-6">
+    <View className="flex-1 justify-center gap-4 bg-background px-6">
       <Text className="text-2xl font-bold">Welcome</Text>
-      <Text className="mb-5 text-base leading-[22px] text-neutral-600">Sign in to manage your todos on the go.</Text>
+      <Text className="mb-5 text-base leading-[22px] text-muted-foreground">Sign in to manage your todos on the go.</Text>
       <Link href="/sign-in" asChild>
         <Button>
           <ButtonText className="text-center">Log in</ButtonText>

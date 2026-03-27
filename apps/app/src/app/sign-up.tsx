@@ -1,9 +1,10 @@
 import { router } from "expo-router"
 import { useState } from "react"
-import { ActivityIndicator, Alert, KeyboardAvoidingView, Platform, Text, View } from "react-native"
+import { ActivityIndicator, Alert, KeyboardAvoidingView, Platform, View } from "react-native"
 
 import { Button, ButtonText } from "@/components/button"
 import { Input } from "@/components/input"
+import { Text } from "@/components/text"
 import { authClient } from "@/lib/auth-client"
 
 const MIN_PASSWORD = 8
@@ -29,7 +30,7 @@ export default function SignUp() {
     setSubmitting(true)
     try {
       await authClient.signUp.email(
-        { email: email.trim(), password, name: name.trim() },
+        { email: email.trim(), password, name: name.trim(), callbackURL: "boilerplate://verify-email" },
         {
           onError: ({ error: err }) => {
             setError(err.message ?? "Could not create account")
@@ -50,11 +51,11 @@ export default function SignUp() {
 
   return (
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} className="flex-1">
-      <View className="flex-1 gap-2 px-6 pt-4">
+      <View className="flex-1 gap-2 bg-background px-6 pt-6">
         <Text className="text-2xl font-bold">Sign up</Text>
-        <Text className="mt-2 text-sm font-semibold text-neutral-700">Name</Text>
+        <Text className="mt-2 text-sm font-semibold">Name</Text>
         <Input placeholder="Your name" autoComplete="name" value={name} onChangeText={setName} />
-        <Text className="mt-2 text-sm font-semibold text-neutral-700">Email</Text>
+        <Text className="mt-2 text-sm font-semibold">Email</Text>
         <Input
           placeholder="you@example.com"
           autoCapitalize="none"
@@ -63,7 +64,7 @@ export default function SignUp() {
           value={email}
           onChangeText={setEmail}
         />
-        <Text className="mt-2 text-sm font-semibold text-neutral-700">Password</Text>
+        <Text className="mt-2 text-sm font-semibold">Password</Text>
         <Input
           placeholder={`At least ${MIN_PASSWORD} characters`}
           secureTextEntry
@@ -71,7 +72,7 @@ export default function SignUp() {
           value={password}
           onChangeText={setPassword}
         />
-        <Text className="mt-2 text-sm font-semibold text-neutral-700">Confirm password</Text>
+        <Text className="mt-2 text-sm font-semibold">Confirm password</Text>
         <Input
           placeholder="Repeat password"
           secureTextEntry

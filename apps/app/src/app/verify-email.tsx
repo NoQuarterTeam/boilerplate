@@ -9,11 +9,8 @@ export default function VerifyEmail() {
   const router = useRouter()
   useEffect(() => {
     if (isPending) return
-    if (session) {
-      router.replace("/")
-    } else {
-      router.replace("/sign-in")
-    }
+
+    router.replace("/")
   }, [session, isPending, router])
 
   return null
