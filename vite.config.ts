@@ -13,6 +13,7 @@ const ignorePatterns = [
   "migrations/",
   ".vercel",
   "node_modules/",
+  "uniwind-types.d.ts",
   "routeTree.gen.ts",
   "apps/app/src/assets/",
 ]
