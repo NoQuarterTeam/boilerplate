@@ -35,7 +35,7 @@ export function getContext() {
   if (context) return context
   const queryClient = new QueryClient({
     defaultOptions: {
-      // queries: { gcTime: 5000 },
+      queries: { gcTime: 60_000, staleTime: 60_000 },
       dehydrate: { serializeData: superjson.serialize },
       hydrate: { deserializeData: superjson.deserialize },
     },

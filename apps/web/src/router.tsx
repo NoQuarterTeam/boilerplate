@@ -23,7 +23,7 @@ export function getRouter() {
     },
   })
 
-  setupRouterSsrQueryIntegration({ router, queryClient: context.queryClient })
+  setupRouterSsrQueryIntegration({ router, queryClient: context.queryClient, handleRedirects: true })
 
   return router
 }
