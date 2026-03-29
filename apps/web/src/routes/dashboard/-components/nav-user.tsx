@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@boilerplate/ui/components/dropdown-menu"
 
-import { authClient } from "@/lib/integrations/better-auth/auth-client"
+import { authClient } from "@/lib/auth/client"
 
 function createInitials(user: Pick<User, "name">) {
   return (

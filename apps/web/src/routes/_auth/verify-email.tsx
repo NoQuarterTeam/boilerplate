@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from "@boilerplate/ui/components/sonner"
 
 import { useAppForm } from "@/components/react-form"
-import { authClient } from "@/lib/integrations/better-auth/auth-client"
+import { authClient } from "@/lib/auth/client"
 
 export const Route = createFileRoute("/_auth/verify-email")({
   validateSearch: z.object({

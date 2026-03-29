@@ -10,7 +10,8 @@ import { db } from "@boilerplate/db/server"
 import { ResetPasswordEmail, VerifyEmail } from "@boilerplate/email"
 
 import { env } from "@/env"
-import { sendAppEmail } from "@/lib/email/email.server"
+import { getBaseUrl } from "@/lib/config"
+import { sendAppEmail } from "@/server/email"
 
 function getFirstName(name: string | null | undefined) {
   if (!name) return "there"
@@ -46,6 +47,7 @@ export const auth = betterAuth({
     sendVerificationEmail: async ({ user, url }, request) => {
       const newUrl = new URL(url)
 
+      // Send ip based urls so app gets LAN host
       const headers = request?.headers
       if (headers) {
         const host = headers.get("x-forwarded-host") || headers.get("host")
@@ -80,11 +82,8 @@ export const auth = betterAuth({
         ]
       : []),
   ],
+  baseUrl: getBaseUrl(),
+  productionUrl: `https://${env.VERCEL_PROJECT_PRODUCTION_URL ?? "boilerplate.noquarter.co"}`,
   session: { cookieCache: { enabled: true } },
-  trustedOrigins: [
-    env.VITE_WEB_URL,
-    "boilerplate://",
-    "boilerplate://*",
-    ...(env.NODE_ENV === "development" ? (["exp://", "exp://**", "exp://192.168.*.*:*/**"] as const) : []),
-  ],
+  trustedOrigins: ["boilerplate://"],
 })

@@ -7,7 +7,7 @@ import { Button } from "@boilerplate/ui/components/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@boilerplate/ui/components/card"
 
 import { useAppForm } from "@/components/react-form"
-import { authClient } from "@/lib/integrations/better-auth/auth-client"
+import { authClient } from "@/lib/auth/client"
 
 export const Route = createFileRoute("/_auth/forgot-password")({
   component: ForgotPasswordPage,
