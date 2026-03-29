@@ -9,7 +9,10 @@ export default defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools(),
-    nitro(),
+    nitro({
+      preset: "vercel",
+      vercel: { entryFormat: "node" },
+    }),
     tailwindcss(),
     tanstackStart({
       router: { routeToken: "layout" },
