@@ -1,3 +1,4 @@
+import { queryOptions } from "@tanstack/react-query"
 import { createFileRoute, Outlet } from "@tanstack/react-router"
 
 import { Separator } from "@boilerplate/ui/components/separator"
@@ -11,6 +12,8 @@ import { DashboardSidebar } from "./-components/dashboard-sidebar"
 import { NavUser } from "./-components/nav-user"
 import { getCurrentUserFn } from "./-data"
 
+export const currentUserQueryOptions = () => queryOptions({ queryKey: ["current-user"], queryFn: () => getCurrentUserFn() })
+
 export const Route = createFileRoute("/dashboard")({
   component: DashboardLayoutShell,
   errorComponent: (p) => (
@@ -18,8 +21,8 @@ export const Route = createFileRoute("/dashboard")({
       <DefaultError {...p} />
     </div>
   ),
-  beforeLoad: async () => {
-    const user = await getCurrentUserFn()
+  beforeLoad: async ({ context }) => {
+    const user = await context.queryClient.ensureQueryData(currentUserQueryOptions())
     return { user }
   },
 })
