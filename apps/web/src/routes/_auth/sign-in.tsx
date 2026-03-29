@@ -51,43 +51,45 @@ function SignInPage() {
         <CardDescription>Enter your email and password to continue.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form
-          className="space-y-4"
-          onSubmit={(e) => {
-            e.preventDefault()
-            void form.handleSubmit()
-          }}
-        >
-          <form.AppField
-            name="email"
-            validators={{
-              onSubmit: ({ value }) => {
-                if (!value.trim()) return "Email is required"
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return "Enter a valid email"
-                return undefined
-              },
+        <form.AppForm>
+          <form
+            className="space-y-4"
+            onSubmit={(e) => {
+              e.preventDefault()
+              void form.handleSubmit()
             }}
           >
-            {(field) => <field.TextField label="Email" type="email" autoComplete="email" placeholder="you@example.com" />}
-          </form.AppField>
+            <form.AppField
+              name="email"
+              validators={{
+                onSubmit: ({ value }) => {
+                  if (!value.trim()) return "Email is required"
+                  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return "Enter a valid email"
+                  return undefined
+                },
+              }}
+            >
+              {(field) => <field.TextField label="Email" type="email" autoComplete="email" placeholder="you@example.com" />}
+            </form.AppField>
 
-          <form.AppField
-            name="password"
-            validators={{
-              onSubmit: ({ value }) => (!value ? "Password is required" : undefined),
-            }}
-          >
-            {(field) => (
-              <field.TextField label="Password" type="password" autoComplete="current-password" placeholder="••••••••" />
-            )}
-          </form.AppField>
+            <form.AppField
+              name="password"
+              validators={{
+                onSubmit: ({ value }) => (!value ? "Password is required" : undefined),
+              }}
+            >
+              {(field) => (
+                <field.TextField label="Password" type="password" autoComplete="current-password" placeholder="••••••••" />
+              )}
+            </form.AppField>
 
-          <form.AppField name="rememberMe">{(field) => <field.CheckboxField label="Remember me" />}</form.AppField>
+            <form.AppField name="rememberMe">{(field) => <field.CheckboxField label="Remember me" />}</form.AppField>
 
-          <form.SubmitButton>{(isSubmitting) => (isSubmitting ? "Signing in…" : "Sign in")}</form.SubmitButton>
+            <form.SubmitButton>{(isSubmitting) => (isSubmitting ? "Signing in…" : "Sign in")}</form.SubmitButton>
 
-          <form.FormError>{apiError}</form.FormError>
-        </form>
+            <form.FormError>{apiError}</form.FormError>
+          </form>
+        </form.AppForm>
       </CardContent>
       <CardFooter className="border-t pt-4">
         <div className="flex w-full flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
