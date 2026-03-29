@@ -17,12 +17,12 @@ import type { AsyncSelectComponent, AsyncSelectPrimitive, AsyncSelectProps } fro
 import type { MultiSelectComponent, MultiSelectPrimitive, MultiSelectProps } from "@/components/multi-select"
 
 const AsyncSelect = React.lazy(async () => {
-  const mod = await import("@/components/async-select")
+  const mod = await import("@/components/async-select.tsx")
   return { default: mod.AsyncSelect }
 }) as AsyncSelectComponent
 
 const MultiSelect = React.lazy(async () => {
-  const mod = await import("@/components/multi-select")
+  const mod = await import("@/components/multi-select.tsx")
   return { default: mod.MultiSelect }
 }) as MultiSelectComponent
 
@@ -37,7 +37,7 @@ type SelectInputProps = {
 } & React.ComponentProps<typeof BaseSelect>
 
 const AppSelect = React.lazy(async () => {
-  const mod = await import("@boilerplate/ui/components/select")
+  const mod = await import("@boilerplate/ui/components/select.tsx")
 
   function LazySelect({ children, id, isInvalid = false, onBlur, onChange, placeholder, value, ...rest }: SelectInputProps) {
     return (
