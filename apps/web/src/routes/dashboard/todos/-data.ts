@@ -1,4 +1,3 @@
-import { queryOptions } from "@tanstack/react-query"
 import { createServerFn } from "@tanstack/react-start"
 import { z } from "zod"
 
@@ -26,8 +25,6 @@ export const listTodosFn = createServerFn({ method: "GET" })
   })
 
 export type TodoListItem = Awaited<ReturnType<typeof listTodosFn>>[number]
-
-export const todosListQueryOptions = () => queryOptions({ queryKey: ["todos", "list"], queryFn: () => listTodosFn() })
 
 export const createTodoFn = createServerFn({ method: "POST" })
   .middleware([authMiddleware])

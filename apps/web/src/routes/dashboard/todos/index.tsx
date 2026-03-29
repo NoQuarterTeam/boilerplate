@@ -1,4 +1,4 @@
-import { useMutation, useSuspenseQuery } from "@tanstack/react-query"
+import { queryOptions, useMutation, useSuspenseQuery } from "@tanstack/react-query"
 import { createFileRoute, getRouteApi } from "@tanstack/react-router"
 import { Trash2Icon } from "lucide-react"
 import { useState } from "react"
@@ -9,9 +9,11 @@ import { Checkbox } from "@boilerplate/ui/components/checkbox"
 import { Input } from "@boilerplate/ui/components/input"
 import { toast } from "@boilerplate/ui/components/sonner"
 
-import { createTodoFn, deleteTodoFn, setTodoCompletedFn, todosListQueryOptions, type TodoListItem } from "./-data"
+import { createTodoFn, deleteTodoFn, listTodosFn, setTodoCompletedFn, type TodoListItem } from "./-data"
 
 const dashboardRoute = getRouteApi("/dashboard")
+
+const todosListQueryOptions = () => queryOptions({ queryKey: ["todos", "list"], queryFn: () => listTodosFn() })
 
 export const Route = createFileRoute("/dashboard/todos/")({
   component: TodosPage,
@@ -153,7 +155,7 @@ function TodosPage() {
                   disabled={remove.isPending}
                   onClick={() => void remove.mutateAsync({ id: todo.id })}
                 >
-                  <Trash2Icon className="size-4" />
+                  <Trash2Icon />
                 </Button>
               </div>
             ))
