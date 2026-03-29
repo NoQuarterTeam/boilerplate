@@ -18,8 +18,8 @@ const todosListQueryOptions = () => queryOptions({ queryKey: ["todos", "list"], 
 export const Route = createFileRoute("/dashboard/todos/")({
   component: TodosPage,
   head: () => ({ meta: [{ title: "Todos · Boilerplate" }] }),
-  loader: ({ context }) => {
-    void context.queryClient.prefetchQuery(todosListQueryOptions())
+  loader: async ({ context }) => {
+    await context.queryClient.ensureQueryData(todosListQueryOptions())
   },
 })
 

@@ -22,8 +22,8 @@ const usersQueryOptions = (data: typeof Route.types.searchSchema) =>
 export const Route = createFileRoute("/dashboard/users/")({
   validateSearch: tablePaginationSearchParams,
   loaderDeps: ({ search }) => ({ page: search.page, pageSize: search.pageSize, search: search.search }),
-  loader: ({ deps, context }) => {
-    void context.queryClient.prefetchQuery(usersQueryOptions(deps))
+  loader: async ({ deps, context }) => {
+    await context.queryClient.ensureQueryData(usersQueryOptions(deps))
   },
   component: UsersPage,
 })
