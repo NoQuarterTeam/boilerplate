@@ -99,51 +99,51 @@ bun run --filter @boilerplate/db db:studio
 
 ### Root
 
-| Command | Purpose |
-| --- | --- |
-| `bun run lint` | Run repo-wide linting via `vite-plus` / Oxlint |
-| `bun run format` | Format the repo via `vite-plus` / Oxfmt |
-| `bun run check` | Run repo-wide checks |
+| Command          | Purpose                                        |
+| ---------------- | ---------------------------------------------- |
+| `bun run lint`   | Run repo-wide linting via `vite-plus` / Oxlint |
+| `bun run format` | Format the repo via `vite-plus` / Oxfmt        |
+| `bun run check`  | Run repo-wide checks                           |
 
 ### Web App (`@boilerplate/web`)
 
-| Command | Purpose |
-| --- | --- |
-| `bun run --filter @boilerplate/web dev` | Start the Vite dev server on port `6969` |
-| `bun run --filter @boilerplate/web build` | Production build |
-| `bun run --filter @boilerplate/web preview` | Preview the built app |
-| `bun run --filter @boilerplate/web start` | Start the Nitro server output |
+| Command                                     | Purpose                                  |
+| ------------------------------------------- | ---------------------------------------- |
+| `bun run --filter @boilerplate/web dev`     | Start the Vite dev server on port `6969` |
+| `bun run --filter @boilerplate/web build`   | Production build                         |
+| `bun run --filter @boilerplate/web preview` | Preview the built app                    |
+| `bun run --filter @boilerplate/web start`   | Start the Nitro server output            |
 
 ### Mobile App (`@boilerplate/app`)
 
-| Command | Purpose |
-| --- | --- |
-| `bun run --filter @boilerplate/app dev` | Start Expo |
-| `bun run --filter @boilerplate/app ios` | Launch Expo on iOS |
-| `bun run --filter @boilerplate/app android` | Launch Expo on Android |
-| `bun run --filter @boilerplate/app web` | Run the Expo web target |
-| `bun run --filter @boilerplate/app build:simulator` | EAS iOS simulator build |
-| `bun run --filter @boilerplate/app build:dev` | EAS development build |
-| `bun run --filter @boilerplate/app build:preview` | EAS preview build |
-| `bun run --filter @boilerplate/app build:staging-internal` | Internal staging build |
-| `bun run --filter @boilerplate/app build:staging` | Store staging build + submit |
-| `bun run --filter @boilerplate/app build:production` | Production build + submit |
+| Command                                                    | Purpose                      |
+| ---------------------------------------------------------- | ---------------------------- |
+| `bun run --filter @boilerplate/app dev`                    | Start Expo                   |
+| `bun run --filter @boilerplate/app ios`                    | Launch Expo on iOS           |
+| `bun run --filter @boilerplate/app android`                | Launch Expo on Android       |
+| `bun run --filter @boilerplate/app web`                    | Run the Expo web target      |
+| `bun run --filter @boilerplate/app build:simulator`        | EAS iOS simulator build      |
+| `bun run --filter @boilerplate/app build:dev`              | EAS development build        |
+| `bun run --filter @boilerplate/app build:preview`          | EAS preview build            |
+| `bun run --filter @boilerplate/app build:staging-internal` | Internal staging build       |
+| `bun run --filter @boilerplate/app build:staging`          | Store staging build + submit |
+| `bun run --filter @boilerplate/app build:production`       | Production build + submit    |
 
 ### Database (`@boilerplate/db`)
 
-| Command | Purpose |
-| --- | --- |
-| `bun run --filter @boilerplate/db dev` | Open Drizzle Studio |
+| Command                                        | Purpose                                 |
+| ---------------------------------------------- | --------------------------------------- |
+| `bun run --filter @boilerplate/db dev`         | Open Drizzle Studio                     |
 | `bun run --filter @boilerplate/db db:generate` | Generate migrations from schema changes |
-| `bun run --filter @boilerplate/db db:migrate` | Run migrations |
-| `bun run --filter @boilerplate/db db:push` | Push schema directly to the database |
-| `bun run --filter @boilerplate/db db:pull` | Pull schema from the database |
-| `bun run --filter @boilerplate/db db:studio` | Open Drizzle Studio |
+| `bun run --filter @boilerplate/db db:migrate`  | Run migrations                          |
+| `bun run --filter @boilerplate/db db:push`     | Push schema directly to the database    |
+| `bun run --filter @boilerplate/db db:pull`     | Pull schema from the database           |
+| `bun run --filter @boilerplate/db db:studio`   | Open Drizzle Studio                     |
 
 ### Email (`@boilerplate/email`)
 
-| Command | Purpose |
-| --- | --- |
+| Command                                   | Purpose                               |
+| ----------------------------------------- | ------------------------------------- |
 | `bun run --filter @boilerplate/email dev` | Preview React Email templates locally |
 
 ## Tooling Notes
