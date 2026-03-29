@@ -1,9 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
-import { AlertCircleIcon } from "lucide-react"
 import { useState } from "react"
 
-import { Alert, AlertDescription } from "@boilerplate/ui/components/alert"
-import { Button } from "@boilerplate/ui/components/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@boilerplate/ui/components/card"
 import { toast } from "@boilerplate/ui/components/sonner"
 
@@ -87,19 +84,9 @@ function SignInPage() {
 
           <form.AppField name="rememberMe">{(field) => <field.CheckboxField label="Remember me" />}</form.AppField>
 
-          <form.Subscribe selector={(s) => [s.canSubmit, s.isSubmitting]}>
-            {([canSubmit, isSubmitting]) => (
-              <Button type="submit" className="w-full" disabled={!canSubmit || isSubmitting}>
-                {isSubmitting ? "Signing in…" : "Sign in"}
-              </Button>
-            )}
-          </form.Subscribe>
-          {apiError && (
-            <Alert>
-              <AlertCircleIcon />
-              <AlertDescription>{apiError}</AlertDescription>
-            </Alert>
-          )}
+          <form.SubmitButton>{(isSubmitting) => (isSubmitting ? "Signing in…" : "Sign in")}</form.SubmitButton>
+
+          <form.FormError>{apiError}</form.FormError>
         </form>
       </CardContent>
       <CardFooter className="border-t pt-4">
