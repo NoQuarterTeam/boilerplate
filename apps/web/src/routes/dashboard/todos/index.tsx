@@ -16,8 +16,8 @@ const dashboardRoute = getRouteApi("/dashboard")
 export const Route = createFileRoute("/dashboard/todos/")({
   component: TodosPage,
   head: () => ({ meta: [{ title: "Todos · Boilerplate" }] }),
-  loader: async ({ context }) => {
-    await context.queryClient.ensureQueryData(todosListQueryOptions())
+  loader: ({ context }) => {
+    void context.queryClient.prefetchQuery(todosListQueryOptions())
   },
 })
 
