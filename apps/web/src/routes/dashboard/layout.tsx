@@ -6,7 +6,6 @@ import { TooltipProvider } from "@boilerplate/ui/components/tooltip"
 
 import { DefaultError } from "@/components/default-error"
 
-import { NavUser } from "./-components/nav-user"
 // import { NavUser } from "./-components/nav-user"
 import { getCurrentUserFn } from "./-data"
 
@@ -39,9 +38,7 @@ function DashboardLayoutShell() {
             <Separator orientation="vertical" className="mt-2 mr-2 data-[orientation=vertical]:h-4" />
             {/* <DashboardBreadcrumbs /> */}
           </div>
-          <div className="flex shrink-0 items-center gap-2">
-            <NavUser />
-          </div>
+          <div className="flex shrink-0 items-center gap-2">{/* <NavUser /> */}</div>
         </header>
         <div className="flex-1 overflow-auto overscroll-contain">
           <Outlet />
