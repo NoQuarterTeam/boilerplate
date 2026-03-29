@@ -1,14 +1,10 @@
 import { queryOptions } from "@tanstack/react-query"
 import { createFileRoute, Outlet } from "@tanstack/react-router"
 
-import { Separator } from "@boilerplate/ui/components/separator"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@boilerplate/ui/components/sidebar"
 import { TooltipProvider } from "@boilerplate/ui/components/tooltip"
 
 import { DefaultError } from "@/components/default-error"
 
-import { DashboardBreadcrumbs } from "./-components/dashboard-breadcrumbs"
-import { DashboardSidebar } from "./-components/dashboard-sidebar"
 // import { NavUser } from "./-components/nav-user"
 import { getCurrentUserFn } from "./-data"
 
@@ -31,7 +27,7 @@ export const Route = createFileRoute("/dashboard")({
 function DashboardLayoutShell() {
   return (
     <TooltipProvider delay={0}>
-      <SidebarProvider>
+      {/* <SidebarProvider>
         <div className="flex h-dvh w-full overflow-hidden">
           <DashboardSidebar />
           <SidebarInset className="flex flex-col overflow-hidden">
@@ -41,14 +37,14 @@ function DashboardLayoutShell() {
                 <Separator orientation="vertical" className="mt-2 mr-2 data-[orientation=vertical]:h-4" />
                 <DashboardBreadcrumbs />
               </div>
-              <div className="flex shrink-0 items-center gap-2">{/* <NavUser /> */}</div>
+              <div className="flex shrink-0 items-center gap-2"><NavUser /></div>
             </header>
-            <div className="flex-1 overflow-auto overscroll-contain">
-              <Outlet />
-            </div>
+            <div className="flex-1 overflow-auto overscroll-contain"> */}
+      <Outlet />
+      {/* </div>
           </SidebarInset>
         </div>
-      </SidebarProvider>
+      </SidebarProvider> */}
     </TooltipProvider>
   )
 }
