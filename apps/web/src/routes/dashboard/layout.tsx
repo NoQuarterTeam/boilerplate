@@ -21,7 +21,7 @@ export const Route = createFileRoute("/dashboard")({
       <DefaultError {...p} />
     </div>
   ),
-  ssr: false,
+  // ssr: false,
   beforeLoad: async ({ context }) => {
     const user = await context.queryClient.ensureQueryData(currentUserQueryOptions())
     return { user }
