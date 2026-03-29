@@ -3,9 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bun with-env vite build",
     "dev": "bun with-env portless --app-port 6969 boilerplate vite dev --host",
-    "preview": "vite preview",
+    "build": "vite build",
     "start": "node .output/server/index.mjs",
     "with-env": "dotenv -e ../../.env.local --"
   },
