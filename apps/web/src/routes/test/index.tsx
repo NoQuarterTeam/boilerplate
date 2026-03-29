@@ -33,14 +33,7 @@ function RouteComponent() {
                 void form.handleSubmit()
               }}
             >
-              <form.AppField
-                name="test"
-                validators={{
-                  onSubmit: ({ value }) => (!value.trim() ? "Test field is required" : undefined),
-                }}
-              >
-                {(field) => <field.TextField label="Test field" type="text" placeholder="Type anything" />}
-              </form.AppField>
+              <input />
 
               <form.Subscribe selector={(s) => [s.canSubmit, s.isSubmitting]}>
                 {([canSubmit, isSubmitting]) => (
