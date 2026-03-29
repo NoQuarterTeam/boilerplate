@@ -1,17 +1,24 @@
+import { QueryClient } from "@tanstack/react-query"
 import { createRouter as createTanStackRouter } from "@tanstack/react-router"
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query"
+import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query"
+import SuperJSON from "superjson"
 
 import { DefaultError } from "./components/default-error"
 import { DefaultNotFound } from "./components/default-not-found"
-import { getContext } from "./lib/integrations/tanstack-query/root-provider"
+import { makeTRPCClient, TRPCProvider } from "./lib/integrations/trpc"
 import { routeTree } from "./routeTree.gen"
 
 export function getRouter() {
-  const context = getContext()
+  const queryClient = new QueryClient({
+    defaultOptions: { dehydrate: { serializeData: SuperJSON.serialize }, hydrate: { deserializeData: SuperJSON.deserialize } },
+  })
+  const trpcClient = makeTRPCClient()
+  const trpc = createTRPCOptionsProxy({ client: trpcClient, queryClient })
 
   const router = createTanStackRouter({
     routeTree,
-    context,
+    context: { queryClient, trpc },
     scrollRestoration: true,
     defaultPreload: "intent",
     defaultPreloadStaleTime: 0,
@@ -21,9 +28,10 @@ export function getRouter() {
     defaultOnCatch: (error) => {
       console.error("Router error", error)
     },
+    Wrap: (props) => <TRPCProvider trpcClient={trpcClient} queryClient={queryClient} {...props} />,
   })
 
-  setupRouterSsrQueryIntegration({ router, queryClient: context.queryClient, handleRedirects: true })
+  setupRouterSsrQueryIntegration({ router, queryClient })
 
   return router
 }

@@ -7,7 +7,6 @@ import { Toaster } from "@boilerplate/ui/components/sonner"
 
 import { DefaultError } from "@/components/default-error"
 import { ThemeProvider } from "@/components/theme-provider"
-import { TanStackQueryProvider } from "@/lib/integrations/tanstack-query/root-provider"
 
 import appCss from "../styles.css?url"
 
@@ -36,19 +35,17 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <ThemeProvider>
-          <TanStackQueryProvider>
-            {children}
-            <Toaster />
-          </TanStackQueryProvider>
-        </ThemeProvider>
-        <Scripts />
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <HeadContent />
+        </head>
+        <body>
+          {children}
+          <Toaster />
+          <Scripts />
+        </body>
+      </html>
+    </ThemeProvider>
   )
 }
