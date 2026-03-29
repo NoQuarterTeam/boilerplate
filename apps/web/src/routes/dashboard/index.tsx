@@ -1,25 +1,19 @@
-import { useSuspenseQuery } from "@tanstack/react-query"
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { ArrowRightIcon } from "lucide-react"
 
 import { Button } from "@boilerplate/ui/components/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@boilerplate/ui/components/card"
 
-import { todosListQueryOptions } from "./todos/-data"
-
 export const Route = createFileRoute("/dashboard/")({
   head: () => ({
     meta: [{ title: "Overview · Boilerplate" }],
   }),
-  loader: async ({ context }) => {
-    await context.queryClient.ensureQueryData(todosListQueryOptions())
-  },
+
   component: DashboardHomePage,
 })
 
 function DashboardHomePage() {
   const { user } = Route.useRouteContext()
-  const { data: todos } = useSuspenseQuery(todosListQueryOptions())
 
   return (
     <div className="space-y-6 p-4 md:p-6">
@@ -30,8 +24,8 @@ function DashboardHomePage() {
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Your todos</CardTitle>
-            <CardDescription>{todos.length} total in your list.</CardDescription>
+            <CardTitle>Todos</CardTitle>
+            <CardDescription>View your todos list.</CardDescription>
           </CardHeader>
           <CardContent>
             <Button nativeButton={false} variant="outline" size="sm" render={<Link to="/dashboard/todos" />}>
