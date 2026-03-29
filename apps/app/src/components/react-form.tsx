@@ -5,7 +5,9 @@ import { Input } from "@/components/input"
 import { Text } from "@/components/text"
 import { cn } from "@/lib/utils"
 
-const { fieldContext, formContext, useFieldContext } = createFormHookContexts()
+import { Button } from "./button"
+
+const { fieldContext, formContext, useFieldContext, useFormContext } = createFormHookContexts()
 
 function TextField({
   label,
@@ -47,11 +49,37 @@ function TextField({
   )
 }
 
+function SubmitButton({
+  children,
+  ...rest
+}: Omit<React.ComponentProps<typeof Button>, "children"> & {
+  children: React.ReactNode | ((isSubmitting: boolean) => React.ReactNode)
+}) {
+  const form = useFormContext()
+  return (
+    <form.Subscribe selector={(s) => [s.canSubmit, s.isSubmitting] as const}>
+      {([canSubmit, isSubmitting]) => (
+        <Button className={cn("mt-", rest.className)} disabled={!canSubmit || isSubmitting || rest.disabled} {...rest}>
+          {typeof children === "function" ? children(isSubmitting) : children}
+        </Button>
+      )}
+    </form.Subscribe>
+  )
+}
+
+function FormError({ children }: { children: React.ReactNode }) {
+  if (!children) return null
+  return <Text className="mt-1 text-sm text-red-700">{children}</Text>
+}
+
 export const { useAppForm } = createFormHook({
   fieldContext,
   formContext,
   fieldComponents: {
     TextField,
   },
-  formComponents: {},
+  formComponents: {
+    SubmitButton,
+    FormError,
+  },
 })
