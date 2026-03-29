@@ -3,10 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bun with-env vite build && cp instrument.server.mjs .output/server",
+    "build": "bun with-env vite build",
     "dev": "bun with-env portless --app-port 6969 boilerplate vite dev --host",
     "preview": "vite preview",
-    "start": "node --import ./.output/server/instrument.server.mjs .output/server/index.mjs",
+    "start": "node .output/server/index.mjs",
     "with-env": "dotenv -e ../../.env.local --"
   },
   "dependencies": {
