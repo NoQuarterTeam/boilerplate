@@ -7,10 +7,6 @@
     ".": {
       "types": "./src/index.ts",
       "default": "./src/index.ts"
-    },
-    "./client-types": {
-      "types": "./src/client-types.ts",
-      "default": "./src/client-types.ts"
     }
   },
   "scripts": {
