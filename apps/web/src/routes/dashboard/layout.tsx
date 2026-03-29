@@ -9,7 +9,7 @@ import { DefaultError } from "@/components/default-error"
 import { DashboardBreadcrumbs } from "./-components/dashboard-breadcrumbs"
 import { DashboardSidebar } from "./-components/dashboard-sidebar"
 import { NavUser } from "./-components/nav-user"
-import { getAuthSessionFn, getCurrentUserFn, signOutFn } from "./-data"
+import { getCurrentUserFn } from "./-data"
 
 export const Route = createFileRoute("/dashboard")({
   component: DashboardLayoutShell,
@@ -19,10 +19,8 @@ export const Route = createFileRoute("/dashboard")({
     </div>
   ),
   beforeLoad: async () => {
-    const data = await getAuthSessionFn()
-    if (!data) return await signOutFn()
     const user = await getCurrentUserFn()
-    return { session: data.session, user }
+    return { user }
   },
 })
 
