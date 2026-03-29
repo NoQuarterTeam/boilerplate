@@ -10,8 +10,7 @@ import { authMiddleware } from "@/lib/functions/middleware"
 
 export const listTodosFn = createServerFn({ method: "GET" })
   .middleware([authMiddleware])
-  .handler(async ({ context }) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+  .handler(({ context }) => {
     return db
       .select({
         id: todosTable.id,
