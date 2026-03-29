@@ -6,7 +6,6 @@ import { TooltipProvider } from "@boilerplate/ui/components/tooltip"
 
 import { DefaultError } from "@/components/default-error"
 
-import { DashboardBreadcrumbs } from "./-components/dashboard-breadcrumbs"
 import { NavUser } from "./-components/nav-user"
 // import { NavUser } from "./-components/nav-user"
 import { getCurrentUserFn } from "./-data"
@@ -38,7 +37,7 @@ function DashboardLayoutShell() {
           <div className="flex items-center gap-2">
             {/* <SidebarTrigger className="-ml-1" /> */}
             <Separator orientation="vertical" className="mt-2 mr-2 data-[orientation=vertical]:h-4" />
-            <DashboardBreadcrumbs />
+            {/* <DashboardBreadcrumbs /> */}
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <NavUser />
