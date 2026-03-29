@@ -7,9 +7,6 @@ import { defineConfig } from "vite-plus"
 
 export default defineConfig({
   resolve: { tsconfigPaths: true },
-  ssr: {
-    noExternal: ["react", "react-dom", "use-sync-external-store"],
-  },
   plugins: [
     devtools(),
     nitro(),
