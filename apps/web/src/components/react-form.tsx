@@ -4,6 +4,9 @@ import * as React from "react"
 import { Checkbox } from "@boilerplate/ui/components/checkbox"
 import { Field, FieldContent, FieldDescription, FieldError, FieldLabel } from "@boilerplate/ui/components/field"
 import { Input } from "@boilerplate/ui/components/input"
+import { NativeSelect, type NativeSelectProps } from "@boilerplate/ui/components/native-select"
+import { Select, SelectContent, SelectTrigger, SelectValue } from "@boilerplate/ui/components/select"
+import { Textarea } from "@boilerplate/ui/components/textarea"
 import { cn } from "@boilerplate/ui/lib/utils"
 
 const { fieldContext, formContext, useFieldContext } = createFormHookContexts()
@@ -45,124 +48,124 @@ function TextField({
   )
 }
 
-// function TextareaField({
-//   label,
-//   placeholder,
-//   description,
-//   fieldProps,
-//   ...rest
-// }: {
-//   label: string
-//   placeholder: string
-//   description?: React.ReactNode
-//   fieldProps?: React.ComponentProps<typeof Field>
-// } & React.ComponentProps<"textarea">) {
-//   const field = useFieldContext<string>()
-//   const isInvalid = field.state.meta.isTouched && field.state.meta.errors.length > 0
-//   return (
-//     <Field {...fieldProps} data-invalid={isInvalid || undefined} className={cn("gap-1", fieldProps?.className)}>
-//       <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
-//       <Textarea
-//         id={field.name}
-//         placeholder={placeholder}
-//         aria-invalid={isInvalid}
-//         aria-describedby={isInvalid ? `${field.name}-error` : undefined}
-//         value={field.state.value}
-//         onBlur={field.handleBlur}
-//         onChange={(e) => field.handleChange(e.target.value)}
-//         {...rest}
-//       />
-//       <FieldContent className="gap-0">
-//         {description && <FieldDescription>{description}</FieldDescription>}
-//         {isInvalid && <FieldError errors={field.state.meta.errors} />}
-//       </FieldContent>
-//     </Field>
-//   )
-// }
+function TextareaField({
+  label,
+  placeholder,
+  description,
+  fieldProps,
+  ...rest
+}: {
+  label: string
+  placeholder: string
+  description?: React.ReactNode
+  fieldProps?: React.ComponentProps<typeof Field>
+} & React.ComponentProps<"textarea">) {
+  const field = useFieldContext<string>()
+  const isInvalid = field.state.meta.isTouched && field.state.meta.errors.length > 0
+  return (
+    <Field {...fieldProps} data-invalid={isInvalid || undefined} className={cn("gap-1", fieldProps?.className)}>
+      <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
+      <Textarea
+        id={field.name}
+        placeholder={placeholder}
+        aria-invalid={isInvalid}
+        aria-describedby={isInvalid ? `${field.name}-error` : undefined}
+        value={field.state.value}
+        onBlur={field.handleBlur}
+        onChange={(e) => field.handleChange(e.target.value)}
+        {...rest}
+      />
+      <FieldContent className="gap-0">
+        {description && <FieldDescription>{description}</FieldDescription>}
+        {isInvalid && <FieldError errors={field.state.meta.errors} />}
+      </FieldContent>
+    </Field>
+  )
+}
 
-// function NativeSelectField({
-//   label,
-//   description,
-//   children,
-//   fieldProps,
-//   ...rest
-// }: {
-//   label: string
-//   description?: React.ReactNode
-//   children: React.ReactNode
-//   fieldProps?: React.ComponentProps<typeof Field>
-// } & NativeSelectProps) {
-//   const field = useFieldContext<string>()
-//   const isInvalid = field.state.meta.isTouched && field.state.meta.errors.length > 0
-//   return (
-//     <Field {...fieldProps} data-invalid={isInvalid || undefined} className={cn("gap-1", fieldProps?.className)}>
-//       <FieldContent className="gap-0">
-//         <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
-//         {description && <FieldDescription>{description}</FieldDescription>}
-//       </FieldContent>
-//       <FieldContent>
-//         <NativeSelect
-//           id={field.name}
-//           aria-invalid={isInvalid}
-//           aria-describedby={isInvalid ? `${field.name}-error` : undefined}
-//           value={field.state.value}
-//           onBlur={field.handleBlur}
-//           onChange={(e) => field.handleChange(e.target.value)}
-//           className="w-full"
-//           {...rest}
-//         >
-//           {children}
-//         </NativeSelect>
-//         {isInvalid && <FieldError errors={field.state.meta.errors} />}
-//       </FieldContent>
-//     </Field>
-//   )
-// }
-// function SelectField({
-//   label,
-//   description,
-//   placeholder,
-//   children,
-//   fieldProps,
-//   ...rest
-// }: {
-//   label: string
-//   placeholder?: string
-//   description?: React.ReactNode
-//   children: React.ReactNode
-//   fieldProps?: React.ComponentProps<typeof Field>
-// } & React.ComponentProps<typeof Select>) {
-//   const field = useFieldContext<string>()
-//   const isInvalid = field.state.meta.isTouched && field.state.meta.errors.length > 0
-//   return (
-//     <Field {...fieldProps} data-invalid={isInvalid || undefined} className={cn("gap-1", fieldProps?.className)}>
-//       <FieldContent className="gap-0">
-//         <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
-//         {description && <FieldDescription>{description}</FieldDescription>}
-//       </FieldContent>
-//       <FieldContent>
-//         <Select
-//           {...rest}
-//           highlightItemOnHover
-//           id={field.name}
-//           value={field.state.value}
-//           onValueChange={(value) => field.handleChange((value as string) ?? "")}
-//         >
-//           <SelectTrigger
-//             aria-invalid={isInvalid}
-//             aria-describedby={isInvalid ? `${field.name}-error` : undefined}
-//             className="w-full overflow-hidden"
-//             onBlur={field.handleBlur}
-//           >
-//             <SelectValue placeholder={placeholder} />
-//           </SelectTrigger>
-//           <SelectContent>{children}</SelectContent>
-//         </Select>
-//         {isInvalid && <FieldError errors={field.state.meta.errors} />}
-//       </FieldContent>
-//     </Field>
-//   )
-// }
+function NativeSelectField({
+  label,
+  description,
+  children,
+  fieldProps,
+  ...rest
+}: {
+  label: string
+  description?: React.ReactNode
+  children: React.ReactNode
+  fieldProps?: React.ComponentProps<typeof Field>
+} & NativeSelectProps) {
+  const field = useFieldContext<string>()
+  const isInvalid = field.state.meta.isTouched && field.state.meta.errors.length > 0
+  return (
+    <Field {...fieldProps} data-invalid={isInvalid || undefined} className={cn("gap-1", fieldProps?.className)}>
+      <FieldContent className="gap-0">
+        <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
+        {description && <FieldDescription>{description}</FieldDescription>}
+      </FieldContent>
+      <FieldContent>
+        <NativeSelect
+          id={field.name}
+          aria-invalid={isInvalid}
+          aria-describedby={isInvalid ? `${field.name}-error` : undefined}
+          value={field.state.value}
+          onBlur={field.handleBlur}
+          onChange={(e) => field.handleChange(e.target.value)}
+          className="w-full"
+          {...rest}
+        >
+          {children}
+        </NativeSelect>
+        {isInvalid && <FieldError errors={field.state.meta.errors} />}
+      </FieldContent>
+    </Field>
+  )
+}
+function SelectField({
+  label,
+  description,
+  placeholder,
+  children,
+  fieldProps,
+  ...rest
+}: {
+  label: string
+  placeholder?: string
+  description?: React.ReactNode
+  children: React.ReactNode
+  fieldProps?: React.ComponentProps<typeof Field>
+} & React.ComponentProps<typeof Select>) {
+  const field = useFieldContext<string>()
+  const isInvalid = field.state.meta.isTouched && field.state.meta.errors.length > 0
+  return (
+    <Field {...fieldProps} data-invalid={isInvalid || undefined} className={cn("gap-1", fieldProps?.className)}>
+      <FieldContent className="gap-0">
+        <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
+        {description && <FieldDescription>{description}</FieldDescription>}
+      </FieldContent>
+      <FieldContent>
+        <Select
+          {...rest}
+          highlightItemOnHover
+          id={field.name}
+          value={field.state.value}
+          onValueChange={(value) => field.handleChange((value as string) ?? "")}
+        >
+          <SelectTrigger
+            aria-invalid={isInvalid}
+            aria-describedby={isInvalid ? `${field.name}-error` : undefined}
+            className="w-full overflow-hidden"
+            onBlur={field.handleBlur}
+          >
+            <SelectValue placeholder={placeholder} />
+          </SelectTrigger>
+          <SelectContent>{children}</SelectContent>
+        </Select>
+        {isInvalid && <FieldError errors={field.state.meta.errors} />}
+      </FieldContent>
+    </Field>
+  )
+}
 
 function CheckboxField({
   label,
@@ -425,9 +428,9 @@ export const { useAppForm } = createFormHook({
   formContext,
   fieldComponents: {
     TextField,
-    // TextareaField,
-    // NativeSelectField,
-    // SelectField,
+    TextareaField,
+    NativeSelectField,
+    SelectField,
     CheckboxField,
     // AsyncSelectField,
     // MultiSelectField,
