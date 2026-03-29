@@ -5,10 +5,7 @@ import { Button } from "@boilerplate/ui/components/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@boilerplate/ui/components/card"
 
 export const Route = createFileRoute("/dashboard/")({
-  head: () => ({
-    meta: [{ title: "Overview · Boilerplate" }],
-  }),
-
+  head: () => ({ meta: [{ title: "Overview · Boilerplate" }] }),
   component: DashboardHomePage,
 })
 
