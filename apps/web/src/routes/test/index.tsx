@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router"
 
 import { Button } from "@boilerplate/ui/components/button"
 
-export const Route = createFileRoute("/test")({
+export const Route = createFileRoute("/test/")({
   component: RouteComponent,
 })
 
