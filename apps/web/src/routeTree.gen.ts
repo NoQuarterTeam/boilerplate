@@ -9,11 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestLayoutRouteImport } from './routes/test/layout'
 import { Route as DashboardLayoutRouteImport } from './routes/dashboard/layout'
 import { Route as AuthLayoutRouteImport } from './routes/_auth/layout'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TestIndexRouteImport } from './routes/test/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
 import { Route as AuthVerifyEmailRouteImport } from './routes/_auth/verify-email'
 import { Route as AuthSignUpRouteImport } from './routes/_auth/sign-up'
@@ -27,11 +25,6 @@ import { Route as ApiTrpcSplatRouteImport } from './routes/api/trpc.$'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as DashboardUsersIdIndexRouteImport } from './routes/dashboard/users/$id/index'
 
-const TestLayoutRoute = TestLayoutRouteImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DashboardLayoutRoute = DashboardLayoutRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -45,11 +38,6 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
-} as any)
-const TestIndexRoute = TestIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => TestLayoutRoute,
 } as any)
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
   id: '/',
@@ -115,7 +103,6 @@ const DashboardUsersIdIndexRoute = DashboardUsersIdIndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardLayoutRouteWithChildren
-  '/test': typeof TestLayoutRouteWithChildren
   '/dashboard/users': typeof DashboardUsersLayoutRouteWithChildren
   '/forgot-password': typeof AuthForgotPasswordRoute
   '/reset-password': typeof AuthResetPasswordRoute
@@ -123,7 +110,6 @@ export interface FileRoutesByFullPath {
   '/sign-up': typeof AuthSignUpRoute
   '/verify-email': typeof AuthVerifyEmailRoute
   '/dashboard/': typeof DashboardIndexRoute
-  '/test/': typeof TestIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
   '/dashboard/todos/': typeof DashboardTodosIndexRoute
@@ -138,7 +124,6 @@ export interface FileRoutesByTo {
   '/sign-up': typeof AuthSignUpRoute
   '/verify-email': typeof AuthVerifyEmailRoute
   '/dashboard': typeof DashboardIndexRoute
-  '/test': typeof TestIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
   '/dashboard/todos': typeof DashboardTodosIndexRoute
@@ -150,7 +135,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_auth': typeof AuthLayoutRouteWithChildren
   '/dashboard': typeof DashboardLayoutRouteWithChildren
-  '/test': typeof TestLayoutRouteWithChildren
   '/dashboard/users': typeof DashboardUsersLayoutRouteWithChildren
   '/_auth/forgot-password': typeof AuthForgotPasswordRoute
   '/_auth/reset-password': typeof AuthResetPasswordRoute
@@ -158,7 +142,6 @@ export interface FileRoutesById {
   '/_auth/sign-up': typeof AuthSignUpRoute
   '/_auth/verify-email': typeof AuthVerifyEmailRoute
   '/dashboard/': typeof DashboardIndexRoute
-  '/test/': typeof TestIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
   '/dashboard/todos/': typeof DashboardTodosIndexRoute
@@ -170,7 +153,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/dashboard'
-    | '/test'
     | '/dashboard/users'
     | '/forgot-password'
     | '/reset-password'
@@ -178,7 +160,6 @@ export interface FileRouteTypes {
     | '/sign-up'
     | '/verify-email'
     | '/dashboard/'
-    | '/test/'
     | '/api/auth/$'
     | '/api/trpc/$'
     | '/dashboard/todos/'
@@ -193,7 +174,6 @@ export interface FileRouteTypes {
     | '/sign-up'
     | '/verify-email'
     | '/dashboard'
-    | '/test'
     | '/api/auth/$'
     | '/api/trpc/$'
     | '/dashboard/todos'
@@ -204,7 +184,6 @@ export interface FileRouteTypes {
     | '/'
     | '/_auth'
     | '/dashboard'
-    | '/test'
     | '/dashboard/users'
     | '/_auth/forgot-password'
     | '/_auth/reset-password'
@@ -212,7 +191,6 @@ export interface FileRouteTypes {
     | '/_auth/sign-up'
     | '/_auth/verify-email'
     | '/dashboard/'
-    | '/test/'
     | '/api/auth/$'
     | '/api/trpc/$'
     | '/dashboard/todos/'
@@ -224,20 +202,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthLayoutRoute: typeof AuthLayoutRouteWithChildren
   DashboardLayoutRoute: typeof DashboardLayoutRouteWithChildren
-  TestLayoutRoute: typeof TestLayoutRouteWithChildren
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiTrpcSplatRoute: typeof ApiTrpcSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestLayoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -258,13 +228,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/test/': {
-      id: '/test/'
-      path: '/'
-      fullPath: '/test/'
-      preLoaderRoute: typeof TestIndexRouteImport
-      parentRoute: typeof TestLayoutRoute
     }
     '/dashboard/': {
       id: '/dashboard/'
@@ -402,23 +365,10 @@ const DashboardLayoutRouteWithChildren = DashboardLayoutRoute._addFileChildren(
   DashboardLayoutRouteChildren,
 )
 
-interface TestLayoutRouteChildren {
-  TestIndexRoute: typeof TestIndexRoute
-}
-
-const TestLayoutRouteChildren: TestLayoutRouteChildren = {
-  TestIndexRoute: TestIndexRoute,
-}
-
-const TestLayoutRouteWithChildren = TestLayoutRoute._addFileChildren(
-  TestLayoutRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthLayoutRoute: AuthLayoutRouteWithChildren,
   DashboardLayoutRoute: DashboardLayoutRouteWithChildren,
-  TestLayoutRoute: TestLayoutRouteWithChildren,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiTrpcSplatRoute: ApiTrpcSplatRoute,
 }
