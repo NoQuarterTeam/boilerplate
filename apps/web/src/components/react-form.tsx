@@ -1,7 +1,6 @@
 import { createFormHook, createFormHookContexts } from "@tanstack/react-form"
 import { ChevronDownIcon } from "lucide-react"
 import * as React from "react"
-import { Fragment } from "react/jsx-runtime"
 
 import { Button } from "@boilerplate/ui/components/button"
 import { Checkbox } from "@boilerplate/ui/components/checkbox"
@@ -295,7 +294,7 @@ function MultiSelectField<Item, StoredValue extends Primitive>({
           <ComboboxChips ref={anchor} className="w-full">
             <ComboboxValue>
               {(values: Item[] | undefined) => (
-                <Fragment>
+                <>
                   {values?.map((item: Item) => (
                     <ComboboxChip key={resolvedGetItemKey(item)}>{renderChip?.(item) ?? resolvedRenderItem(item)}</ComboboxChip>
                   ))}
@@ -305,7 +304,7 @@ function MultiSelectField<Item, StoredValue extends Primitive>({
                     placeholder={values?.length ? "" : placeholder}
                   />
                   <ChevronDownIcon className="pointer-events-none size-4 text-muted-foreground" />
-                </Fragment>
+                </>
               )}
             </ComboboxValue>
           </ComboboxChips>
