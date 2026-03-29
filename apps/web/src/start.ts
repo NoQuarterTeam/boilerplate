@@ -1,3 +1,4 @@
+import { isRedirect } from "@tanstack/react-router"
 import { createMiddleware, createStart } from "@tanstack/react-start"
 
 const requestLogger = createMiddleware().server(async ({ request, next, pathname }) => {
@@ -11,6 +12,7 @@ const requestLogger = createMiddleware().server(async ({ request, next, pathname
     console.log(`[${timestamp}] ${request.method} ${pathname} - ${result.response.status} (${duration}ms)`)
     return result
   } catch (error) {
+    if (isRedirect(error)) throw error
     const duration = Date.now() - startTime
     console.error(`[${timestamp}] ${request.method} ${pathname} - Error (${duration}ms):`, error)
     throw error
@@ -27,6 +29,7 @@ const loggerMiddleware = createMiddleware({ type: "function" }).server(async ({ 
     console.log(`[${timestamp}] ${method} ${serverFnMeta?.name} - 200 (${duration}ms)`)
     return result
   } catch (error) {
+    if (isRedirect(error)) throw error
     const duration = Date.now() - startTime
     console.error(`[${timestamp}] ${method} ${serverFnMeta?.name} - Error (${duration}ms):`, error)
     throw error
