@@ -170,12 +170,7 @@ function SubmitButton({
   return (
     <form.Subscribe selector={(s) => [s.canSubmit, s.isSubmitting]}>
       {([canSubmit, isSubmitting]) => (
-        <Button
-          type="submit"
-          {...rest}
-          className={cn("w-full", rest.className)}
-          disabled={!canSubmit || isSubmitting || rest.disabled}
-        >
+        <Button type="submit" {...rest} disabled={!canSubmit || isSubmitting || rest.disabled}>
           {typeof children === "function" ? children(isSubmitting ?? false) : children}
         </Button>
       )}

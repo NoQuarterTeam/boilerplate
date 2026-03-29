@@ -121,7 +121,9 @@ function SignUpPage() {
               )}
             </form.AppField>
 
-            <form.SubmitButton>{(isSubmitting) => (isSubmitting ? "Creating account…" : "Create account")}</form.SubmitButton>
+            <form.SubmitButton className="w-full">
+              {(isSubmitting) => (isSubmitting ? "Creating account…" : "Create account")}
+            </form.SubmitButton>
             <form.FormError>{apiError}</form.FormError>
           </form>
         </form.AppForm>

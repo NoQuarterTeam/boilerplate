@@ -85,7 +85,9 @@ function SignInPage() {
 
             <form.AppField name="rememberMe">{(field) => <field.CheckboxField label="Remember me" />}</form.AppField>
 
-            <form.SubmitButton>{(isSubmitting) => (isSubmitting ? "Signing in…" : "Sign in")}</form.SubmitButton>
+            <form.SubmitButton className="w-full">
+              {(isSubmitting) => (isSubmitting ? "Signing in…" : "Sign in")}
+            </form.SubmitButton>
 
             <form.FormError>{apiError}</form.FormError>
           </form>
