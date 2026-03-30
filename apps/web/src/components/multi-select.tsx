@@ -1,5 +1,3 @@
-import { ChevronDownIcon } from "lucide-react"
-
 import {
   Combobox,
   ComboboxChip,
@@ -9,6 +7,7 @@ import {
   ComboboxEmpty,
   ComboboxItem,
   ComboboxList,
+  ComboboxTrigger,
   ComboboxValue,
   useComboboxAnchor,
 } from "@boilerplate/ui/components/combobox"
@@ -77,7 +76,7 @@ export function MultiSelect<Item, Value extends MultiSelectPrimitive = Extract<I
                 aria-describedby={isInvalid && id ? `${id}-error` : undefined}
                 placeholder={values?.length ? "" : placeholder}
               />
-              <ChevronDownIcon className="pointer-events-none size-4 text-muted-foreground" />
+              <ComboboxTrigger className="ml-auto" />
             </>
           )}
         </ComboboxValue>

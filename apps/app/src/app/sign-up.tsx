@@ -105,7 +105,12 @@ export default function SignUp() {
             }}
           >
             {(field) => (
-              <field.TextField label="Confirm password" placeholder="Repeat password" secureTextEntry autoComplete="new-password" />
+              <field.TextField
+                label="Confirm password"
+                placeholder="Repeat password"
+                secureTextEntry
+                autoComplete="new-password"
+              />
             )}
           </form.AppField>
           <form.FormError>{error}</form.FormError>
