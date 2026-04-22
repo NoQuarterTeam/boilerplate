@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { useState } from "react"
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@boilerplate/ui/components/card"
@@ -13,7 +13,6 @@ export const Route = createFileRoute("/_auth/sign-in")({
 })
 
 function SignInPage() {
-  const navigate = useNavigate()
   const [apiError, setApiError] = useState<string | null>(null)
 
   const form = useAppForm({
@@ -35,9 +34,6 @@ function SignInPage() {
               return
             }
             setApiError(error.message ?? "Could not sign in")
-          },
-          onSuccess: () => {
-            void navigate({ to: "/dashboard" })
           },
         },
       )
